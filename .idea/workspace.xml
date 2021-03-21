@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd344fa2-c0f1-4f0d-b634-c73c379e4456" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/controlEngine/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/controlEngine/Input.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/controlEngine/PlayerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/Entity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/PlayerEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/Position.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/Size.java" afterDir="false" />
+    <list default="true" id="cd344fa2-c0f1-4f0d-b634-c73c379e4456" name="Default Changelist" comment="Adding the controller and a playerEntity">
+      <change afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Renderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,8 +126,16 @@
       <option name="presentableId" value="Default" />
       <updated>1616013977904</updated>
       <workItem from="1616013980169" duration="1779000" />
-      <workItem from="1616320481722" duration="3234000" />
+      <workItem from="1616320481722" duration="3871000" />
     </task>
+    <task id="LOCAL-00001" summary="Adding the controller and a playerEntity">
+      <created>1616325051200</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1616325051200</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,5 +152,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Adding the controller and a playerEntity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding the controller and a playerEntity" />
   </component>
 </project>
