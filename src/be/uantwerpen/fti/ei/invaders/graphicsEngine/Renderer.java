@@ -1,16 +1,15 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine;
 
-import be.uantwerpen.fti.ei.invaders.AFact;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.state.State;
 
 import java.awt.*;
-import java.util.ArrayList;
 
 public class Renderer {
-    public void render(AFact game, Graphics graphics) {
-        game.getEntities().forEach(entity -> graphics.drawImage(
-                entity.visualize(),
-                entity.getPosition().getX(),
-                entity.getPosition().getY(),
+    public void render(State state, Graphics graphics) {
+        state.getEntities().forEach(gameObject -> graphics.drawImage(
+                gameObject.visualize(),
+                gameObject.getPosition().getX(),
+                gameObject.getPosition().getY(),
                 null
         ));
     }

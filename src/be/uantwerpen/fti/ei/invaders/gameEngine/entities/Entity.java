@@ -12,13 +12,11 @@ import java.awt.*;
 public abstract class Entity {
     protected Position position;
     protected Size size;
-    protected AFact afact;
 
     /**
      * The constructor provides a default position and size.
      */
-    public Entity(AFact afact) {
-        this.afact = afact;
+    public Entity() {
         position = new Position(50,350);
         size = new Size(50, 50);
     }

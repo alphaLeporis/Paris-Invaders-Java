@@ -1,14 +1,12 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 
-import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
 
 import java.awt.*;
 
 public class BulletEntity extends Entity {
-    public BulletEntity(AFact afact, int x, int y) {
-        super(afact);
+    public BulletEntity(int x, int y) {
         position = new Position(x,y);
         size = new Size(5, 20);
     }

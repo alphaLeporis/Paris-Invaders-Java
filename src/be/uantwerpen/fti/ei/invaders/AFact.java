@@ -13,10 +13,6 @@ public abstract class AFact {
     public List<Entity> entities;
     protected Input input;
 
-    public abstract void createEnemy();
-    public abstract void createPlayer();
-    public abstract void createBullet(Entity entity);
     public abstract void update();
     public abstract void render();
-    public abstract List<Entity> getEntities();
 }

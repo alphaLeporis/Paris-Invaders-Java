@@ -1,4 +1,4 @@
-package be.uantwerpen.fti.ei.invaders.graphicsEngine;
+package be.uantwerpen.fti.ei.invaders.graphicsEngine.entities;
 
 import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.BulletEntity;
@@ -7,8 +7,8 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Java2DBulletEntity extends BulletEntity {
-    public Java2DBulletEntity(AFact afact, int x, int y) {
-        super(afact, x, y);
+    public Java2DBulletEntity(int x, int y) {
+        super(x, y);
     }
 
     public Image visualize() {
