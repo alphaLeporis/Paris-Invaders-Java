@@ -1,22 +1,14 @@
 package be.uantwerpen.fti.ei.invaders.controlEngine;
 
-import java.awt.event.KeyEvent;
-
-public class PlayerController implements Controller {
-    private Input input;
-
-    public PlayerController(Input input) {
-        this.input = input;
-    }
-
+public class EnemyController implements Controller {
     @Override
     public boolean isRequestingLeft() {
-        return input.isPressed(KeyEvent.VK_LEFT);
+        return false;
     }
 
     @Override
     public boolean isRequestingRight() {
-        return input.isPressed(KeyEvent.VK_RIGHT);
+        return false;
     }
 
     @Override
@@ -31,6 +23,6 @@ public class PlayerController implements Controller {
 
     @Override
     public boolean isRequestingSpace() {
-        return input.isPressed(KeyEvent.VK_SPACE);
+        return false;
     }
 }

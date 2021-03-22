@@ -1,9 +1,9 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine;
 
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.Game;
+import be.uantwerpen.fti.ei.invaders.AFact;
 
-public class GameLoop implements Runnable {
-    private Game game;
+public class GameLoop {
+    private final AFact afact;
 
     private boolean running;
     private final double updateRate = 1.0d/60.0d;
@@ -11,11 +11,10 @@ public class GameLoop implements Runnable {
     private long nextStatTime;
     private int fps, ups;
 
-    public GameLoop(Game game) {
-        this.game = game;
+    public GameLoop(AFact afact) {
+        this.afact = afact;
     }
 
-    @Override
     public void run() {
         running = true;
         double accumulator = 0;
@@ -28,19 +27,21 @@ public class GameLoop implements Runnable {
             accumulator += lastRenderTimeInSeconds;
             lastUpdate = currentTime;
 
-            while (accumulator > updateRate) {
-                update();
-                accumulator -= updateRate;
+
+            if (accumulator >= updateRate) {
+                while (accumulator >= updateRate) {
+                    update();
+                    accumulator -= updateRate;
+                }
             }
             render();
-
             printStats();
         }
     }
 
     private void printStats() {
         if (System.currentTimeMillis() > nextStatTime) {
-            System.out.println(String.format("FPS: %d, UPS: %d", fps, ups));
+            System.out.printf("FPS: %d, UPS: %d%n", fps, ups);
             fps = 0;
             ups = 0;
             nextStatTime = System.currentTimeMillis() + 1000;
@@ -48,12 +49,12 @@ public class GameLoop implements Runnable {
     }
 
     private void update() {
-        game.update();
+        afact.update();
         ups++;
     }
 
     private void render() {
-        game.render();
+        afact.render();
         fps++;
     }
 }

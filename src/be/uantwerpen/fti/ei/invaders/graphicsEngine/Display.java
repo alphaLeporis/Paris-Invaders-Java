@@ -1,5 +1,6 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine;
 
+import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Input;
 
 import javax.swing.*;
@@ -30,14 +31,14 @@ public class Display extends JFrame {
         setVisible(true);
     }
 
-    public void render(Game game) {
+    public void render(AFact afact) {
         BufferStrategy bufferStrategy = canvas.getBufferStrategy();
         Graphics graphics = bufferStrategy.getDrawGraphics();
 
         graphics.setColor(Color.BLACK);
         graphics.fillRect(0,0, canvas.getWidth(),canvas.getHeight());
 
-        renderer.render(game, graphics);
+        renderer.render(afact, graphics);
 
         graphics.dispose();
         bufferStrategy.show();

@@ -1,5 +1,8 @@
-package be.uantwerpen.fti.ei.invaders.gameEngine;
+package be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions;
 
+/**
+ * To easily access the position we use this helper class
+ */
 public class Position {
     private int x;
     private int y;
