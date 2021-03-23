@@ -3,14 +3,15 @@ package be.uantwerpen.fti.ei.invaders.graphicsEngine.entities;
 import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.PlayerEntity;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.Action;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Java2DPlayerEntity extends PlayerEntity {
 
-    public Java2DPlayerEntity(Controller controller) {
-        super(controller);
+    public Java2DPlayerEntity(Controller controller, Action action) {
+        super(controller, action);
     }
 
     public Image visualize() {

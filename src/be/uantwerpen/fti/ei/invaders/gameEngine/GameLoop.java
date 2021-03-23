@@ -3,7 +3,7 @@ package be.uantwerpen.fti.ei.invaders.gameEngine;
 import be.uantwerpen.fti.ei.invaders.AFact;
 
 public class GameLoop {
-    private final AFact afact;
+    private Game game;
 
     private boolean running;
     private final double updateRate = 1.0d/60.0d;
@@ -11,8 +11,9 @@ public class GameLoop {
     private long nextStatTime;
     private int fps, ups;
 
-    public GameLoop(AFact afact) {
-        this.afact = afact;
+    public GameLoop(Game game)  {
+        this.game = game;
+        run();
     }
 
     public void run() {
@@ -33,8 +34,9 @@ public class GameLoop {
                     update();
                     accumulator -= updateRate;
                 }
+                render();
             }
-            render();
+
             printStats();
         }
     }
@@ -49,12 +51,12 @@ public class GameLoop {
     }
 
     private void update() {
-        afact.update();
+        game.update();
         ups++;
     }
 
     private void render() {
-        afact.render();
+        game.render();
         fps++;
     }
 }

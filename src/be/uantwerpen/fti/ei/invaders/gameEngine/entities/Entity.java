@@ -12,11 +12,13 @@ import java.awt.*;
 public abstract class Entity {
     protected Position position;
     protected Size size;
+    protected boolean isEntityAlive;
 
     /**
      * The constructor provides a default position and size.
      */
     public Entity() {
+        isEntityAlive = true;
         position = new Position(50,350);
         size = new Size(50, 50);
     }
@@ -32,4 +34,11 @@ public abstract class Entity {
     }
 
     public abstract Image visualize();
+
+    public boolean isEntityAlive() {
+        return isEntityAlive;
+    }
+    public void killEntity() {
+        isEntityAlive = false;
+    }
 }

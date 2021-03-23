@@ -7,13 +7,13 @@ import java.awt.*;
 
 public class BulletEntity extends Entity {
     public BulletEntity(int x, int y) {
-        position = new Position(x,y);
+        position = new Position(x+25,y);
         size = new Size(5, 20);
     }
 
     @Override
     public void update() {
-        int deltaY = 0;
+        int deltaY = -10;
         position = new Position(position.getX(), position.getY() + deltaY);
     }
 

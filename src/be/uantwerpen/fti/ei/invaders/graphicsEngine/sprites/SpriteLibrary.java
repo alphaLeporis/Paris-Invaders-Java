@@ -6,16 +6,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SpriteLibrary {
-    private final static String PATH_TO_UNITS = "/sprites/units"
+    private final static String PATH_TO_UNITS = "/sprites/units";
 
     private Map<String, SpriteSet> units;
 
     public SpriteLibrary() {
         units = new HashMap<>();
-        loadSpritesFromDisk();
+        //loadSpritesFromDisk();
     }
-
-    private void loadSpritesFromDisk() {
+    // Todo: Finish this...
+/*    private void loadSpritesFromDisk() {
         String[] folderNames = getFolderNames(PATH_TO_UNITS);
 
         for(String folderName: folderNames) {
@@ -27,9 +27,9 @@ public class SpriteLibrary {
                             sheetName.substring(0,sheetName.length - 4),
                             ImageUtils.loadImage()
                     )
-                    )
+                    );
         }
-    }
+    }*/
 
     private String[] getSheetsInFolder(String baseDir) {
         URL resource = SpriteLibrary.class.getResource(baseDir);
