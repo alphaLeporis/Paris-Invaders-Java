@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class Java2DFact extends AFact {
     private final static int width = 800;
     private final static int height = 600;
-    private Display display;
+    private final Display display;
 
     public Java2DFact() {
         input = new Input();

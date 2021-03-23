@@ -3,7 +3,7 @@ package be.uantwerpen.fti.ei.invaders.gameEngine;
 import be.uantwerpen.fti.ei.invaders.AFact;
 
 public class GameLoop {
-    private Game game;
+    private final Game game;
 
     private boolean running;
     private final double updateRate = 1.0d/60.0d;

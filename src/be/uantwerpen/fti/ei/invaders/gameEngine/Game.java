@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
-    private AFact afact;
-    private Action action;
+    private final AFact afact;
+    private final Action action;
     public List<Entity> entities;
 
     public Game(AFact afact) {
@@ -43,8 +43,8 @@ public class Game {
     }
 
     private void updateGameObjects() {
-        for(int i = 0; i < entities.size(); i++) {
-            entities.get(i).update();
+        for (Entity entity : entities) {
+            entity.update();
         }
     }
 

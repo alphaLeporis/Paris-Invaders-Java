@@ -4,7 +4,7 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.Entity;
 
 public class Action {
-    private Game game;
+    private final Game game;
 
     public Action(Game game) {
         this.game = game;

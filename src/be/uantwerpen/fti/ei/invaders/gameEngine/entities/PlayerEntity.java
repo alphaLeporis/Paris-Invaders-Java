@@ -8,8 +8,8 @@ import java.awt.*;
 
 public class PlayerEntity extends Entity {
 
-    private Controller controller;
-    private Action action;
+    private final Controller controller;
+    private final Action action;
     private long lastSpaceEntry = System.currentTimeMillis();
 
     public PlayerEntity(Controller controller, Action action) {
@@ -24,7 +24,7 @@ public class PlayerEntity extends Entity {
             if (25 < position.getX()) {
                 deltaX -= 5;
             } else {
-                deltaX -= 0;
+                deltaX = 0;
             }
 
         }

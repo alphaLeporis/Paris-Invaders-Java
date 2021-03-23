@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd344fa2-c0f1-4f0d-b634-c73c379e4456" name="Default Changelist" comment="Small refactor, adding a state.&#10;Working on SpriteLibrary.java">
-      <change afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/actions/Action.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/AFact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/AFact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/Main.java" afterDir="false" />
+    <list default="true" id="cd344fa2-c0f1-4f0d-b634-c73c379e4456" name="Default Changelist" comment="Fixed errors, now working:&#10;- Removing an object&#10;- Firing&#10;- Added boundaries so that our object will not go that far&#10;Working with a general game.java file.&#10;&#10;Todo:&#10;- Add enemies&#10;- Collision detection&#10;- Sprites&#10;- Sound">
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/GameLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/BulletEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/BulletEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/PlayerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/PlayerEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/actions/Actions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/actions/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/actions/Action.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Renderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DFact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Java2DFact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DPlayerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DPlayerEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/sprites/SpriteLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/sprites/SpriteLibrary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/state/GameState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/state/State.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Java2DFact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Java2DFact.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +128,7 @@
       <workItem from="1616440910687" duration="51000" />
       <workItem from="1616441779024" duration="5559000" />
       <workItem from="1616488893399" duration="9545000" />
+      <workItem from="1616507570951" duration="309000" />
     </task>
     <task id="LOCAL-00001" summary="Adding the controller and a playerEntity">
       <created>1616325051200</created>
@@ -168,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616447466951</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed errors, now working:&#10;- Removing an object&#10;- Firing&#10;- Added boundaries so that our object will not go that far&#10;Working with a general game.java file.&#10;&#10;Todo:&#10;- Add enemies&#10;- Collision detection&#10;- Sprites&#10;- Sound">
+      <created>1616507710168</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1616507710168</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +188,7 @@
     <MESSAGE value="Adding the object renderer" />
     <MESSAGE value="Added the enemy&#10;&#10;ToDo: Unable to create bullet and re-draw the image" />
     <MESSAGE value="Small refactor, adding a state.&#10;Working on SpriteLibrary.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small refactor, adding a state.&#10;Working on SpriteLibrary.java" />
+    <MESSAGE value="Fixed errors, now working:&#10;- Removing an object&#10;- Firing&#10;- Added boundaries so that our object will not go that far&#10;Working with a general game.java file.&#10;&#10;Todo:&#10;- Add enemies&#10;- Collision detection&#10;- Sprites&#10;- Sound" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed errors, now working:&#10;- Removing an object&#10;- Firing&#10;- Added boundaries so that our object will not go that far&#10;Working with a general game.java file.&#10;&#10;Todo:&#10;- Add enemies&#10;- Collision detection&#10;- Sprites&#10;- Sound" />
   </component>
 </project>
