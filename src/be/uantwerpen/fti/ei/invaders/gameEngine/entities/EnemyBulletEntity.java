@@ -6,15 +6,15 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
 
 import java.awt.*;
 
-public class BulletEntity extends Entity {
-    public BulletEntity(int x, int y) {
+public class EnemyBulletEntity extends Entity {
+    public EnemyBulletEntity(int x, int y) {
         position = new Position(x,y);
         size = new Size(64, 64);
     }
 
     @Override
     public void updateMovement() {
-        int deltaY = -10;
+        int deltaY = +10;
         position = new Position(position.getX(), position.getY() + deltaY);
     }
 

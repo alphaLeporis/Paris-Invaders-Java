@@ -17,7 +17,6 @@ public class Display extends JFrame {
         setResizable(false);
 
         this.renderer = new Renderer();
-
         canvas = new Canvas();
         canvas.setPreferredSize(new Dimension(width, height));
         canvas.setFocusable(false);
@@ -35,10 +34,15 @@ public class Display extends JFrame {
         BufferStrategy bufferStrategy = canvas.getBufferStrategy();
         Graphics graphics = bufferStrategy.getDrawGraphics();
 
-        graphics.setColor(Color.BLACK);
+        graphics.setColor(Color.WHITE);
         graphics.fillRect(0,0, canvas.getWidth(),canvas.getHeight());
 
-        renderer.render(game, graphics);
+        game.getEntities().forEach(entity -> graphics.drawImage(
+                entity.visualize(),
+                entity.getPosition().getX(),
+                entity.getPosition().getY(),
+                null
+        ));
 
         graphics.dispose();
         bufferStrategy.show();

@@ -30,7 +30,7 @@ public class PlayerController implements Controller {
     }
 
     @Override
-    public boolean isRequestingSpace() {
+    public boolean isRequestingShoot() {
         return input.isPressed(KeyEvent.VK_SPACE);
     }
 }

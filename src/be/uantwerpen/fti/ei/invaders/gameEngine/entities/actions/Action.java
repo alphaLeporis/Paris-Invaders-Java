@@ -13,12 +13,7 @@ public class Action {
     public void shootBullet(Entity entity) {
         game.spawnBulletEntity(entity);
     }
-
-    public Integer getMaxWidth() {
-        return game.getGameSizeWidth();
-    }
-
-    public Integer getMaxHeight() {
-        return game.getGameSizeHeight();
+    public void shootEnemyBullet(Entity entity) {
+        game.spawnEnemyBulletEntity(entity);
     }
 }

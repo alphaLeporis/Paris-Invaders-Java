@@ -6,6 +6,7 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.Action;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Game {
     private final AFact afact;
@@ -16,7 +17,10 @@ public class Game {
         this.afact = afact;
         action = new Action(this);
         entities = new ArrayList<>();
-        entities.add(afact.getPlayerEntity(action));
+        entities.add(afact.getPlayerEntity(this));
+        for (int i=0; i<10; i++) {
+            entities.add(afact.getEnemyEntity(this,i));
+        }
     }
 
     public Integer getGameSizeWidth() {
@@ -43,8 +47,8 @@ public class Game {
     }
 
     private void updateGameObjects() {
-        for (Entity entity : entities) {
-            entity.update();
+        for(int i = 0; i < entities.size(); i++) {
+            entities.get(i).update();
         }
     }
 
@@ -63,4 +67,13 @@ public class Game {
     }
 
 
+    public List<Entity> getCollidingGameObjects(Entity entity) {
+        return entities.stream()
+                .filter(other -> other.collidesWith(entity))
+                .collect(Collectors.toList());
+    }
+
+    public void spawnEnemyBulletEntity(Entity entity) {
+        entities.add(afact.getEnemyBulletEntity(entity));
+    }
 }

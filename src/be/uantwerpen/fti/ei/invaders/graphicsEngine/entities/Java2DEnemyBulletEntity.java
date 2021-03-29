@@ -1,16 +1,15 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine.entities;
 
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.BulletEntity;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.EnemyBulletEntity;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.sprites.AnimationManager;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.sprites.SpriteLibrary;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
 
-public class Java2DBulletEntity extends BulletEntity {
+public class Java2DEnemyBulletEntity extends EnemyBulletEntity {
     private AnimationManager animationManager;
 
-    public Java2DBulletEntity(int x, int y, SpriteLibrary spriteLibrary) {
+    public Java2DEnemyBulletEntity(int x, int y, SpriteLibrary spriteLibrary) {
         super(x, y);
         animationManager = new AnimationManager(spriteLibrary.getUnit("baguette"));
     }

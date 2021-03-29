@@ -4,10 +4,8 @@ import be.uantwerpen.fti.ei.invaders.AFact;
 
 public class GameLoop {
     private final Game game;
-
     private boolean running;
-    private final double updateRate = 1.0d/60.0d;
-
+    private long lastUpdate = System.currentTimeMillis();
     private long nextStatTime;
     private int fps, ups;
 
@@ -18,26 +16,30 @@ public class GameLoop {
 
     public void run() {
         running = true;
-        double accumulator = 0;
-        long currentTime, lastUpdate = System.currentTimeMillis();
         nextStatTime = System.currentTimeMillis() + 1000;
 
         while (running) {
-            currentTime = System.currentTimeMillis();
-            double lastRenderTimeInSeconds = (currentTime -lastUpdate) / 1000d;
-            accumulator += lastRenderTimeInSeconds;
-            lastUpdate = currentTime;
-
-
-            if (accumulator >= updateRate) {
-                while (accumulator >= updateRate) {
-                    update();
-                    accumulator -= updateRate;
-                }
-                render();
-            }
-
+            startStopwatch();
+            update();
+            render();
+            sleepStopwatch();
             printStats();
+        }
+    }
+
+    private void startStopwatch() {
+        lastUpdate = System.currentTimeMillis();
+    }
+
+    private void sleepStopwatch() {
+        double tickDuration = 1000.0d / 60.0d;
+        long sleepTime = (long) tickDuration - (System.currentTimeMillis() - lastUpdate);
+        if (sleepTime > 0) {
+            try {
+                Thread.sleep(sleepTime);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 

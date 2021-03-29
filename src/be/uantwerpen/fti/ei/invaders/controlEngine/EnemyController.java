@@ -22,7 +22,7 @@ public class EnemyController implements Controller {
     }
 
     @Override
-    public boolean isRequestingSpace() {
-        return false;
+    public boolean isRequestingShoot() {
+        return Math.random()*1000 < 1;
     }
 }

@@ -5,5 +5,5 @@ public interface Controller {
     boolean isRequestingRight();
     boolean isRequestingUp();
     boolean isRequestingDown();
-    boolean isRequestingSpace();
+    boolean isRequestingShoot();
 }

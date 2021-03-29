@@ -8,7 +8,7 @@ public class ImageUtils {
         try {
            return ImageIO.read(ImageUtils.class.getResource(filePath));
         } catch (Exception e) {
-            System.out.println("Could not load images from path" + filePath);
+            System.out.println("Could not load images from path: " + filePath);
         }
         return null;
     }
