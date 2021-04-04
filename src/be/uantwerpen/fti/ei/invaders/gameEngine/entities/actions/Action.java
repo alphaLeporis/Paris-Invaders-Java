@@ -10,10 +10,4 @@ public class Action {
         this.game = game;
     }
 
-    public void shootBullet(Entity entity) {
-        game.spawnBulletEntity(entity);
-    }
-    public void shootEnemyBullet(Entity entity) {
-        game.spawnEnemyBulletEntity(entity);
-    }
 }

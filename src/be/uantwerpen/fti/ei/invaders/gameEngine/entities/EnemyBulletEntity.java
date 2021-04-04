@@ -3,6 +3,7 @@ package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 import be.uantwerpen.fti.ei.invaders.gameEngine.CollisionHandling.CollisionBox;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
+import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
 import java.awt.*;
 
@@ -24,8 +25,8 @@ public class EnemyBulletEntity extends Entity {
     }
 
     @Override
-    public void update() {
-
+    public void update(State state) {
+        updateMovement();
     }
 
     @Override

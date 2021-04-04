@@ -1,14 +1,14 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine.sprites;
 
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.Java2DFact;
+import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class AnimationManager {
-    private SpriteSet spriteSet;
+    private final SpriteSet spriteSet;
     private BufferedImage currentAnimationSheet;
-    private int updatePerFrame;
+    private final int updatePerFrame;
     private int currentFrameTime;
     private int frameIndex;
 
@@ -22,10 +22,10 @@ public class AnimationManager {
 
     public Image getSprite() {
         return currentAnimationSheet.getSubimage(
-                frameIndex* Java2DFact.SPRITE_SIZE,
+                frameIndex* GameSettings.SPRITE_SIZE,
                 0,
-                Java2DFact.SPRITE_SIZE,
-                Java2DFact.SPRITE_SIZE
+                GameSettings.SPRITE_SIZE,
+                GameSettings.SPRITE_SIZE
         );
     }
 
@@ -36,7 +36,7 @@ public class AnimationManager {
             currentFrameTime = 0;
             frameIndex++;
 
-            if (frameIndex >= currentAnimationSheet.getWidth() / Java2DFact.SPRITE_SIZE - 1) {
+            if (frameIndex >= currentAnimationSheet.getWidth() / GameSettings.SPRITE_SIZE - 1) {
                 frameIndex = 0;
             }
         }

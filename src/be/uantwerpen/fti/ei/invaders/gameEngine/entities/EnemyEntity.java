@@ -5,6 +5,7 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.CollisionHandling.CollisionBox;
 import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.Action;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
+import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -28,49 +29,52 @@ public class EnemyEntity extends Entity {
     }
 
     @Override
+    public void update(State state) {
+        handleCollisions(state);
+        updateMovement();
+    }
+
+    @Override
     public void updateMovement() {
         int deltaX = 0;
         int deltaY = 0;
+
         if (controller.isRequestingLeft()) {
-            deltaX-=1;
+            deltaX-=2;
         }
         if (controller.isRequestingRight()) {
-            deltaX+=1;
+            deltaX+=2;
         }
         if (controller.isRequestingUp()) {
             deltaY-=1;
         }
         if (controller.isRequestingDown()) {
-            deltaY+=1;
+            System.out.println("DOWN");
+            deltaY+=20;
         }
+
         if (controller.isRequestingShoot()) {
             System.out.println("SHOOT");
-            action.shootEnemyBullet(this);
         }
         position = new Position(position.getX() + deltaX, position.getY() + deltaY);
-        handleCollisions(game);
-    }
-    private void handleCollisions(Game game) {
-        game.getCollidingGameObjects(this).forEach(this::handleCollision);
-
     }
 
+    private void handleCollisions(State state) {
+        state.getCollidingGameObjects(this).forEach(this::handleCollision);
+
+    }
     private void handleCollision(Entity other) {
-        if (other instanceof BulletEntity) {
+        if (other instanceof PlayerBulletEntity) {
             isEntityAlive = false;
             other.killEntity();
         }
     }
+
     @Override
     public Image visualize() {
         return null;
     }
 
-
-    @Override
-    public void update() {
-        updateMovement();
-    }
 
     @Override
     public CollisionBox getCollisionBox() {

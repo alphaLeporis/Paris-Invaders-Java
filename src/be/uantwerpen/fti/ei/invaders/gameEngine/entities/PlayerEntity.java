@@ -2,24 +2,26 @@ package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.gameEngine.CollisionHandling.CollisionBox;
-import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.Action;
+import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
+import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
 import java.awt.*;
 
 public class PlayerEntity extends Entity {
 
     private final Controller controller;
-    private final Game game;
-    private final Action action;
     private long lastSpaceEntry = System.currentTimeMillis();
 
-    public PlayerEntity(Game game, Controller controller) {
+    public PlayerEntity(Controller controller) {
         super();
-        this.game = game;
-        this.action = new Action(game);
         this.controller = controller;
+    }
+
+    @Override
+    public void update(State state) {
+        updateMovement();
+        handleCollisions(state);
     }
 
     @Override
@@ -31,7 +33,7 @@ public class PlayerEntity extends Entity {
         }
 
         if (controller.isRequestingRight()) {
-            if (position.getX() < game.getGameSizeWidth()-(this.size.getWidth()*1.5)) {
+            if (position.getX() < GameSettings.WIDTH-(this.size.getWidth()*1.5)) {
                 deltaX += 5;
             } else {
                 deltaX = 0;
@@ -40,16 +42,15 @@ public class PlayerEntity extends Entity {
 
         if (controller.isRequestingShoot()) {
             if (lastSpaceEntry + 750 < System.currentTimeMillis()) {
-                action.shootBullet(this);
+                System.out.println("SHOOT PLAYER");
                 lastSpaceEntry = System.currentTimeMillis();
             }
         }
         position = new Position(position.getX() + deltaX, position.getY());
-        handleCollisions(game);
     }
 
-    private void handleCollisions(Game game) {
-        game.getCollidingGameObjects(this).forEach(this::handleCollision);
+    private void handleCollisions(State state) {
+        state.getCollidingGameObjects(this).forEach(this::handleCollision);
 
     }
 
@@ -65,10 +66,7 @@ public class PlayerEntity extends Entity {
         return null;
     }
 
-    @Override
-    public void update() {
-        updateMovement();
-    }
+
 
     @Override
     public CollisionBox getCollisionBox() {

@@ -2,8 +2,10 @@ package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 
 import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.gameEngine.CollisionHandling.CollisionBox;
+import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
+import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
 import java.awt.*;
 
@@ -21,11 +23,11 @@ public abstract class Entity {
     public Entity() {
         isEntityAlive = true;
         position = new Position(50,520);
-        size = new Size(64, 64);
+        size = new Size(GameSettings.ENTITY_WIDTH, GameSettings.ENTITY_HEIGHT);
     }
 
     public abstract void updateMovement();
-    public abstract void update();
+    public abstract void update(State state);
     public abstract CollisionBox getCollisionBox();
     public abstract boolean collidesWith(Entity other);
     public abstract Image visualize();

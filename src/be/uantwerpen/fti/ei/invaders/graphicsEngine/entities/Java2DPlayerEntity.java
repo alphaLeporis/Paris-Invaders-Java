@@ -4,6 +4,7 @@ import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.PlayerEntity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.Action;
+import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.sprites.AnimationManager;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.sprites.SpriteLibrary;
 
@@ -11,15 +12,16 @@ import java.awt.*;
 
 public class Java2DPlayerEntity extends PlayerEntity {
 
-    private AnimationManager animationManager;
+    private final AnimationManager animationManager;
 
-    public Java2DPlayerEntity(Game game, Controller controller, SpriteLibrary spriteLibrary) {
-        super(game, controller);
+    public Java2DPlayerEntity(Controller controller, SpriteLibrary spriteLibrary) {
+        super(controller);
         animationManager = new AnimationManager(spriteLibrary.getUnit("remy"));
     }
 
-    public void update() {
-        this.updateMovement();
+    @Override
+    public void update(State state) {
+        super.update(state);
         animationManager.update();
     }
 

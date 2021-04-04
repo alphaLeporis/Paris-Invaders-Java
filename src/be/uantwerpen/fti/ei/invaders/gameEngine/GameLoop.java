@@ -32,7 +32,7 @@ public class GameLoop {
     }
 
     private void sleepStopwatch() {
-        double tickDuration = 1000.0d / 60.0d;
+        double tickDuration = 1000.0d / (double) GameSettings.UPDATES_PER_SECOND;
         long sleepTime = (long) tickDuration - (System.currentTimeMillis() - lastUpdate);
         if (sleepTime > 0) {
             try {
