@@ -22,7 +22,8 @@ public abstract class Entity {
      */
     public Entity() {
         isEntityAlive = true;
-        position = new Position(50,520);
+        position = new Position((int) (GameSettings.WINDOW_DIMENSION.getWidth()/2 - GameSettings.ENTITY_WIDTH/2),
+                                (int) (GameSettings.WINDOW_DIMENSION.getHeight() -  GameSettings.ENTITY_HEIGHT*1.3));
         size = new Size(GameSettings.ENTITY_WIDTH, GameSettings.ENTITY_HEIGHT);
     }
 

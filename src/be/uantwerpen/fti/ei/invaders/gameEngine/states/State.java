@@ -9,6 +9,7 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.entities.Entity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UIContainer;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;

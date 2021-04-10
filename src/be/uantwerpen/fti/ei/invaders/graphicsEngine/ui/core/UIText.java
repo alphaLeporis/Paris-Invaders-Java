@@ -4,7 +4,7 @@ package be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core;
 
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.sprites.ImageUtils;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ImageUtils;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

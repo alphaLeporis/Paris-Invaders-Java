@@ -1,4 +1,4 @@
-package be.uantwerpen.fti.ei.invaders.graphicsEngine.sprites;
+package be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites;
 
 import java.awt.*;
 import java.util.HashMap;

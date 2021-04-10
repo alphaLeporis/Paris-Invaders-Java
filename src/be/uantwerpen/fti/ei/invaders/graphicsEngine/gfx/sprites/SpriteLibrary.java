@@ -1,4 +1,6 @@
-package be.uantwerpen.fti.ei.invaders.graphicsEngine.sprites;
+package be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites;
+
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ImageUtils;
 
 import java.io.File;
 import java.net.URL;

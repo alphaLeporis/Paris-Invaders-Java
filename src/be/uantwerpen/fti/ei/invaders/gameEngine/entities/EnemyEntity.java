@@ -12,18 +12,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class EnemyEntity extends Entity {
+    private final Controller controller;
 
-    private final Action action;
-    private Controller controller;
-    private final Game game;
+    private static final ArrayList<Integer> x = new ArrayList<>((Arrays.asList(100,200,300,400,500,100,200,300,400,500)));
+    private static final ArrayList<Integer> y = new ArrayList<>((Arrays.asList(50,50,50,50,50,150,150,150,150,150)));
 
-    private static ArrayList<Integer> x = new ArrayList<>((Arrays.asList(100,200,300,400,500,100,200,300,400,500)));
-    private static ArrayList<Integer> y = new ArrayList<>((Arrays.asList(50,50,50,50,50,150,150,150,150,150)));
-
-    public EnemyEntity(Game game, Controller controller, Integer enemyCount) {
+    public EnemyEntity(Controller controller, Integer enemyCount) {
         super();
-        this.game = game;
-        this.action = new Action(game);
         position = new Position(x.get(enemyCount),y.get(enemyCount));
         this.controller = controller;
     }

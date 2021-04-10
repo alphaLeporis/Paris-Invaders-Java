@@ -12,18 +12,20 @@ import be.uantwerpen.fti.ei.invaders.graphicsEngine.entities.Java2DPlayerBulletE
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.entities.Java2DEnemyBulletEntity;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.entities.Java2DEnemyEntity;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.entities.Java2DPlayerEntity;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.sprites.SpriteLibrary;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds.BackgroundLibrary;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.SpriteLibrary;
 
 /**
  * This class extends the parent abstract factory.
  */
 public class Java2DFact extends AFact {
     private final Display display;
+    protected SpriteLibrary spriteLibrary;
 
     public Java2DFact() {
         super();
         spriteLibrary = new SpriteLibrary();
-        display = new Display(GameSettings.WIDTH, GameSettings.HEIGHT, input);
+        display = new Display(GameSettings.WINDOW_DIMENSION, input);
     }
 
     @Override
@@ -37,8 +39,8 @@ public class Java2DFact extends AFact {
     }
 
     @Override
-    public Entity getEnemyEntity(Game game, Controller enemyController, Integer enemyCount) {
-        return new Java2DEnemyEntity(game, enemyController, spriteLibrary, enemyCount);
+    public Entity getEnemyEntity(Controller enemyController, Integer enemyCount) {
+        return new Java2DEnemyEntity(enemyController, spriteLibrary, enemyCount);
     }
 
     @Override

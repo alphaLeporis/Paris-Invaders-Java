@@ -8,12 +8,13 @@ import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UIText;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.VerticalContainer;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.clickable.UIButton;
 
+import java.awt.*;
+
 public class UIMainMenu extends VerticalContainer {
     public UIMainMenu(Size windowSize) {
         super(windowSize);
         alignment = new Alignment(Alignment.Position.CENTER, Alignment.Position.CENTER);
 
-        addUIComponent(new UIText("PARIS INVADERS"));
         addUIComponent(new UIButton("PLAY", (state) -> state.setNextState(new GameState(state.getGame()))));
         addUIComponent(new UIButton("EXIT", (state) -> System.exit(0)));
     }

@@ -1,12 +1,10 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine.entities;
 
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
-import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.PlayerEntity;
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.Action;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.sprites.AnimationManager;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.sprites.SpriteLibrary;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.AnimationManager;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.SpriteLibrary;
 
 import java.awt.*;
 

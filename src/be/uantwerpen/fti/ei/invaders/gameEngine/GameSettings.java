@@ -2,12 +2,15 @@ package be.uantwerpen.fti.ei.invaders.gameEngine;
 
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
 
+import java.awt.*;
+
 public class GameSettings {
     public static final int UPDATES_PER_SECOND = 60;
 
-    public static final Size WINDOW_SIZE = new Size(800,600);
-    public static final int WIDTH = 800;
-    public static final int HEIGHT = 600;
+    public static final Dimension WINDOW_DIMENSION = new Dimension(1280,720);
+    public static final Size WINDOW_SIZE = new Size(1280,720);
+    public static final int WIDTH = 1280;
+    public static final int HEIGHT = 720;
 
     public static final int ENTITY_WIDTH = 64;
     public static final int ENTITY_HEIGHT = 64;

@@ -4,12 +4,13 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
 import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.EnemyEntity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.Entity;
+import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class NPCInput {
-    private final Game game;
+    private final State state;
 
     public boolean callingLeft = false;
     public boolean callingRight = false;
@@ -18,13 +19,13 @@ public class NPCInput {
 
     private boolean goingRight;
 
-    public NPCInput(Game game) {
-        this.game = game;
+    public NPCInput(State state) {
+        this.state = state;
         goingRight = true;
     }
 
     public void update() {
-/*        List<Entity> enemies = game.entities.stream()
+        List<Entity> enemies = state.getEntities().stream()
                 .filter(other -> other instanceof EnemyEntity)
                 .collect(Collectors.toList());
 
@@ -44,7 +45,7 @@ public class NPCInput {
             } else {
                 callingDown = false;
             }
-        }*/
+        }
 
 
     }

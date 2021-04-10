@@ -1,4 +1,4 @@
-package be.uantwerpen.fti.ei.invaders.graphicsEngine.sprites;
+package be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx;
 
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
 
@@ -14,6 +14,7 @@ public class ImageUtils {
         try {
            return ImageIO.read(ImageUtils.class.getResource(filePath));
         } catch (Exception e) {
+            System.out.println(e);
             System.out.println("Could not load images from path: " + filePath);
         }
         return null;
