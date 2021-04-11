@@ -8,10 +8,7 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
 import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.Entity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.entities.Java2DPlayerBulletEntity;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.entities.Java2DEnemyBulletEntity;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.entities.Java2DEnemyEntity;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.entities.Java2DPlayerEntity;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.entities.*;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds.BackgroundLibrary;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.SpriteLibrary;
 
@@ -51,5 +48,10 @@ public class Java2DFact extends AFact {
     @Override
     public Entity getEnemyBulletEntity(Entity entity) {
         return new Java2DEnemyBulletEntity(entity.getPosition().getX(), entity.getPosition().getY(), spriteLibrary);
+    }
+
+    @Override
+    public Entity getBonusEntity() {
+        return new Java2DBonusEntity(spriteLibrary);
     }
 }

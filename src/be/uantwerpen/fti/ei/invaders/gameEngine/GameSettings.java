@@ -17,8 +17,14 @@ public class GameSettings {
 
     public static final int SPRITE_SIZE = 64;
 
-    private float musicVolume = 1;
-    private float soundVolume = 1;
+    public static final double CHANCE_ENEMY_SHOOTS = 0.1;
+    public static final double CHANCE_GOOD_BONUS = 0.5;
+    public static final double CHANCE_NEW_BONUS = 2;
+    public static final int BONUS_WIDTH = 30;
+    public static final int BONUS_HEIGHT = 30;
+
+    private final float musicVolume = 1;
+    private final float soundVolume = 1;
 
     public float getSoundVolume() {
         return soundVolume;

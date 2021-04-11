@@ -21,6 +21,7 @@ public abstract class AFact {
     public abstract Entity getEnemyEntity(Controller entityController, Integer enemyCount);
     public abstract Entity getBulletEntity(Entity entity);
     public abstract Entity getEnemyBulletEntity(Entity entity);
+    public abstract Entity getBonusEntity();
 
     public AFact() {
         this.input = new Input();

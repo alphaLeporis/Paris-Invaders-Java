@@ -71,6 +71,7 @@ public class GameState extends State {
     @Override
     public void update(Game game) {
         super.update(game);
+        generateBonus();
 
         if(playing) {
             if(victoryConditions.stream().allMatch(Condition::isMet)) {
@@ -81,6 +82,14 @@ public class GameState extends State {
                 lose();
             }
         }
+    }
+
+    private void generateBonus() {
+        if(Math.random() * 1000 < GameSettings.CHANCE_NEW_BONUS) {
+            entities.add(afact.getBonusEntity());
+            System.out.println("RANDOM BONUS");
+        }
+
     }
 
     private void lose() {

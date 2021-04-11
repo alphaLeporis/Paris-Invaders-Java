@@ -41,11 +41,20 @@ public abstract class State {
     public void update(Game game) {
         updateEntities();
         removeDeadEntities();
+        removeOutOfWindowEntities();
         List.copyOf(uiContainers).forEach(uiContainer -> uiContainer.update(this));
         handleMouseInput();
 
         if(nextState != null) {
             game.enterState(nextState);
+        }
+    }
+
+    private void removeOutOfWindowEntities() {
+        for(int i = 0; i < entities.size(); i++) {
+            if (entities.get(i).getPosition().getX() < 0 | entities.get(i).getPosition().getX() > GameSettings.WIDTH
+                    | entities.get(i).getPosition().getY() < 0 | entities.get(i).getPosition().getY() > GameSettings.HEIGHT)
+                entities.remove(i);
         }
     }
 
@@ -56,10 +65,6 @@ public abstract class State {
     private void removeDeadEntities() {
         for(int i = 0; i < entities.size(); i++) {
             if(!entities.get(i).isEntityAlive())
-                entities.remove(i);
-
-            if (entities.get(i).getPosition().getX() < 0 | entities.get(i).getPosition().getX() > GameSettings.WIDTH
-                    | entities.get(i).getPosition().getY() < 0 | entities.get(i).getPosition().getY() > GameSettings.HEIGHT )
                 entities.remove(i);
         }
     }

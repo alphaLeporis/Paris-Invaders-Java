@@ -9,12 +9,13 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import java.awt.*;
 
 public class PlayerEntity extends Entity {
-
+    private int speed;
     private final Controller controller;
     private long lastSpaceEntry = System.currentTimeMillis();
 
     public PlayerEntity(Controller controller) {
         super();
+        speed = 5;
         this.controller = controller;
     }
 
@@ -29,12 +30,12 @@ public class PlayerEntity extends Entity {
         int deltaX = 0;
         if (controller.isRequestingLeft()) {
             if ((this.size.getWidth()*0.5) < position.getX())
-                deltaX -= 5;
+                deltaX -= speed;
         }
 
         if (controller.isRequestingRight()) {
             if (position.getX() < GameSettings.WIDTH-(this.size.getWidth()*1.5)) {
-                deltaX += 5;
+                deltaX += speed;
             } else {
                 deltaX = 0;
             }
@@ -57,6 +58,15 @@ public class PlayerEntity extends Entity {
     private void handleCollision(Entity other) {
         if (other instanceof EnemyBulletEntity) {
             isEntityAlive = false;
+            other.killEntity();
+        }
+
+        if (other instanceof BonusEntity) {
+            if (((BonusEntity) other).isGoodBonus()) {
+                speed = 7;
+            } else {
+                speed = 3;
+            }
             other.killEntity();
         }
     }
