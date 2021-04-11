@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd344fa2-c0f1-4f0d-b634-c73c379e4456" name="Default Changelist" comment="Added Game and lose states/conditions&#10;Added backgrounds&#10;&#10;Still have to add:&#10;- Bonusses&#10;- Movement for enemies&#10;- Sound effects&#10;- Enemies animation&#10;- Pause">
-      <change afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/BonusEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DBonusEntity.java" afterDir="false" />
+    <list default="true" id="cd344fa2-c0f1-4f0d-b634-c73c379e4456" name="Default Changelist" comment="- Began adding bonusses -&gt; has to be integrated in actions&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Sound effects&#10;- Enemies animation&#10;- Pause&#10;- Actions&#10;- Win and lose screens&#10;- Finish UI containers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/AFact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/AFact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/GameSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/GameSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/PlayerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/PlayerEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Java2DFact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Java2DFact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_sources/american_cheese.psd" beforeDir="false" afterPath="$PROJECT_DIR$/image_sources/american_cheese.psd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DEnemyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DEnemyEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/sprites/AnimationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/sprites/AnimationManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,19 +133,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -192,7 +174,8 @@
       <workItem from="1617979812648" duration="1737000" />
       <workItem from="1618005837222" duration="145000" />
       <workItem from="1618079289567" duration="5228000" />
-      <workItem from="1618139310807" duration="2201000" />
+      <workItem from="1618139310807" duration="2507000" />
+      <workItem from="1618156451408" duration="1060000" />
     </task>
     <task id="LOCAL-00001" summary="Adding the controller and a playerEntity">
       <created>1616325051200</created>
@@ -264,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618084523918</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="- Began adding bonusses -&gt; has to be integrated in actions&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Sound effects&#10;- Enemies animation&#10;- Pause&#10;- Actions&#10;- Win and lose screens&#10;- Finish UI containers">
+      <created>1618141740552</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1618141740552</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +282,8 @@
     <MESSAGE value="Small fixes&#10;&#10;Changed the gameloop to sleep after update.&#10;&#10;Added collision detection on enemy and player." />
     <MESSAGE value="Added gamestate -&gt; working menu&#10;&#10;Still have to add:&#10;&#10;- Background&#10;- Bonusses&#10;- Movement for enemies&#10;- Sound effects&#10;- Enemies animation&#10;- Pause" />
     <MESSAGE value="Added Game and lose states/conditions&#10;Added backgrounds&#10;&#10;Still have to add:&#10;- Bonusses&#10;- Movement for enemies&#10;- Sound effects&#10;- Enemies animation&#10;- Pause" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Game and lose states/conditions&#10;Added backgrounds&#10;&#10;Still have to add:&#10;- Bonusses&#10;- Movement for enemies&#10;- Sound effects&#10;- Enemies animation&#10;- Pause" />
+    <MESSAGE value="- Began adding bonusses -&gt; has to be integrated in actions&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Sound effects&#10;- Enemies animation&#10;- Pause&#10;- Actions&#10;- Win and lose screens&#10;- Finish UI containers" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Began adding bonusses -&gt; has to be integrated in actions&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Sound effects&#10;- Enemies animation&#10;- Pause&#10;- Actions&#10;- Win and lose screens&#10;- Finish UI containers" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
