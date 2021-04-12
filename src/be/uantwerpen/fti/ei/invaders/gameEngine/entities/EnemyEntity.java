@@ -25,8 +25,8 @@ public class EnemyEntity extends Entity {
 
     @Override
     public void update(State state) {
+        super.update(state);
         handleCollisions(state);
-        updateMovement();
     }
 
     @Override

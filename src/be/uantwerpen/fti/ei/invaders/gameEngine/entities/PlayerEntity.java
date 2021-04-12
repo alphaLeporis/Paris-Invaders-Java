@@ -3,10 +3,14 @@ package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.gameEngine.CollisionHandling.CollisionBox;
 import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Effect;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Fast;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Slow;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
 import java.awt.*;
+import java.util.List;
 
 public class PlayerEntity extends Entity {
     private int speed;
@@ -21,8 +25,19 @@ public class PlayerEntity extends Entity {
 
     @Override
     public void update(State state) {
-        updateMovement();
+        super.update(state);
         handleCollisions(state);
+        getSpeed();
+    }
+
+    private int getSpeed() {
+        if (effects.get(0) instanceof Slow) {
+            return 3;
+        } else if (effects.get(0) instanceof Fast) {
+            return 7;
+        } else {
+            return 5;
+        }
     }
 
     @Override
@@ -30,12 +45,12 @@ public class PlayerEntity extends Entity {
         int deltaX = 0;
         if (controller.isRequestingLeft()) {
             if ((this.size.getWidth()*0.5) < position.getX())
-                deltaX -= speed;
+                deltaX -= getSpeed();
         }
 
         if (controller.isRequestingRight()) {
             if (position.getX() < GameSettings.WIDTH-(this.size.getWidth()*1.5)) {
-                deltaX += speed;
+                deltaX += getSpeed();
             } else {
                 deltaX = 0;
             }
@@ -44,6 +59,7 @@ public class PlayerEntity extends Entity {
         if (controller.isRequestingShoot()) {
             if (lastSpaceEntry + 750 < System.currentTimeMillis()) {
                 System.out.println("SHOOT PLAYER");
+
                 lastSpaceEntry = System.currentTimeMillis();
             }
         }
@@ -63,9 +79,9 @@ public class PlayerEntity extends Entity {
 
         if (other instanceof BonusEntity) {
             if (((BonusEntity) other).isGoodBonus()) {
-                speed = 7;
+                setEffect(new Fast());
             } else {
-                speed = 3;
+                setEffect(new Slow());
             }
             other.killEntity();
         }
