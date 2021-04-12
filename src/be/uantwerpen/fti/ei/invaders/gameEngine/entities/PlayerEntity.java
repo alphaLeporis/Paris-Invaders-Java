@@ -3,6 +3,7 @@ package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.gameEngine.CollisionHandling.CollisionBox;
 import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.PlayerShootsBullet;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Effect;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Fast;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Slow;
@@ -27,17 +28,22 @@ public class PlayerEntity extends Entity {
     public void update(State state) {
         super.update(state);
         handleCollisions(state);
-        getSpeed();
+        setSpeed();
     }
 
-    private int getSpeed() {
-        if (effects.get(0) instanceof Slow) {
-            return 3;
-        } else if (effects.get(0) instanceof Fast) {
-            return 7;
-        } else {
+    private int setSpeed() {
+        try {
+            if (effects.get(0) instanceof Slow) {
+                return 3;
+            } else if (effects.get(0) instanceof Fast) {
+                return 7;
+            } else {
+                return 5;
+            }
+        } catch (Exception e) {
             return 5;
         }
+
     }
 
     @Override
@@ -45,12 +51,12 @@ public class PlayerEntity extends Entity {
         int deltaX = 0;
         if (controller.isRequestingLeft()) {
             if ((this.size.getWidth()*0.5) < position.getX())
-                deltaX -= getSpeed();
+                deltaX -= setSpeed();
         }
 
         if (controller.isRequestingRight()) {
             if (position.getX() < GameSettings.WIDTH-(this.size.getWidth()*1.5)) {
-                deltaX += getSpeed();
+                deltaX += setSpeed();
             } else {
                 deltaX = 0;
             }
@@ -59,7 +65,7 @@ public class PlayerEntity extends Entity {
         if (controller.isRequestingShoot()) {
             if (lastSpaceEntry + 750 < System.currentTimeMillis()) {
                 System.out.println("SHOOT PLAYER");
-
+                perform(new PlayerShootsBullet(this));
                 lastSpaceEntry = System.currentTimeMillis();
             }
         }
@@ -84,6 +90,7 @@ public class PlayerEntity extends Entity {
                 setEffect(new Slow());
             }
             other.killEntity();
+            audioPlayer.playSound("bonus.wav");
         }
     }
 

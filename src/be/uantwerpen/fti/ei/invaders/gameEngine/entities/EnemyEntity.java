@@ -1,9 +1,11 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 
+import be.uantwerpen.fti.ei.invaders.audioEngine.AudioPlayer;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.gameEngine.CollisionHandling.CollisionBox;
 import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.Action;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.EnemyShootsBullet;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
@@ -50,6 +52,7 @@ public class EnemyEntity extends Entity {
 
         if (controller.isRequestingShoot()) {
             System.out.println("SHOOT");
+            perform(new EnemyShootsBullet(this));
         }
         position = new Position(position.getX() + deltaX, position.getY() + deltaY);
     }
@@ -62,6 +65,7 @@ public class EnemyEntity extends Entity {
         if (other instanceof PlayerBulletEntity) {
             isEntityAlive = false;
             other.killEntity();
+            audioPlayer.playSound("hit.wav");
         }
     }
 
