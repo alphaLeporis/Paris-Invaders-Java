@@ -11,6 +11,8 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
 import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.EnemyEntity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.PlayerEntity;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.game.UIGameStats;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.menu.UIMainMenu;
 
 import java.awt.*;
 import java.util.List;
@@ -31,6 +33,7 @@ public class GameState extends State {
         //Todo: add UI
         //initializeUI(windowSize);
         initializeConditions();
+        uiContainers.add(new UIGameStats(windowSize));
 
         audioPlayer.playMusic("game.wav");
     }
