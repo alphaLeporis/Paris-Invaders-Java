@@ -23,6 +23,8 @@ public class BackgroundManager {
             return backgroundLibrary.getBackground("won-background");
         else if (state instanceof LostState)
             return backgroundLibrary.getBackground("lost-background");
+        else if (state instanceof PauseState)
+            return backgroundLibrary.getBackground("pause-background");
         else
             return null;
     }

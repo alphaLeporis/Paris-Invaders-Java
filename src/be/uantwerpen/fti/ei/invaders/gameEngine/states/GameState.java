@@ -33,7 +33,7 @@ public class GameState extends State {
         //Todo: add UI
         //initializeUI(windowSize);
         initializeConditions();
-        uiContainers.add(new UIGameStats(windowSize));
+        uiContainers.add(new UIGameStats(windowSize, this));
 
         audioPlayer.playMusic("game.wav");
     }

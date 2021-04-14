@@ -13,8 +13,4 @@ public class MenuState extends State {
         audioPlayer.playMusic("menu.wav");
     }
 
-    public void enterMenu(UIContainer container) {
-        uiContainers.clear();
-        uiContainers.add(container);
-    }
 }

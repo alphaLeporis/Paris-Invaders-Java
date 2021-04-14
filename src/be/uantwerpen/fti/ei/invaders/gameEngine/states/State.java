@@ -47,6 +47,7 @@ public abstract class State {
 
         if(nextState != null) {
             game.enterState(nextState);
+            nextState = null;
         }
     }
 
@@ -93,6 +94,7 @@ public abstract class State {
         audioPlayer.removeMusic();
         this.nextState = nextState;
     }
+
 
     public List<Entity> getEntities() {
         return entities;
