@@ -13,6 +13,7 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import java.awt.*;
 
 public class PlayerEntity extends Entity {
+    private int playerLives = 3;
     private int speed;
     private final Controller controller;
     private long lastSpaceEntry = System.currentTimeMillis();
@@ -77,7 +78,12 @@ public class PlayerEntity extends Entity {
 
     private void handleCollision(Entity other) {
         if (other instanceof EnemyBulletEntity) {
-            isEntityAlive = false;
+            audioPlayer.playSound("player-hit.wav");
+            if (playerLives <= 1) {
+                isEntityAlive = false;
+            } else {
+                playerLives --;
+            }
             other.killEntity();
         }
 
