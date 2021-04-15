@@ -46,12 +46,10 @@ public class EnemyEntity extends Entity {
             deltaY-=1;
         }
         if (controller.isRequestingDown()) {
-            System.out.println("DOWN");
             deltaY+=20;
         }
 
         if (controller.isRequestingShoot()) {
-            System.out.println("SHOOT");
             perform(new EnemyShootsBullet(this));
         }
         position = new Position(position.getX() + deltaX, position.getY() + deltaY);

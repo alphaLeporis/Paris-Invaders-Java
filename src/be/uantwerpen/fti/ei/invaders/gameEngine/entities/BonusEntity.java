@@ -9,7 +9,10 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import java.awt.*;
 
 public class BonusEntity extends Entity {
+    private final int maxAliveTimeInSeconds = GameSettings.UPDATES_PER_SECOND * 15;
+    private int aliveTimeInSeconds = 0;
     protected boolean isGoodBonus;
+
     public BonusEntity() {
         isGoodBonus = Math.random() < GameSettings.CHANCE_GOOD_BONUS;
         position = new Position((int) (Math.random()*GameSettings.WIDTH), 0);
@@ -24,6 +27,10 @@ public class BonusEntity extends Entity {
 
     @Override
     public void update(State state) {
+        aliveTimeInSeconds ++;
+        if (maxAliveTimeInSeconds <= aliveTimeInSeconds)
+            this.killEntity();
+
         updateMovement();
     }
 

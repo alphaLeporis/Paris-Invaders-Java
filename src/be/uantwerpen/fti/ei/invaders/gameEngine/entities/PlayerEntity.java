@@ -11,7 +11,6 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Positio
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
 import java.awt.*;
-import java.util.List;
 
 public class PlayerEntity extends Entity {
     private int speed;
@@ -64,7 +63,6 @@ public class PlayerEntity extends Entity {
 
         if (controller.isRequestingShoot()) {
             if (lastSpaceEntry + 750 < System.currentTimeMillis()) {
-                System.out.println("SHOOT PLAYER");
                 perform(new PlayerShootsBullet(this));
                 lastSpaceEntry = System.currentTimeMillis();
             }

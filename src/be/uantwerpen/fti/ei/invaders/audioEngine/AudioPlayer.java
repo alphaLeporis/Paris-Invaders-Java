@@ -2,6 +2,7 @@ package be.uantwerpen.fti.ei.invaders.audioEngine;
 
 
 import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.EnemyEntity;
 
 import javax.sound.sampled.*;
 import java.io.IOException;
@@ -58,5 +59,11 @@ public class AudioPlayer {
         }
 
         return null;
+    }
+
+    public boolean isPlaying() {
+        return audioClips.stream()
+                .filter(e -> e instanceof MusicClip)
+                .toArray().length > 0;
     }
 }

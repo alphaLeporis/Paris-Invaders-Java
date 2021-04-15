@@ -23,15 +23,22 @@ public class GameState extends State {
     private List<Condition> defeatConditions;
     private boolean playing;
 
+    public GameState(Game game, State previousState) {
+        super(game);
+        this.entities = previousState.getEntities();
+        this.uiContainers = previousState.getUiContainers();
+
+        playing = true;
+        initializeConditions();
+        audioPlayer.playMusic("game.wav");
+    }
+
     public GameState(Game game) {
         super(game);
 
-        //Todo: add background
         playing = true;
         initializeCharacters();
 
-        //Todo: add UI
-        //initializeUI(windowSize);
         initializeConditions();
         uiContainers.add(new UIGameStats(windowSize, this));
 
@@ -74,6 +81,7 @@ public class GameState extends State {
     @Override
     public void update(Game game) {
         super.update(game);
+
         generateBonus();
 
         if(playing) {
@@ -90,7 +98,6 @@ public class GameState extends State {
     private void generateBonus() {
         if(Math.random() * 1000 < GameSettings.CHANCE_NEW_BONUS) {
             entities.add(afact.getBonusEntity());
-            System.out.println("RANDOM BONUS");
         }
 
     }
