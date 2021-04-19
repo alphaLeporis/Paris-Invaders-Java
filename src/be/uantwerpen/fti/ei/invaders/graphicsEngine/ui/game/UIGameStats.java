@@ -14,7 +14,7 @@ public class UIGameStats extends HorizontalContainer {
         super(windowSize);
 
         alignment = new Alignment(Alignment.Position.CENTER, Alignment.Position.START);
-        addUIComponent(new UIText("Im alive"));
+        addUIComponent(new UIText(String.valueOf(currentState.getPlayerLives())));
         addUIComponent(new UIButton("PAUSE", (state) -> state.setNextState(new PauseState(state.getGame(), currentState))));
     }
 }

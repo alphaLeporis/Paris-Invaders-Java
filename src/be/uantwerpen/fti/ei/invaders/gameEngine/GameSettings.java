@@ -4,6 +4,9 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
 
 import java.awt.*;
 
+/**
+ * In this class we store the most used static variables.
+ */
 public class GameSettings {
     public static final int UPDATES_PER_SECOND = 60;
 
@@ -17,20 +20,12 @@ public class GameSettings {
 
     public static final int SPRITE_SIZE = 64;
 
-    public static final double CHANCE_ENEMY_SHOOTS = 0.1;
+    public static final double CHANCE_ENEMY_SHOOTS = 0.2;
     public static final double CHANCE_GOOD_BONUS = 0.5;
     public static final double CHANCE_NEW_BONUS = 2;
     public static final int BONUS_WIDTH = 30;
     public static final int BONUS_HEIGHT = 30;
 
-    private final float musicVolume = 1;
-    private final float soundVolume = 1;
-
-    public float getSoundVolume() {
-        return soundVolume;
-    }
-
-    public float getMusicVolume() {
-        return musicVolume;
-    }
+    public static float MUSIC_VOLUME = 0.5F;
+    public static float SOUND_VOLUME = 0.5F;
 }

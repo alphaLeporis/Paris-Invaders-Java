@@ -6,10 +6,10 @@ import be.uantwerpen.fti.ei.invaders.controlEngine.Input;
 import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
 import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.Entity;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.PlayerEntity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UIContainer;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -76,6 +76,11 @@ public abstract class State {
 
     public void spawn(Entity entity) {
         entities.add(entity);
+    }
+
+    public int getPlayerLives() {
+        System.out.println(((PlayerEntity) entities.get(0)).getPlayerLives());
+        return ((PlayerEntity) entities.get(0)).getPlayerLives();
     }
 
     public Input getInput() {

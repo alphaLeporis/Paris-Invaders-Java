@@ -4,7 +4,6 @@ import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.gameEngine.CollisionHandling.CollisionBox;
 import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.PlayerShootsBullet;
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Effect;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Fast;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Slow;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
@@ -13,6 +12,7 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import java.awt.*;
 
 public class PlayerEntity extends Entity {
+
     private int playerLives = 3;
     private int speed;
     private final Controller controller;
@@ -120,5 +120,9 @@ public class PlayerEntity extends Entity {
     @Override
     public boolean collidesWith(Entity other) {
         return getCollisionBox().collidesWith(other.getCollisionBox());
+    }
+
+    public int getPlayerLives() {
+        return playerLives;
     }
 }

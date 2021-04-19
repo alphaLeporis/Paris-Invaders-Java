@@ -22,10 +22,6 @@ public class Input implements KeyListener, MouseListener, MouseMotionListener {
         return pressed[keyCode];
     }
 
-    public boolean isCurrentlyPressed(int keyCode) {
-        return currentlyPressed[keyCode];
-    }
-
     public void clearMouseClick() {
         mouseClicked = false;
     }

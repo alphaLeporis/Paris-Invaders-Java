@@ -52,7 +52,7 @@ public class NPCInput {
 
     public boolean callingShoot() {
         update();
-        return Math.random()*1000 < 2;
+        return Math.random()*100 < GameSettings.CHANCE_ENEMY_SHOOTS;
     }
 
     public boolean callingLeft() {

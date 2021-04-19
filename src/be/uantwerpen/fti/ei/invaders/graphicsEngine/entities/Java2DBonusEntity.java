@@ -1,6 +1,5 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine.entities;
 
-import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.BonusEntity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.AnimationManager;

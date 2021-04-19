@@ -82,4 +82,5 @@ public abstract class Entity {
     public void perform(Action action) {
         this.action = Optional.of(action);
     }
+
 }
