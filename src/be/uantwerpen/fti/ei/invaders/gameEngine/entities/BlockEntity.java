@@ -11,13 +11,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class BlockEntity extends Entity {
-    private static final ArrayList<Integer> x = new ArrayList<>((Arrays.asList(100,200,300,400,500,100,200,300,400,500)));
-    private static final ArrayList<Integer> y = new ArrayList<>((Arrays.asList(50,50,50,50,50,150,150,150,150,150)));
     protected int currentHealth = 7;
 
-    public BlockEntity(int blockID) {
+    public BlockEntity(int x, int y) {
         super();
-        position = new Position(x.get(blockID),y.get(blockID));
+        position = new Position(x,y);
     }
 
     @Override

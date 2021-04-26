@@ -24,6 +24,7 @@ public abstract class AFact {
     public abstract Entity getBulletEntity(Entity entity);
     public abstract Entity getEnemyBulletEntity(Entity entity);
     public abstract Entity getBonusEntity();
+    public abstract Entity getBlockEntity(int x, int y);
 
     public AFact() {
         gameConfig = new ConfigReader("game.properties");

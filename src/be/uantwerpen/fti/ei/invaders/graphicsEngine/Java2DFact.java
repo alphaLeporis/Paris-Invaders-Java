@@ -55,4 +55,9 @@ public class Java2DFact extends AFact {
     public Entity getBonusEntity() {
         return new Java2DBonusEntity(spriteLibrary);
     }
+
+    @Override
+    public Entity getBlockEntity(int x, int y) {
+        return new Java2DBlockEntity(spriteLibrary, x, y);
+    }
 }
