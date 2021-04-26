@@ -25,7 +25,7 @@ public class UIText extends UIComponent {
 
     public UIText(String text) {
         this.text = text;
-        this.fontSize = 28;
+        this.fontSize = 18;
         this.fontStyle = Font.BOLD;
         this.fontFamily = "Joystix Monospace";
         this.color = Color.WHITE;

@@ -1,6 +1,8 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine;
 
 import be.uantwerpen.fti.ei.invaders.controlEngine.Input;
+import be.uantwerpen.fti.ei.invaders.gameEngine.DisplaySettings;
+import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds.BackgroundLibrary;
@@ -17,19 +19,23 @@ import static be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ImageUtils.loadIm
 public class Display extends JFrame {
     private final Canvas canvas;
     private static BackgroundManager backgroundManager;
+    private final double xFactor;
+    private final double yFactor;
 
     /**
      * This is the default constructor to set up a display
-     * @param size The width of the game
      * @param input Because our JFrame needs a KeyListener we add our (keyboard) input
      */
-    public Display(Dimension size, Input input) {
+    public Display(Input input) {
+        xFactor = DisplaySettings.WINDOW_SIZE.getWidth() / GameSettings.GAME_SIZE.getWidth();
+        yFactor = DisplaySettings.WINDOW_SIZE.getHeight() / GameSettings.GAME_SIZE.getHeight();
+
         setTitle("Paris Invaders");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
 
         canvas = new Canvas();
-        canvas.setPreferredSize(size);
+        canvas.setPreferredSize(DisplaySettings.WINDOW_SIZE);
         canvas.setFocusable(false);
         canvas.addMouseListener(input);
         canvas.addMouseMotionListener(input);
@@ -58,11 +64,11 @@ public class Display extends JFrame {
 
         graphics.drawImage(backgroundManager.visualize(state), 0,0,null);
 
-        state.getEntities().stream()
+        state.getEntities()
                 .forEach(entity -> graphics.drawImage(
                         entity.visualize(),
-                        entity.getPosition().getX(),
-                        entity.getPosition().getY(),
+                        (int) Math.round(entity.getPosition().getX()*xFactor),
+                        (int) Math.round(entity.getPosition().getY()*yFactor),
                         null
                 ));
 

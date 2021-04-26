@@ -1,9 +1,11 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects;
 
-import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
 
+/**
+ * This effect makes the player go faster.
+ */
 public class Fast extends Effect {
     public Fast() {
-        super(GameSettings.UPDATES_PER_SECOND*5);
+        super(5);
     }
 }

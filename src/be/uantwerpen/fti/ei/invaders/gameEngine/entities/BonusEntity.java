@@ -15,7 +15,7 @@ public class BonusEntity extends Entity {
 
     public BonusEntity() {
         isGoodBonus = Math.random() < GameSettings.CHANCE_GOOD_BONUS;
-        position = new Position((int) (Math.random()*GameSettings.WIDTH), 0);
+        position = new Position((int) (Math.random()*GameSettings.GAME_SIZE.getWidth()), 0);
         size = new Size(GameSettings.BONUS_WIDTH, GameSettings.BONUS_HEIGHT);
     }
 

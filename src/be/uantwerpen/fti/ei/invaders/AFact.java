@@ -18,7 +18,7 @@ public abstract class AFact {
     public abstract void render(State state);
 
     public abstract Entity getPlayerEntity(Input input);
-    public abstract Entity getEnemyEntity(Controller entityController, Integer enemyCount);
+    public abstract Entity getEnemyEntity(Controller entityController, int x, int y);
     public abstract Entity getBulletEntity(Entity entity);
     public abstract Entity getEnemyBulletEntity(Entity entity);
     public abstract Entity getBonusEntity();

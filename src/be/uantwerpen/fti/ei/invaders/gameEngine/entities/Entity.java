@@ -31,8 +31,7 @@ public abstract class Entity {
      */
     public Entity() {
         isEntityAlive = true;
-        position = new Position((int) (GameSettings.WINDOW_DIMENSION.getWidth()/2 - GameSettings.ENTITY_WIDTH/2),
-                                (int) (GameSettings.WINDOW_DIMENSION.getHeight() -  GameSettings.ENTITY_HEIGHT*1.3));
+        position = new Position(0,0);
         size = new Size(GameSettings.ENTITY_WIDTH, GameSettings.ENTITY_HEIGHT);
         effects = new ArrayList<>();
         action = Optional.empty();
@@ -40,9 +39,19 @@ public abstract class Entity {
     }
 
     public abstract void updateMovement();
-    public abstract CollisionBox getCollisionBox();
     public abstract boolean collidesWith(Entity other);
     public abstract Image visualize();
+
+    public CollisionBox getCollisionBox() {
+        return new CollisionBox(
+                new Rectangle(
+                        position.getX(),
+                        position.getY(),
+                        size.getWidth(),
+                        size.getHeight()
+                )
+        );
+    };
 
     public void update(State state) {
         updateMovement();

@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Our game is based on different states. Each state can have different elements.
+ */
 public abstract class State {
     protected AudioPlayer audioPlayer;
     protected List<Entity> entities;
@@ -24,12 +27,9 @@ public abstract class State {
     protected Input input;
     //protected Time time;
 
-    protected Size windowSize;
-
     private State nextState;
 
     public State(Game game) {
-        this.windowSize = GameSettings.WINDOW_SIZE;
         this.input = game.getInput();
         this.afact = game.getAfact();
         this.game = game;
@@ -79,8 +79,8 @@ public abstract class State {
     }
 
     public int getPlayerLives() {
-        System.out.println(((PlayerEntity) entities.get(0)).getPlayerLives());
-        return ((PlayerEntity) entities.get(0)).getPlayerLives();
+        System.out.println(((PlayerEntity) entities.get(0)).getCurrentHealth());
+        return ((PlayerEntity) entities.get(0)).getCurrentHealth();
     }
 
     public Input getInput() {

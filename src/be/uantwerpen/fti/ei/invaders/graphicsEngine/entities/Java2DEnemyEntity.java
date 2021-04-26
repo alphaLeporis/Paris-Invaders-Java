@@ -15,8 +15,8 @@ public class Java2DEnemyEntity extends EnemyEntity {
     private final AnimationManager animationManager;
     private final ArrayList<String> spriteList = new ArrayList<String>(Arrays.asList("cowboy", "german", "greek", "spanish"));
 
-    public Java2DEnemyEntity(Controller controller, SpriteLibrary spriteLibrary,Integer enemyCount) {
-        super(controller, enemyCount);
+    public Java2DEnemyEntity(Controller controller, SpriteLibrary spriteLibrary, int x, int y) {
+        super(controller, x, y);
         animationManager = new AnimationManager(spriteLibrary.getUnit(spriteList.get((int) (Math.random()*4))));
     }
 

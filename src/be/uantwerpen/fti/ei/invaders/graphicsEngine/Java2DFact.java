@@ -22,7 +22,7 @@ public class Java2DFact extends AFact {
     public Java2DFact() {
         super();
         spriteLibrary = new SpriteLibrary();
-        display = new Display(GameSettings.WINDOW_DIMENSION, input);
+        display = new Display(input);
     }
 
     @Override
@@ -36,8 +36,8 @@ public class Java2DFact extends AFact {
     }
 
     @Override
-    public Entity getEnemyEntity(Controller enemyController, Integer enemyCount) {
-        return new Java2DEnemyEntity(enemyController, spriteLibrary, enemyCount);
+    public Entity getEnemyEntity(Controller enemyController, int x, int y) {
+        return new Java2DEnemyEntity(enemyController, spriteLibrary, x, y);
     }
 
     @Override

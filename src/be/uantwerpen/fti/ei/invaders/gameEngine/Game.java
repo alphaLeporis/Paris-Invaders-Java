@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
  */
 public class Game {
     private final AFact afact;
-    private Input input;
+    private final Input input;
     private State currentState;
 
     /**

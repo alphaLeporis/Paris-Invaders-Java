@@ -13,14 +13,14 @@ import java.awt.*;
 
 public class PlayerEntity extends Entity {
 
-    private int playerLives = 3;
-    private int speed;
+    private int currentHealth = 3;
     private final Controller controller;
     private long lastSpaceEntry = System.currentTimeMillis();
 
     public PlayerEntity(Controller controller) {
         super();
-        speed = 5;
+        position = new Position(GameSettings.GAME_SIZE.getWidth()/2 - GameSettings.ENTITY_WIDTH/2,
+                                GameSettings.GAME_SIZE.getHeight() -  GameSettings.ENTITY_HEIGHT*2);
         this.controller = controller;
     }
 
@@ -55,7 +55,7 @@ public class PlayerEntity extends Entity {
         }
 
         if (controller.isRequestingRight()) {
-            if (position.getX() < GameSettings.WIDTH-(this.size.getWidth()*1.5)) {
+            if (position.getX() < GameSettings.GAME_SIZE.getWidth()-(this.size.getWidth()*1.5)) {
                 deltaX += setSpeed();
             } else {
                 deltaX = 0;
@@ -79,10 +79,10 @@ public class PlayerEntity extends Entity {
     private void handleCollision(Entity other) {
         if (other instanceof EnemyBulletEntity) {
             audioPlayer.playSound("player-hit.wav");
-            if (playerLives <= 1) {
+            if (currentHealth <= 1) {
                 isEntityAlive = false;
             } else {
-                playerLives --;
+                currentHealth--;
             }
             other.killEntity();
         }
@@ -122,7 +122,7 @@ public class PlayerEntity extends Entity {
         return getCollisionBox().collidesWith(other.getCollisionBox());
     }
 
-    public int getPlayerLives() {
-        return playerLives;
+    public int getCurrentHealth() {
+        return currentHealth;
     }
 }

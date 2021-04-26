@@ -4,6 +4,7 @@ import be.uantwerpen.fti.ei.invaders.audioEngine.AudioPlayer;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.gameEngine.CollisionHandling.CollisionBox;
 import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
+import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.Action;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.EnemyShootsBullet;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
@@ -16,12 +17,12 @@ import java.util.Arrays;
 public class EnemyEntity extends Entity {
     private final Controller controller;
 
-    private static final ArrayList<Integer> x = new ArrayList<>((Arrays.asList(100,200,300,400,500,100,200,300,400,500)));
-    private static final ArrayList<Integer> y = new ArrayList<>((Arrays.asList(50,50,50,50,50,150,150,150,150,150)));
-
-    public EnemyEntity(Controller controller, Integer enemyCount) {
+    public EnemyEntity(Controller controller, int x, int y) {
         super();
-        position = new Position(x.get(enemyCount),y.get(enemyCount));
+        //int x = ((150 * (enemyID - Math.floorDiv(enemyID, GameSettings.ENEMIES_PER_ROW) * GameSettings.ENEMIES_PER_ROW )) - GameSettings.ENTITY_WIDTH/2);
+        //int y = ((Math.floorDiv(enemyID, GameSettings.ENEMIES_PER_ROW) + 1) * 50 - GameSettings.ENTITY_HEIGHT/2);
+        System.out.println(x+":"+y+" ");
+        position = new Position(x,y);
         this.controller = controller;
     }
 
@@ -70,19 +71,6 @@ public class EnemyEntity extends Entity {
     @Override
     public Image visualize() {
         return null;
-    }
-
-
-    @Override
-    public CollisionBox getCollisionBox() {
-        return new CollisionBox(
-                new Rectangle(
-                        position.getX(),
-                        position.getY(),
-                        size.getWidth(),
-                        size.getHeight()
-                )
-        );
     }
 
     @Override

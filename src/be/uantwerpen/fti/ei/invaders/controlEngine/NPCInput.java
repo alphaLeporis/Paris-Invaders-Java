@@ -30,7 +30,7 @@ public class NPCInput {
                 .collect(Collectors.toList());
 
         for (Entity enemy : enemies) {
-            if (enemy.getPosition().getX() + 64 > GameSettings.WIDTH) {
+            if (enemy.getPosition().getX() + 64 > GameSettings.GAME_SIZE.getWidth()) {
                 callingDown = true;
                 goingRight = false;
                 break;
