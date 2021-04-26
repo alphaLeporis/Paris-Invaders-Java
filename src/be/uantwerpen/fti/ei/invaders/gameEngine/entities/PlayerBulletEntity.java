@@ -1,7 +1,7 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 
+import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.gameEngine.CollisionHandling.CollisionBox;
-import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
@@ -9,7 +9,7 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import java.awt.*;
 
 public class PlayerBulletEntity extends Entity {
-    private final int maxAliveTimeInSeconds = GameSettings.UPDATES_PER_SECOND*10;
+    private final int maxAliveTimeInSeconds = 10*AFact.gameConfig.getConfigInt("UPDATES_PER_SECOND");
     private int aliveTimeInSeconds = 0;
 
     public PlayerBulletEntity(int x, int y) {

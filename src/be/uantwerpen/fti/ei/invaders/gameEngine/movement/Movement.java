@@ -1,7 +1,6 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine.movement;
 
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
-import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
 
 public class Movement {
 

@@ -1,6 +1,8 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine;
 
 
+import be.uantwerpen.fti.ei.invaders.AFact;
+
 /**
  * This class will make sure that our game works at a constant update and render rate across multiple OS'es
  */
@@ -50,7 +52,7 @@ public class GameLoop {
      * It is possible that our updates/renders take more time than 1 second, in this case our UPS/FPS will drop and the processor will not sleep.
      */
     private void sleepStopwatch() {
-        double tickDuration = 1000.0d / (double) GameSettings.UPDATES_PER_SECOND;
+        double tickDuration = 1000.0d / (double) AFact.gameConfig.getConfigInt("UPDATES_PER_SECOND");
         long sleepTime = (long) tickDuration - (System.currentTimeMillis() - lastUpdate);
         if (sleepTime > 0) {
             try {

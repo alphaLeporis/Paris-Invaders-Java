@@ -1,6 +1,7 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine;
 
 import be.uantwerpen.fti.ei.invaders.AFact;
+import be.uantwerpen.fti.ei.invaders.ConfigReader;
 import be.uantwerpen.fti.ei.invaders.audioEngine.AudioPlayer;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.controlEngine.EnemyController;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
  * The Game class will bond our Abstract Factory and the Game engine together.
  */
 public class Game {
+
     private final AFact afact;
     private final Input input;
     private State currentState;

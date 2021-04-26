@@ -3,7 +3,6 @@ package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.audioEngine.AudioPlayer;
 import be.uantwerpen.fti.ei.invaders.gameEngine.CollisionHandling.CollisionBox;
-import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.Action;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Effect;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
@@ -32,7 +31,8 @@ public abstract class Entity {
     public Entity() {
         isEntityAlive = true;
         position = new Position(0,0);
-        size = new Size(GameSettings.ENTITY_WIDTH, GameSettings.ENTITY_HEIGHT);
+        size = new Size(AFact.gameConfig.getConfigInt("ENTITY_WIDTH"),
+                        AFact.gameConfig.getConfigInt("ENTITY_HEIGHT"));
         effects = new ArrayList<>();
         action = Optional.empty();
         audioPlayer = new AudioPlayer();

@@ -1,6 +1,6 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects;
 
-import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
+import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
 /**
@@ -13,7 +13,7 @@ public abstract class Effect {
      * @param lifeSpanInSeconds is needed to know how long our effect will take.
      */
     public Effect(int lifeSpanInSeconds) {
-        this.lifeSpanInUpdates = lifeSpanInSeconds * GameSettings.UPDATES_PER_SECOND;
+        this.lifeSpanInUpdates = lifeSpanInSeconds * AFact.gameConfig.getConfigInt("UPDATES_PER_SECOND");
     }
 
     /**

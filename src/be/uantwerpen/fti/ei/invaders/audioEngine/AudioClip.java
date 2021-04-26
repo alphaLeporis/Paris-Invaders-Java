@@ -21,31 +21,6 @@ public abstract class AudioClip {
     }
 
     /**
-     * at every update we will check the volume, this is useful for an in-game volume setting.
-     */
-    public void update() {
-        setVolume();
-    }
-
-    /**
-     * @return Gets the volume based on the type of AudioClip.
-     */
-    protected abstract float getVolume();
-
-    /**
-     * Sets the volume of the current clip. This is not supported by every OS or clip.
-     */
-    void setVolume() {
-        if (clip.isControlSupported(FloatControl.Type.MASTER_GAIN)) {
-            final FloatControl control = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-            float range = control.getMaximum() - control.getMinimum();
-            float gain = (range * getVolume()) + control.getMinimum();
-
-            control.setValue(gain);
-        }
-    }
-
-    /**
      * @return To check if a clip is done playing.
      */
     public boolean hasFinishedPlaying() {

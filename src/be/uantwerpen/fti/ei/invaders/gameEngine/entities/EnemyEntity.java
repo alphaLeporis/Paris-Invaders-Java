@@ -1,18 +1,11 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 
-import be.uantwerpen.fti.ei.invaders.audioEngine.AudioPlayer;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
-import be.uantwerpen.fti.ei.invaders.gameEngine.CollisionHandling.CollisionBox;
-import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
-import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.Action;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.EnemyShootsBullet;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class EnemyEntity extends Entity {
     private final Controller controller;

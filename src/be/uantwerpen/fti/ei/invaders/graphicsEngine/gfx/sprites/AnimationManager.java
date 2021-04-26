@@ -1,7 +1,7 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites;
 
-import be.uantwerpen.fti.ei.invaders.gameEngine.DisplaySettings;
-import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
+import be.uantwerpen.fti.ei.invaders.AFact;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.Java2DFact;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -23,10 +23,10 @@ public class AnimationManager {
 
     public Image getSprite() {
         return currentAnimationSheet.getSubimage(
-                frameIndex* DisplaySettings.SPRITE_SIZE,
+                frameIndex* Java2DFact.displayConfig.getConfigInt("SPRITE_SIZE"),
                 0,
-                DisplaySettings.SPRITE_SIZE,
-                DisplaySettings.SPRITE_SIZE
+                Java2DFact.displayConfig.getConfigInt("SPRITE_SIZE"),
+                Java2DFact.displayConfig.getConfigInt("SPRITE_SIZE")
         );
     }
 
@@ -37,7 +37,7 @@ public class AnimationManager {
             currentFrameTime = 0;
             frameIndex++;
 
-            if (frameIndex >= currentAnimationSheet.getWidth() / DisplaySettings.SPRITE_SIZE ) {
+            if (frameIndex >= currentAnimationSheet.getWidth() / Java2DFact.displayConfig.getConfigInt("SPRITE_SIZE") ) {
                 frameIndex = 0;
             }
         }

@@ -1,7 +1,6 @@
 package be.uantwerpen.fti.ei.invaders.controlEngine;
 
-import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
-import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
+import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.EnemyEntity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.Entity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
@@ -30,7 +29,7 @@ public class NPCInput {
                 .collect(Collectors.toList());
 
         for (Entity enemy : enemies) {
-            if (enemy.getPosition().getX() + 64 > GameSettings.GAME_SIZE.getWidth()) {
+            if (enemy.getPosition().getX() + 64 > AFact.gameConfig.getConfigInt("WIDTH")) {
                 callingDown = true;
                 goingRight = false;
                 break;
@@ -52,7 +51,7 @@ public class NPCInput {
 
     public boolean callingShoot() {
         update();
-        return Math.random()*100 < GameSettings.CHANCE_ENEMY_SHOOTS;
+        return Math.random()*1000 < AFact.gameConfig.getConfigInt("CHANCE_ENEMY_SHOOTS");
     }
 
     public boolean callingLeft() {

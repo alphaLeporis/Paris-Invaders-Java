@@ -13,6 +13,8 @@ import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.SpriteLibrary;
  * a Java2D engine or a Text Engine.
  */
 public abstract class AFact {
+    public static ConfigReader gameConfig;
+
     protected Input input;
 
     public abstract void render(State state);
@@ -24,6 +26,7 @@ public abstract class AFact {
     public abstract Entity getBonusEntity();
 
     public AFact() {
+        gameConfig = new ConfigReader("game.properties");
         this.input = new Input();
     }
 

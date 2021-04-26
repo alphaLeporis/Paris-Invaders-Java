@@ -1,8 +1,6 @@
 package be.uantwerpen.fti.ei.invaders.audioEngine;
 
 
-import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
-
 import javax.sound.sampled.Clip;
 
 /**
@@ -17,12 +15,4 @@ public class SoundClip extends AudioClip {
         super(clip);
     }
 
-    /**
-     * Gets the sound volume inside the GameSettings.
-     * @return the desired volume.
-     */
-    @Override
-    protected float getVolume() {
-        return GameSettings.SOUND_VOLUME;
-    }
 }

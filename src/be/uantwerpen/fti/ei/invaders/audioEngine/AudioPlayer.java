@@ -25,8 +25,6 @@ public class AudioPlayer {
      * This method will call the update method of each clip and check for clips that have finished and have to be deleted.
      */
     public void update() {
-        audioClips.forEach(AudioClip::update);
-
         List.copyOf(audioClips).forEach(audioClip -> {
             if(audioClip.hasFinishedPlaying()) {
                 audioClip.cleanUp();
@@ -43,7 +41,6 @@ public class AudioPlayer {
         final Clip clip = getClip(fileName);
         final MusicClip musicClip = new MusicClip(clip);
         clip.loop(Clip.LOOP_CONTINUOUSLY);
-        musicClip.setVolume();
         audioClips.add(musicClip);
     }
 
@@ -54,7 +51,6 @@ public class AudioPlayer {
     public void playSound(String fileName) {
         final Clip clip = getClip(fileName);
         final SoundClip soundClip = new SoundClip(clip);
-        soundClip.setVolume();
         audioClips.add(soundClip);
     }
 

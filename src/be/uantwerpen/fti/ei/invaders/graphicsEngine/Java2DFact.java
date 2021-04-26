@@ -1,26 +1,27 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine;
 
 import be.uantwerpen.fti.ei.invaders.AFact;
+import be.uantwerpen.fti.ei.invaders.ConfigReader;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Input;
 import be.uantwerpen.fti.ei.invaders.controlEngine.PlayerController;
-import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
-import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.Entity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.entities.*;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds.BackgroundLibrary;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.SpriteLibrary;
 
 /**
  * This class extends the parent abstract factory.
  */
 public class Java2DFact extends AFact {
+    public static ConfigReader displayConfig;
+
     private final Display display;
     protected SpriteLibrary spriteLibrary;
 
     public Java2DFact() {
         super();
+        displayConfig = new ConfigReader("display.properties");
         spriteLibrary = new SpriteLibrary();
         display = new Display(input);
     }

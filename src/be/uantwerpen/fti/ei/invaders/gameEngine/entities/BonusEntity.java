@@ -1,7 +1,7 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 
+import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.gameEngine.CollisionHandling.CollisionBox;
-import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
@@ -9,14 +9,14 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import java.awt.*;
 
 public class BonusEntity extends Entity {
-    private final int maxAliveTimeInSeconds = GameSettings.UPDATES_PER_SECOND * 15;
+    private final int maxAliveTimeInSeconds = 15* AFact.gameConfig.getConfigInt("UPDATES_PER_SECOND");
     private int aliveTimeInSeconds = 0;
     protected boolean isGoodBonus;
 
     public BonusEntity() {
-        isGoodBonus = Math.random() < GameSettings.CHANCE_GOOD_BONUS;
-        position = new Position((int) (Math.random()*GameSettings.GAME_SIZE.getWidth()), 0);
-        size = new Size(GameSettings.BONUS_WIDTH, GameSettings.BONUS_HEIGHT);
+        isGoodBonus = Math.random()*10 < AFact.gameConfig.getConfigInt("CHANCE_GOOD_BONUS");
+        position = new Position((int) (Math.random()*AFact.gameConfig.getConfigInt("WIDTH")), 0);
+        size = new Size(AFact.gameConfig.getConfigInt("BONUS_WIDTH"), AFact.gameConfig.getConfigInt("BONUS_HEIGHT"));
     }
 
     @Override

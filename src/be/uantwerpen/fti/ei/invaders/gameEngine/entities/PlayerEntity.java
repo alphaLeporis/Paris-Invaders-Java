@@ -1,8 +1,8 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 
+import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.gameEngine.CollisionHandling.CollisionBox;
-import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.PlayerShootsBullet;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Fast;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Slow;
@@ -19,8 +19,8 @@ public class PlayerEntity extends Entity {
 
     public PlayerEntity(Controller controller) {
         super();
-        position = new Position(GameSettings.GAME_SIZE.getWidth()/2 - GameSettings.ENTITY_WIDTH/2,
-                                GameSettings.GAME_SIZE.getHeight() -  GameSettings.ENTITY_HEIGHT*2);
+        position = new Position(AFact.gameConfig.getConfigInt("WIDTH")/2 - AFact.gameConfig.getConfigInt("ENTITY_WIDTH")/2,
+                AFact.gameConfig.getConfigInt("HEIGHT") -  AFact.gameConfig.getConfigInt("ENTITY_HEIGHT")*2);
         this.controller = controller;
     }
 
@@ -55,7 +55,7 @@ public class PlayerEntity extends Entity {
         }
 
         if (controller.isRequestingRight()) {
-            if (position.getX() < GameSettings.GAME_SIZE.getWidth()-(this.size.getWidth()*1.5)) {
+            if (position.getX() < AFact.gameConfig.getConfigInt("WIDTH")-(this.size.getWidth()*1.5)) {
                 deltaX += setSpeed();
             } else {
                 deltaX = 0;

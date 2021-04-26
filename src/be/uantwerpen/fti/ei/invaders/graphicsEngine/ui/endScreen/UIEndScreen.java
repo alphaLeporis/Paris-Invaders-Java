@@ -1,7 +1,9 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.endScreen;
 
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
+import be.uantwerpen.fti.ei.invaders.gameEngine.states.GameState;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.MenuState;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.Alignment;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.VerticalContainer;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.clickable.UIButton;
 

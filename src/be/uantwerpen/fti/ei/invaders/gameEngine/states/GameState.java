@@ -1,15 +1,14 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine.states;
 
 
+import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.controlEngine.EnemyController;
 import be.uantwerpen.fti.ei.invaders.controlEngine.NPCInput;
 import be.uantwerpen.fti.ei.invaders.gameEngine.Condition;
 import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
-import be.uantwerpen.fti.ei.invaders.gameEngine.GameSettings;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.EnemyEntity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.PlayerEntity;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.game.UIGameStats;
 
 import java.util.List;
 
@@ -63,13 +62,13 @@ public class GameState extends State {
     }
 
     private void initializeEntities(int levels) {
-        int stepSize = GameSettings.GAME_SIZE.getWidth() / (GameSettings.ENEMIES_PER_ROW+1);
+        int stepSize = AFact.gameConfig.getConfigInt("WIDTH") / (AFact.gameConfig.getConfigInt("ENEMIES_PER_ROW")+1);
         System.out.println(stepSize);
         Controller enemyController = new EnemyController(new NPCInput(this));
 
         for (int i=1; i <= levels; i++) {
-            for (int j=1; j <= GameSettings.ENEMIES_PER_ROW; j++) {
-                entities.add(afact.getEnemyEntity(enemyController, (j*stepSize - GameSettings.ENTITY_WIDTH/2), (i*100 - GameSettings.ENTITY_HEIGHT/2)));
+            for (int j=1; j <= AFact.gameConfig.getConfigInt("ENEMIES_PER_ROW"); j++) {
+                entities.add(afact.getEnemyEntity(enemyController, (j*stepSize - AFact.gameConfig.getConfigInt("ENTITY_WIDTH")/2), (i*100 - AFact.gameConfig.getConfigInt("ENTITY_HEIGHT")/2)));
             }
         }
     }
@@ -87,7 +86,7 @@ public class GameState extends State {
     private boolean areEnemiesTooLow() {
         return entities.stream()
                 .filter(e -> e instanceof EnemyEntity)
-                .filter(e -> e.getPosition().getY() > GameSettings.GAME_SIZE.getHeight() - GameSettings.ENTITY_HEIGHT * 1.5)
+                .filter(e -> e.getPosition().getY() > AFact.gameConfig.getConfigInt("HEIGHT") - AFact.gameConfig.getConfigInt("ENTITY_HEIGHT") * 1.5)
                 .toArray().length > 0;
     }
 
@@ -134,7 +133,7 @@ public class GameState extends State {
      * This method will be used to generate bonuses with a predefined chance.
      */
     private void generateBonus() {
-        if(Math.random() * 1000 < GameSettings.CHANCE_NEW_BONUS) {
+        if(Math.random() * 1000 < AFact.gameConfig.getConfigInt("CHANCE_NEW_BONUS")) {
             entities.add(afact.getBonusEntity());
         }
 
