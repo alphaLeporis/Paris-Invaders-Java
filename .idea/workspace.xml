@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd344fa2-c0f1-4f0d-b634-c73c379e4456" name="Default Changelist" comment="- Adding documentation&#10;- Working on UI containers&#10;- Adding a block&#10;- Config parser is added&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Change the enemy bullets according to enemy type">
-      <change afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DBlockEntity.java" afterDir="false" />
+    <list default="true" id="cd344fa2-c0f1-4f0d-b634-c73c379e4456" name="Default Changelist" comment="- Adding documentation&#10;- Working on UI containers&#10;- Added a block&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Change the enemy bullets according to enemy type">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_sources/spanish.psd" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/AFact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/AFact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/BlockEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/BlockEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/actions/EnemyShootsBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/actions/EnemyShootsBullet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Java2DFact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Java2DFact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DEnemyBulletEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DEnemyBulletEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DEnemyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DEnemyEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +207,7 @@
       <workItem from="1618832853790" duration="11092000" />
       <workItem from="1619086057988" duration="3575000" />
       <workItem from="1619435608250" duration="13858000" />
-      <workItem from="1619453265575" duration="2652000" />
+      <workItem from="1619453265575" duration="4756000" />
     </task>
     <task id="LOCAL-00001" summary="Adding the controller and a playerEntity">
       <created>1616325051200</created>
@@ -369,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619454342169</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="- Adding documentation&#10;- Working on UI containers&#10;- Added a block&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Change the enemy bullets according to enemy type">
+      <created>1619456424640</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1619456424640</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +416,8 @@
     <MESSAGE value="- Adding documentation&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Finish UI containers&#10;- Change the enemy bullets according to enemy type" />
     <MESSAGE value="- Adding documentation&#10;- Working on UI containers&#10;- Adding a block&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Change the enemy bullets according to enemy type&#10;- Adding a configuration file/parser" />
     <MESSAGE value="- Adding documentation&#10;- Working on UI containers&#10;- Adding a block&#10;- Config parser is added&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Change the enemy bullets according to enemy type" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Adding documentation&#10;- Working on UI containers&#10;- Adding a block&#10;- Config parser is added&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Change the enemy bullets according to enemy type" />
+    <MESSAGE value="- Adding documentation&#10;- Working on UI containers&#10;- Added a block&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Change the enemy bullets according to enemy type" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Adding documentation&#10;- Working on UI containers&#10;- Added a block&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Change the enemy bullets according to enemy type" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

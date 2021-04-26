@@ -3,6 +3,7 @@ package be.uantwerpen.fti.ei.invaders;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Input;
 import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.EnemyEntity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.Entity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds.BackgroundLibrary;

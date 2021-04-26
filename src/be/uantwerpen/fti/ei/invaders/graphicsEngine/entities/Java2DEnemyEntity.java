@@ -13,11 +13,13 @@ import java.util.Arrays;
 public class Java2DEnemyEntity extends EnemyEntity {
 
     private final AnimationManager animationManager;
-    private final ArrayList<String> spriteList = new ArrayList<String>(Arrays.asList("cowboy", "german", "greek", "spanish"));
+    private final ArrayList<String> spriteList = new ArrayList<>(Arrays.asList("cowboy", "german", "greek", "mexican"));
+    private final String usedSprite;
 
     public Java2DEnemyEntity(Controller controller, SpriteLibrary spriteLibrary, int x, int y) {
         super(controller, x, y);
-        animationManager = new AnimationManager(spriteLibrary.getUnit(spriteList.get((int) (Math.random()*4))));
+        usedSprite = spriteList.get((int) (Math.random()*4));
+        animationManager = new AnimationManager(spriteLibrary.getUnit(usedSprite));
     }
 
     @Override
@@ -28,5 +30,9 @@ public class Java2DEnemyEntity extends EnemyEntity {
 
     public Image visualize() {
         return animationManager.getSprite();
+    }
+
+    public String getUsedSprite() {
+        return usedSprite;
     }
 }

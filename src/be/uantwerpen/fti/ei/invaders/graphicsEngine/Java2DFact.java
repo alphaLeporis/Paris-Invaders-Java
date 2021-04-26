@@ -5,6 +5,7 @@ import be.uantwerpen.fti.ei.invaders.ConfigReader;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Input;
 import be.uantwerpen.fti.ei.invaders.controlEngine.PlayerController;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.EnemyEntity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.Entity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.entities.*;
@@ -48,7 +49,7 @@ public class Java2DFact extends AFact {
 
     @Override
     public Entity getEnemyBulletEntity(Entity entity) {
-        return new Java2DEnemyBulletEntity(entity.getPosition().getX(), entity.getPosition().getY(), spriteLibrary);
+        return new Java2DEnemyBulletEntity(entity, spriteLibrary);
     }
 
     @Override

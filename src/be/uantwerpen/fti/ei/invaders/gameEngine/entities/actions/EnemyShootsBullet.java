@@ -1,5 +1,6 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions;
 
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.EnemyEntity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.Entity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
@@ -7,13 +8,13 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
  * This class will be used if an enemy shoots a bullet.
  */
 public class EnemyShootsBullet extends Action {
-    private final Entity enemy;
+    private final EnemyEntity enemy;
     private Entity EnemyBullet;
 
     /**
      * @param enemy is needed to know from where the bullet is coming from.
      */
-    public EnemyShootsBullet(Entity enemy) {
+    public EnemyShootsBullet(EnemyEntity enemy) {
         super();
         this.enemy = enemy;
         audioPlayer.playSound("enemy-shoots.wav");
