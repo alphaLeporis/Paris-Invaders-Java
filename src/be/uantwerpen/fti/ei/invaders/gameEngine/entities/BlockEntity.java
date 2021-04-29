@@ -1,14 +1,10 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 
 
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Fast;
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Slow;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class BlockEntity extends Entity {
     protected int currentHealth = 7;

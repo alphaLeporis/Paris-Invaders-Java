@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class AudioPlayer {
 
-    private List<AudioClip> audioClips;
+    private final List<AudioClip> audioClips;
 
     /**
      * The constructor instantiates a new ArrayList that will contain sounds or music

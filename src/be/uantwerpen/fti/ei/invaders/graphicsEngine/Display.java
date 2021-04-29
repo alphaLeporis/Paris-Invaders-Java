@@ -31,12 +31,12 @@ public class Display extends JFrame {
         setTitle("Paris Invaders");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         canvas.setPreferredSize(new Dimension(Java2DFact.gameConfig.getConfigInt("WIDTH"), Java2DFact.gameConfig.getConfigInt("HEIGHT")));
-        xFactor = (double) (Java2DFact.gameConfig.getConfigInt("WIDTH") / (double) AFact.gameConfig.getConfigInt("WIDTH"));
-        yFactor = (double) (Java2DFact.gameConfig.getConfigInt("HEIGHT") / (double) AFact.gameConfig.getConfigInt("HEIGHT"));
+        xFactor = Java2DFact.gameConfig.getConfigInt("WIDTH") / (double) AFact.gameConfig.getConfigInt("WIDTH");
+        yFactor = Java2DFact.gameConfig.getConfigInt("HEIGHT") / (double) AFact.gameConfig.getConfigInt("HEIGHT");
 
         if (Java2DFact.displayConfig.getConfigInt("FULLSCREEN") == 1) {
-            xFactor = (double) (Toolkit.getDefaultToolkit().getScreenSize().getWidth() / (double) AFact.gameConfig.getConfigInt("WIDTH"));
-            yFactor = (double) (Toolkit.getDefaultToolkit().getScreenSize().getHeight() / (double) AFact.gameConfig.getConfigInt("HEIGHT"));
+            xFactor = Toolkit.getDefaultToolkit().getScreenSize().getWidth() / (double) AFact.gameConfig.getConfigInt("WIDTH");
+            yFactor = Toolkit.getDefaultToolkit().getScreenSize().getHeight() / (double) AFact.gameConfig.getConfigInt("HEIGHT");
             setExtendedState(JFrame.MAXIMIZED_BOTH);
             setUndecorated(true);
             setVisible(true);
@@ -56,8 +56,8 @@ public class Display extends JFrame {
                     pack();
                     windowResizer(getContentPane().getWidth(), getContentPane().getHeight());
                     canvas.setPreferredSize(getContentPane().getPreferredSize());
-                    xFactor = (double) (getContentPane().getWidth() / (double) AFact.gameConfig.getConfigInt("WIDTH"));
-                    yFactor = (double) (getContentPane().getHeight() / (double) AFact.gameConfig.getConfigInt("HEIGHT"));
+                    xFactor = getContentPane().getWidth() / (double) AFact.gameConfig.getConfigInt("WIDTH");
+                    yFactor = getContentPane().getHeight() / (double) AFact.gameConfig.getConfigInt("HEIGHT");
                 }
             });
         }

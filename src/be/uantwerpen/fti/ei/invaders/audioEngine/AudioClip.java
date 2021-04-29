@@ -2,7 +2,6 @@ package be.uantwerpen.fti.ei.invaders.audioEngine;
 
 
 import javax.sound.sampled.Clip;
-import javax.sound.sampled.FloatControl;
 
 /**
  * This abstract class will hold different types of clips that can be used by the AudioPlayer.

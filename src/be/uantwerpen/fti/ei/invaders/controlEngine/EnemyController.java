@@ -1,7 +1,7 @@
 package be.uantwerpen.fti.ei.invaders.controlEngine;
 
 public class EnemyController implements Controller {
-    private NPCInput npcInput;
+    private final NPCInput npcInput;
 
     public EnemyController(NPCInput npcInput) {
         this.npcInput = npcInput;

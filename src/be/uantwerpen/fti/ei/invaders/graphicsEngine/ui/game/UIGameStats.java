@@ -1,7 +1,6 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.game;
 
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
-import be.uantwerpen.fti.ei.invaders.gameEngine.states.GameState;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.PauseState;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.Alignment;

@@ -1,6 +1,5 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites;
 
-import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.Java2DFact;
 
 import java.awt.*;

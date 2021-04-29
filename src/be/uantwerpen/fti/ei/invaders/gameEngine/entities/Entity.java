@@ -51,14 +51,14 @@ public abstract class Entity {
                         size.getHeight()
                 )
         );
-    };
+    }
 
     public void update(State state) {
         updateMovement();
         handleAction(state);
         effects.forEach(effect -> effect.update(state));
         cleanup();
-    };
+    }
 
     private void handleAction(State state) {
         action.ifPresent(action -> action.update(state));

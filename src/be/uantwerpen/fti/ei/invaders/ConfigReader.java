@@ -1,9 +1,6 @@
 package be.uantwerpen.fti.ei.invaders;
 
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ImageUtils;
-
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 

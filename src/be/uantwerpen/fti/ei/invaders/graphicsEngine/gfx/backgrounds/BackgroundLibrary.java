@@ -1,6 +1,5 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds;
 
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.Java2DFact;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ImageUtils;
 
 import java.awt.*;
