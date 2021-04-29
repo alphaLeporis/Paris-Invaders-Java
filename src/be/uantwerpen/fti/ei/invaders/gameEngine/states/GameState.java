@@ -58,7 +58,7 @@ public class GameState extends State {
     private void initializeCharacters() {
         entities.add(afact.getPlayerEntity(input));
         entities.add(afact.getBlockEntity(800,600));
-        initializeEntities(2);
+        initializeEntities(3);
     }
 
     private void initializeEntities(int levels) {

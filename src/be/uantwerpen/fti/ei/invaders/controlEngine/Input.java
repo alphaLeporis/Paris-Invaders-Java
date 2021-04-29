@@ -10,7 +10,6 @@ public class Input implements KeyListener, MouseListener, MouseMotionListener {
     private boolean mouseClicked;
     private boolean mousePressed;
 
-    private boolean[] currentlyPressed;
     private boolean[] pressed;
 
     public Input() {

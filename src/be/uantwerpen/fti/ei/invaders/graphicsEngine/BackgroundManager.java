@@ -39,4 +39,8 @@ public class BackgroundManager {
         else
             return null;
     }
+
+    public void resize(int width, int height) {
+        backgroundLibrary.resize(width, height);
+    }
 }

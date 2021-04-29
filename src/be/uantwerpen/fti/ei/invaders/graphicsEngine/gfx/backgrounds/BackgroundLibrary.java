@@ -1,5 +1,6 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds;
 
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.Java2DFact;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ImageUtils;
 
 import java.awt.*;
@@ -20,14 +21,13 @@ public class BackgroundLibrary {
 
     private void loadBackgroundsFromDisk() {
         String[] backgroundsInFolder = getBackgroundsInFolder(PATH_TO_BACKGROUNDS);
-        BackgroundSet backgroundSet = new BackgroundSet();
 
         for (String background: backgroundsInFolder) {
             backgrounds.put(background.substring(0,background.length() - 4),
-                            ImageUtils.loadImage(PATH_TO_BACKGROUNDS + "/"+ background));
+                            ImageUtils.loadImage(PATH_TO_BACKGROUNDS + "/"+ background)
+            );
+
         }
-
-
     }
 
     private String[] getBackgroundsInFolder(String baseDir) {
@@ -40,4 +40,12 @@ public class BackgroundLibrary {
     public Image getBackground(String name) {
         return backgrounds.get(name);
     }
+
+    public void resize(int width, int height) {
+        for (Map.Entry<String, Image> background : backgrounds.entrySet()) {
+            background.setValue(background.getValue().getScaledInstance(width,
+                    height, Image.SCALE_DEFAULT));
+        }
+    }
+
 }
