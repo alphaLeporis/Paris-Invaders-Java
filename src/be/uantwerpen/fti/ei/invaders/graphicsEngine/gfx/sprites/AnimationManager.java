@@ -1,6 +1,7 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites;
 
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.Java2DFact;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ImageUtils;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -8,6 +9,7 @@ import java.awt.image.BufferedImage;
 public class AnimationManager {
     private final SpriteSet spriteSet;
     private BufferedImage currentAnimationSheet;
+    private String currentAnimationSheetName;
     private final int updatePerFrame;
     private int currentFrameTime;
     private int frameIndex;
@@ -21,12 +23,19 @@ public class AnimationManager {
     }
 
     public Image getSprite() {
-        return currentAnimationSheet.getSubimage(
-                frameIndex* Java2DFact.displayConfig.getConfigInt("SPRITE_SIZE"),
-                0,
-                Java2DFact.displayConfig.getConfigInt("SPRITE_SIZE"),
-                Java2DFact.displayConfig.getConfigInt("SPRITE_SIZE")
-        );
+        this.currentAnimationSheet = ImageUtils.convertToBufferedImage(spriteSet.get(currentAnimationSheetName));
+
+        try {
+            return currentAnimationSheet.getSubimage(
+                    frameIndex* spriteSet.spriteWidth,
+                    0,
+                    spriteSet.spriteWidth,
+                    spriteSet.spriteHeight
+            );
+        } catch (Exception e) {
+            System.out.println("It looks like the resizing was too slow :/ no problem it will be reade next time :)"+e);
+        }
+        return null;
     }
 
     public void update() {
@@ -36,14 +45,15 @@ public class AnimationManager {
             currentFrameTime = 0;
             frameIndex++;
 
-            if (frameIndex >= currentAnimationSheet.getWidth() / Java2DFact.displayConfig.getConfigInt("SPRITE_SIZE") ) {
+            if (frameIndex >= currentAnimationSheet.getWidth() / spriteSet.spriteWidth ) {
                 frameIndex = 0;
             }
         }
     }
 
     public void playAnimation(String name) {
-        this.currentAnimationSheet = (BufferedImage) spriteSet.get(name);
+        this.currentAnimationSheetName = name;
+        this.currentAnimationSheet = ImageUtils.convertToBufferedImage(spriteSet.get(currentAnimationSheetName));
     }
 
 }

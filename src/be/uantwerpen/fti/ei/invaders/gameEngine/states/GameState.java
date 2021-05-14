@@ -66,7 +66,6 @@ public class GameState extends State {
 
     private void initializeEnemies(int levels) {
         int stepSize = AFact.gameConfig.getConfigInt("WIDTH") / (AFact.gameConfig.getConfigInt("ENEMIES_PER_ROW")+1);
-        System.out.println(stepSize);
         Controller enemyController = new EnemyController(new NPCInput(this));
 
         for (int i=1; i <= levels; i++) {
@@ -169,7 +168,7 @@ public class GameState extends State {
     }
 
     private void restartGame() {
-        System.out.println(currentGameLevel);
+        System.out.println("Current game level: "+currentGameLevel);
         initializeEnemies(2);
     }
 

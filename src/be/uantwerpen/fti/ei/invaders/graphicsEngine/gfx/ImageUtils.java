@@ -4,6 +4,7 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Size;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.Objects;
 
 public class ImageUtils {
@@ -26,5 +27,16 @@ public class ImageUtils {
                 .getDefaultConfiguration();
 
         return graphicsConfiguration.createCompatibleImage(size.getWidth(), size.getHeight(), transparency);
+    }
+
+    public static BufferedImage convertToBufferedImage(Image image)
+    {
+        BufferedImage newImage = new BufferedImage(
+                image.getWidth(null), image.getHeight(null),
+                BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = newImage.createGraphics();
+        g.drawImage(image, 0, 0, null);
+        g.dispose();
+        return newImage;
     }
 }

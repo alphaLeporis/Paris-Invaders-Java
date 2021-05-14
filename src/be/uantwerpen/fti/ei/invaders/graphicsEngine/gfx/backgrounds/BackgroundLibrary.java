@@ -11,9 +11,11 @@ import java.util.Map;
 public class BackgroundLibrary {
     private final static String PATH_TO_BACKGROUNDS = "/backgrounds";
 
+    private final Map<String, Image> original_backgrounds;
     private final Map<String, Image> backgrounds;
 
     public BackgroundLibrary() {
+        original_backgrounds = new HashMap<>();
         backgrounds = new HashMap<>();
         loadBackgroundsFromDisk();
     }
@@ -22,8 +24,8 @@ public class BackgroundLibrary {
         String[] backgroundsInFolder = getBackgroundsInFolder();
 
         for (String background: backgroundsInFolder) {
-            backgrounds.put(background.substring(0,background.length() - 4),
-                            ImageUtils.loadImage(PATH_TO_BACKGROUNDS + "/"+ background)
+            original_backgrounds.put(background.substring(0,background.length() - 4),
+                                    ImageUtils.loadImage(PATH_TO_BACKGROUNDS + "/"+ background)
             );
 
         }
@@ -42,9 +44,10 @@ public class BackgroundLibrary {
     }
 
     public void resize(int width, int height) {
-        for (Map.Entry<String, Image> background : backgrounds.entrySet()) {
-            background.setValue(background.getValue().getScaledInstance(width,
-                    height, Image.SCALE_DEFAULT));
+        for (Map.Entry<String, Image> background : original_backgrounds.entrySet()) {
+
+            backgrounds.put(background.getKey(),
+                            background.getValue().getScaledInstance(width, height, Image.SCALE_DEFAULT));
         }
     }
 

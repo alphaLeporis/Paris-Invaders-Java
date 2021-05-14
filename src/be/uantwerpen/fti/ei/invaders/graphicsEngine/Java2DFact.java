@@ -23,7 +23,7 @@ public class Java2DFact extends AFact {
         super();
         displayConfig = new ConfigReader("display.properties");
         spriteLibrary = new SpriteLibrary();
-        display = new Display(input);
+        display = new Display(input, spriteLibrary);
     }
 
     @Override

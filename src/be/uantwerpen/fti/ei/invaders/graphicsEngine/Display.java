@@ -3,6 +3,7 @@ package be.uantwerpen.fti.ei.invaders.graphicsEngine;
 import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Input;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.SpriteLibrary;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,6 +17,7 @@ import java.awt.image.BufferStrategy;
 public class Display extends JFrame {
 
     private final Canvas canvas;
+    private final SpriteLibrary spriteLibrary;
     private static BackgroundManager backgroundManager;
     private double xFactor;
     private double yFactor;
@@ -24,7 +26,8 @@ public class Display extends JFrame {
      * This is the default constructor to set up a display
      * @param input Because our JFrame needs a KeyListener we add our (keyboard) input
      */
-    public Display(Input input) {
+    public Display(Input input, SpriteLibrary spriteLibrary) {
+        this.spriteLibrary = spriteLibrary;
         backgroundManager = new BackgroundManager();
         canvas = new Canvas();
 
@@ -62,8 +65,7 @@ public class Display extends JFrame {
 
         state.getEntities()
                 .forEach(entity -> graphics.drawImage(
-                        entity.visualize().getScaledInstance((int) (AFact.gameConfig.getConfigInt("ENTITY_WIDTH")*xFactor),
-                                (int) (AFact.gameConfig.getConfigInt("ENTITY_HEIGHT")*yFactor), Image.SCALE_SMOOTH),
+                        entity.visualize(),
                         (int) Math.round(entity.getPosition().getX()*xFactor),
                         (int) Math.round(entity.getPosition().getY()*yFactor),
                         null
@@ -100,7 +102,6 @@ public class Display extends JFrame {
             setPreferredSize(new Dimension(Java2DFact.gameConfig.getConfigInt("WIDTH"), Java2DFact.gameConfig.getConfigInt("HEIGHT")));
             xFactor = Java2DFact.gameConfig.getConfigInt("WIDTH") / (double) AFact.gameConfig.getConfigInt("WIDTH");
             yFactor = Java2DFact.gameConfig.getConfigInt("HEIGHT") / (double) AFact.gameConfig.getConfigInt("HEIGHT");
-            ratioCalculator();
 
 
             addComponentListener(new ComponentAdapter() {
@@ -111,19 +112,18 @@ public class Display extends JFrame {
                     windowResizer(getContentPane().getWidth(), getContentPane().getHeight());
                     canvas.setPreferredSize(getContentPane().getPreferredSize());
 
+                    xFactor = getContentPane().getWidth() / (double) AFact.gameConfig.getConfigInt("WIDTH");
+                    yFactor = getContentPane().getHeight() / (double) AFact.gameConfig.getConfigInt("HEIGHT");
 
-                    ratioCalculator();
                 }
             });
         }
     }
 
-    public void ratioCalculator() {
-        xFactor = Java2DFact.gameConfig.getConfigInt("WIDTH") / (double) AFact.gameConfig.getConfigInt("WIDTH");
-        yFactor = Java2DFact.gameConfig.getConfigInt("HEIGHT") / (double) AFact.gameConfig.getConfigInt("HEIGHT");
-    }
 
     public void windowResizer(int width, int height) {
         backgroundManager.resize(width, height);
+        spriteLibrary.resize(width/(double) AFact.gameConfig.getConfigInt("WIDTH"),
+                            height/(double) AFact.gameConfig.getConfigInt("HEIGHT"));
     }
 }

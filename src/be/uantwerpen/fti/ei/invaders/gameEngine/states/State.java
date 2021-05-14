@@ -75,7 +75,7 @@ public abstract class State {
     }
 
     public int getPlayerLives() {
-        System.out.println(((PlayerEntity) entities.get(0)).getCurrentHealth());
+        System.out.println("Player Health: "+((PlayerEntity) entities.get(0)).getCurrentHealth());
         return ((PlayerEntity) entities.get(0)).getCurrentHealth();
     }
 
