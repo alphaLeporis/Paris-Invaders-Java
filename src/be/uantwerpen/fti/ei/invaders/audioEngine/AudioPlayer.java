@@ -40,6 +40,7 @@ public class AudioPlayer {
     public void playMusic(String fileName) {
         final Clip clip = getClip(fileName);
         final MusicClip musicClip = new MusicClip(clip);
+        assert clip != null;
         clip.loop(Clip.LOOP_CONTINUOUSLY);
         audioClips.add(musicClip);
     }
@@ -72,12 +73,15 @@ public class AudioPlayer {
     private Clip getClip(String fileName) {
         //Todo: fix the crash when music is not found :(
         final URL soundFile = AudioPlayer.class.getResource("/sounds/" + fileName);
-        try(AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(soundFile)) {
-            final Clip clip = AudioSystem.getClip();
-            clip.open(audioInputStream);
-            clip.setMicrosecondPosition(0);
-            return clip;
+        try {
+            assert soundFile != null;
+            try(AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(soundFile)) {
+                final Clip clip = AudioSystem.getClip();
+                clip.open(audioInputStream);
+                clip.setMicrosecondPosition(0);
+                return clip;
 
+            }
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             System.out.println(e);
         }

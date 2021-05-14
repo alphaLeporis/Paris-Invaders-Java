@@ -1,7 +1,4 @@
-package be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions;
-
-import be.uantwerpen.fti.ei.invaders.gameEngine.movement.Movement;
-import be.uantwerpen.fti.ei.invaders.gameEngine.movement.Vector2D;
+package be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement;
 
 /**
  * To easily access the position we use this helper class

@@ -12,7 +12,7 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 public abstract class AFact {
     public static ConfigReader gameConfig;
 
-    protected Input input;
+    protected final Input input;
 
     public abstract void render(State state);
 

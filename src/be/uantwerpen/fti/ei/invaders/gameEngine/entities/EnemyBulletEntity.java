@@ -1,21 +1,31 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 
 import be.uantwerpen.fti.ei.invaders.AFact;
-import be.uantwerpen.fti.ei.invaders.gameEngine.CollisionHandling.CollisionBox;
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Size;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
 import java.awt.*;
 
 public class EnemyBulletEntity extends Entity {
-    private final int maxAliveTimeInSeconds = 5 * AFact.gameConfig.getConfigInt("UPDATES_PER_SECOND");
+    private final int maxAliveTimeInSeconds = 10 * AFact.gameConfig.getConfigInt("UPDATES_PER_SECOND");
     private int aliveTimeInSeconds = 0;
 
     public EnemyBulletEntity(int x, int y) {
-
         position = new Position(x,y);
         size = new Size(64, 64);
+    }
+
+    @Override
+    public void update(State state) {
+        shouldBeAlive();
+        updateMovement();
+    }
+
+    public void shouldBeAlive() {
+        aliveTimeInSeconds ++;
+        if (maxAliveTimeInSeconds <= aliveTimeInSeconds)
+            this.killEntity();
     }
 
     @Override
@@ -27,31 +37,5 @@ public class EnemyBulletEntity extends Entity {
     @Override
     public Image visualize() {
         return null;
-    }
-
-    @Override
-    public void update(State state) {
-        aliveTimeInSeconds ++;
-        if (maxAliveTimeInSeconds <= aliveTimeInSeconds)
-            this.killEntity();
-
-        updateMovement();
-    }
-
-    @Override
-    public CollisionBox getCollisionBox() {
-        return new CollisionBox(
-                new Rectangle(
-                        position.getX(),
-                        position.getY(),
-                        size.getWidth(),
-                        size.getHeight()
-                )
-        );
-    }
-
-    @Override
-    public boolean collidesWith(Entity other) {
-        return getCollisionBox().collidesWith(other.getCollisionBox());
     }
 }

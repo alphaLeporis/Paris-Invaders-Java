@@ -17,7 +17,7 @@ public class Java2DFact extends AFact {
     public static ConfigReader displayConfig;
 
     private final Display display;
-    protected SpriteLibrary spriteLibrary;
+    protected final SpriteLibrary spriteLibrary;
 
     public Java2DFact() {
         super();

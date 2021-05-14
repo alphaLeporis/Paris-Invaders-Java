@@ -1,7 +1,7 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.clickable;
 
 
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Size;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UIContainer;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UIText;
@@ -11,10 +11,10 @@ import java.awt.*;
 
 public class UIButton extends UIClickable {
 
-    private UIContainer container;
-    private UIText label;
+    private final UIContainer container;
+    private final UIText label;
 
-    private ClickAction clickAction;
+    private final ClickAction clickAction;
 
     public UIButton(String label, ClickAction clickAction) {
         this.label = new UIText(label);

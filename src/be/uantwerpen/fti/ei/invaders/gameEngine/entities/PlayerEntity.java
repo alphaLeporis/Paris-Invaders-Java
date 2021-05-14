@@ -2,11 +2,11 @@ package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 
 import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
-import be.uantwerpen.fti.ei.invaders.gameEngine.CollisionHandling.CollisionBox;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.PlayerShootsBullet;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Fast;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Slow;
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Movement;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
 import java.awt.*;
@@ -15,6 +15,7 @@ public class PlayerEntity extends Entity {
 
     private int currentHealth = 3;
     private final Controller controller;
+    private final Movement movement;
     private long lastSpaceEntry = System.currentTimeMillis();
 
     public PlayerEntity(Controller controller) {
@@ -22,12 +23,14 @@ public class PlayerEntity extends Entity {
         position = new Position(AFact.gameConfig.getConfigInt("WIDTH")/2 - AFact.gameConfig.getConfigInt("ENTITY_WIDTH")/2,
                 AFact.gameConfig.getConfigInt("HEIGHT") -  AFact.gameConfig.getConfigInt("ENTITY_HEIGHT")*2);
         this.controller = controller;
+        this.movement = new Movement(3);
     }
 
     @Override
     public void update(State state) {
         super.update(state);
         handleCollisions(state);
+        movement.update(controller);
         setSpeed();
     }
 
@@ -73,7 +76,6 @@ public class PlayerEntity extends Entity {
 
     private void handleCollisions(State state) {
         state.getCollidingGameObjects(this).forEach(this::handleCollision);
-
     }
 
     private void handleCollision(Entity other) {
@@ -103,24 +105,6 @@ public class PlayerEntity extends Entity {
         return null;
     }
 
-
-
-    @Override
-    public CollisionBox getCollisionBox() {
-        return new CollisionBox(
-                new Rectangle(
-                    position.getX(),
-                    position.getY(),
-                    size.getWidth(),
-                    size.getHeight()
-                )
-        );
-    }
-
-    @Override
-    public boolean collidesWith(Entity other) {
-        return getCollisionBox().collidesWith(other.getCollisionBox());
-    }
 
     public int getCurrentHealth() {
         return currentHealth;

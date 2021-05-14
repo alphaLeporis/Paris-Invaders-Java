@@ -19,7 +19,7 @@ public class BackgroundLibrary {
     }
 
     private void loadBackgroundsFromDisk() {
-        String[] backgroundsInFolder = getBackgroundsInFolder(PATH_TO_BACKGROUNDS);
+        String[] backgroundsInFolder = getBackgroundsInFolder();
 
         for (String background: backgroundsInFolder) {
             backgrounds.put(background.substring(0,background.length() - 4),
@@ -29,8 +29,9 @@ public class BackgroundLibrary {
         }
     }
 
-    private String[] getBackgroundsInFolder(String baseDir) {
-        URL resource = BackgroundLibrary.class.getResource(baseDir);
+    private String[] getBackgroundsInFolder() {
+        URL resource = BackgroundLibrary.class.getResource(BackgroundLibrary.PATH_TO_BACKGROUNDS);
+        assert resource != null;
         File file = new File(resource.getFile());
         return file.list((current, name) -> new File(current, name).isFile());
     }

@@ -2,7 +2,7 @@ package be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core;
 
 
 
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Size;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ImageUtils;
 
@@ -12,14 +12,14 @@ import java.awt.image.BufferedImage;
 public class UIText extends UIComponent {
 
     private String text;
-    private int fontSize;
-    private int fontStyle;
-    private String fontFamily;
-    private Color color;
+    private final int fontSize;
+    private final int fontStyle;
+    private final String fontFamily;
+    private final Color color;
 
-    private boolean dropShadow;
-    private int dropShadowOffset;
-    private Color shadowColor;
+    private final boolean dropShadow;
+    private final int dropShadowOffset;
+    private final Color shadowColor;
 
     private Font font;
 

@@ -7,7 +7,7 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
  * This class will be called if the player shoots a bullet.
  */
 public class PlayerShootsBullet extends Action {
-    private Entity player;
+    private final Entity player;
     private Entity playerBullet;
 
     /**

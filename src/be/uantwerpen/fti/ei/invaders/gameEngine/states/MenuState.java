@@ -2,7 +2,7 @@ package be.uantwerpen.fti.ei.invaders.gameEngine.states;
 
 import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Size;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.menu.UIMainMenu;
 
 /**

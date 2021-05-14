@@ -1,9 +1,10 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx;
 
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Size;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.util.Objects;
 
 public class ImageUtils {
     public static final int ALPHA_OPAQUE = 1;
@@ -12,7 +13,7 @@ public class ImageUtils {
 
     public static Image loadImage(String filePath) {
         try {
-           return ImageIO.read(ImageUtils.class.getResource(filePath));
+           return ImageIO.read(Objects.requireNonNull(ImageUtils.class.getResource(filePath)));
         } catch (Exception e) {
             System.out.println("Could not load images from path: " + filePath);
         }

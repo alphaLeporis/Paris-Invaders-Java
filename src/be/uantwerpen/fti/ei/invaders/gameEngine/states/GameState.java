@@ -10,6 +10,7 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.EnemyEntity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.PlayerEntity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,6 +21,7 @@ public class GameState extends State {
     private List<Condition> victoryConditions;
     private List<Condition> defeatConditions;
     private boolean playing;
+    private int currentGameLevel;
 
     /**
      * This is the base constructor and will create a game without a previous state (new game).
@@ -27,10 +29,11 @@ public class GameState extends State {
      */
     public GameState(Game game) {
         super(game);
-
         playing = true;
-        initializeCharacters();
 
+        currentGameLevel = 1;
+
+        initializeCharacters();
         initializeConditions();
         //uiContainers.add(new UIGameStats(windowSize, this));
 
@@ -46,7 +49,7 @@ public class GameState extends State {
         super(game);
         this.entities = previousState.getEntities();
         this.uiContainers = previousState.getUiContainers();
-
+        this.timer = previousState.getTimer();
         playing = true;
         initializeConditions();
         audioPlayer.playMusic("game.wav");
@@ -58,17 +61,18 @@ public class GameState extends State {
     private void initializeCharacters() {
         entities.add(afact.getPlayerEntity(input));
         entities.add(afact.getBlockEntity(800,600));
-        initializeEntities(3);
+        initializeEnemies(1);
     }
 
-    private void initializeEntities(int levels) {
+    private void initializeEnemies(int levels) {
         int stepSize = AFact.gameConfig.getConfigInt("WIDTH") / (AFact.gameConfig.getConfigInt("ENEMIES_PER_ROW")+1);
         System.out.println(stepSize);
         Controller enemyController = new EnemyController(new NPCInput(this));
 
         for (int i=1; i <= levels; i++) {
             for (int j=1; j <= AFact.gameConfig.getConfigInt("ENEMIES_PER_ROW"); j++) {
-                entities.add(afact.getEnemyEntity(enemyController, (j*stepSize - AFact.gameConfig.getConfigInt("ENTITY_WIDTH")/2), (i*100 - AFact.gameConfig.getConfigInt("ENTITY_HEIGHT")/2)));
+                entities.add(afact.getEnemyEntity(enemyController, (j*stepSize - AFact.gameConfig.getConfigInt("ENTITY_WIDTH")/2),
+                        (i*100 - AFact.gameConfig.getConfigInt("ENTITY_HEIGHT")/2)));
             }
         }
     }
@@ -116,6 +120,7 @@ public class GameState extends State {
     public void update(Game game) {
         super.update(game);
 
+        timer.update();
         generateBonus();
 
         if(playing) {
@@ -144,6 +149,7 @@ public class GameState extends State {
      */
     private void lose() {
         playing = false;
+        timer.stop();
         setNextState(new LostState(game));
         System.out.println("LOST");
     }
@@ -152,9 +158,19 @@ public class GameState extends State {
      * If the player wins this method will be called and state will change to the WinState.
      */
     private void win() {
-        playing = false;
-        setNextState(new WonState(game));
-        System.out.println("WON");
+        currentGameLevel ++;
+        restartGame();
+        if (currentGameLevel > 5) {
+            playing = false;
+            timer.stop();
+            setNextState(new WonState(game));
+            System.out.println("WON");
+        }
+    }
+
+    private void restartGame() {
+        System.out.println(currentGameLevel);
+        initializeEnemies(2);
     }
 
 }

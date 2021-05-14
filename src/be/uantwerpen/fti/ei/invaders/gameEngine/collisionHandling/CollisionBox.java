@@ -1,4 +1,4 @@
-package be.uantwerpen.fti.ei.invaders.gameEngine.CollisionHandling;
+package be.uantwerpen.fti.ei.invaders.gameEngine.collisionHandling;
 
 import java.awt.*;
 

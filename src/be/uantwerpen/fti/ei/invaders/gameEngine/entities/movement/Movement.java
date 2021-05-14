@@ -1,4 +1,4 @@
-package be.uantwerpen.fti.ei.invaders.gameEngine.movement;
+package be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement;
 
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 
@@ -37,5 +37,9 @@ public class Movement {
 
     public Vector2D getVector() {
         return vector;
+    }
+
+    public void setSpeed(double speed) {
+        this.speed = speed;
     }
 }

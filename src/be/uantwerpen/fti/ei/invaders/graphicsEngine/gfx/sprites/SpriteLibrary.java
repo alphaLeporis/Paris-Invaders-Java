@@ -8,21 +8,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SpriteLibrary {
-    private final static String PATH_TO_UNITS = "/sprites/units";
+    private final static String PATH_TO_SPRITES = "/sprites";
 
-    private Map<String, SpriteSet> units;
+    private final Map<String, SpriteSet> spriteSetMap;
 
     public SpriteLibrary() {
-        units = new HashMap<>();
+        spriteSetMap = new HashMap<>();
         loadSpritesFromDisk();
     }
 
     private void loadSpritesFromDisk() {
-        String[] folderNames = getFolderNames(PATH_TO_UNITS);
+        String[] folderNames = getFolderNames();
 
         for(String folderName: folderNames) {
             SpriteSet spriteSet = new SpriteSet();
-            String pathToFolder = PATH_TO_UNITS + "/" + folderName;
+            String pathToFolder = PATH_TO_SPRITES + "/" + folderName;
             String[] sheetsInFolder = getSheetsInFolder(pathToFolder);
             
             for (String sheetName: sheetsInFolder) {
@@ -31,28 +31,29 @@ public class SpriteLibrary {
                             ImageUtils.loadImage(pathToFolder + "/"+ sheetName));
             }
 
-            units.put(folderName, spriteSet);
+            spriteSetMap.put(folderName, spriteSet);
         }
     }
 
     private String[] getSheetsInFolder(String baseDir) {
         URL resource = SpriteLibrary.class.getResource(baseDir);
+        assert resource != null;
         File file = new File(resource.getFile());
         return file.list((current, name) -> new File(current, name).isFile());
     }
 
     /**
      * The function will iterate over all the files (and folders) in the given baseDir.
-     * @param baseDir A string to tell us what folder the sprites will be located
      * @return A list of all the folders in the given baseDir
      */
-    private String[] getFolderNames(String baseDir) {
-        URL resource = SpriteLibrary.class.getResource(baseDir);
+    private String[] getFolderNames() {
+        URL resource = SpriteLibrary.class.getResource(SpriteLibrary.PATH_TO_SPRITES);
+        assert resource != null;
         File file = new File(resource.getFile());
         return file.list((current, name) -> new File(current, name).isDirectory());
     }
 
     public SpriteSet getUnit(String name) {
-        return units.get(name);
+        return spriteSetMap.get(name);
     }
 }

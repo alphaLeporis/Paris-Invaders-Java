@@ -1,8 +1,8 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core;
 
 
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Size;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
 import java.awt.*;

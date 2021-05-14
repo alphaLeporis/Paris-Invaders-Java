@@ -1,4 +1,4 @@
-package be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions;
+package be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement;
 
 /**
  * To easily access the size we use this helper class

@@ -7,7 +7,7 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
  * A movable entity is able to do an action. This is the abstract class providing an action.
  */
 public abstract class Action {
-    protected AudioPlayer audioPlayer;
+    protected final AudioPlayer audioPlayer;
 
     /**
      * The constructor provides an AudioPlayer, this will enable the action to play soundeffects.

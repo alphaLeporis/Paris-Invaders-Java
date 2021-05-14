@@ -2,8 +2,8 @@ package be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core;
 
 
 
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Size;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ImageUtils;
 
@@ -17,11 +17,11 @@ public abstract class UIContainer extends UIComponent {
     protected Color backgroundColor;
 
     protected Alignment alignment;
-    protected Size windowSize;
+    protected final Size windowSize;
 
     protected Size fixedSize;
 
-    protected List<UIComponent> children;
+    protected final List<UIComponent> children;
 
     public UIContainer(Size windowSize) {
         super();

@@ -2,7 +2,7 @@ package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.EnemyShootsBullet;
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
 import java.awt.*;
@@ -12,9 +12,6 @@ public class EnemyEntity extends Entity {
 
     public EnemyEntity(Controller controller, int x, int y) {
         super();
-        //int x = ((150 * (enemyID - Math.floorDiv(enemyID, GameSettings.ENEMIES_PER_ROW) * GameSettings.ENEMIES_PER_ROW )) - GameSettings.ENTITY_WIDTH/2);
-        //int y = ((Math.floorDiv(enemyID, GameSettings.ENEMIES_PER_ROW) + 1) * 50 - GameSettings.ENTITY_HEIGHT/2);
-        System.out.println(x+":"+y+" ");
         position = new Position(x,y);
         this.controller = controller;
     }

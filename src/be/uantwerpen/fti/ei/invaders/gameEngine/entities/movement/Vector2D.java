@@ -1,4 +1,4 @@
-package be.uantwerpen.fti.ei.invaders.gameEngine.movement;
+package be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement;
 
 public class Vector2D {
 

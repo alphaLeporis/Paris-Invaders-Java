@@ -30,37 +30,9 @@ public class Display extends JFrame {
 
         setTitle("Paris Invaders");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        canvas.setPreferredSize(new Dimension(Java2DFact.gameConfig.getConfigInt("WIDTH"), Java2DFact.gameConfig.getConfigInt("HEIGHT")));
-        xFactor = Java2DFact.gameConfig.getConfigInt("WIDTH") / (double) AFact.gameConfig.getConfigInt("WIDTH");
-        yFactor = Java2DFact.gameConfig.getConfigInt("HEIGHT") / (double) AFact.gameConfig.getConfigInt("HEIGHT");
 
-        if (Java2DFact.displayConfig.getConfigInt("FULLSCREEN") == 1) {
-            xFactor = Toolkit.getDefaultToolkit().getScreenSize().getWidth() / (double) AFact.gameConfig.getConfigInt("WIDTH");
-            yFactor = Toolkit.getDefaultToolkit().getScreenSize().getHeight() / (double) AFact.gameConfig.getConfigInt("HEIGHT");
-            setExtendedState(JFrame.MAXIMIZED_BOTH);
-            setUndecorated(true);
-            setVisible(true);
-            setResizable(false);
-            windowResizer((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int)Toolkit.getDefaultToolkit().getScreenSize().getHeight());
-            canvas.setPreferredSize(Toolkit.getDefaultToolkit().getScreenSize());
-            setSize(Toolkit.getDefaultToolkit().getScreenSize());
+        resizeHandler();
 
-        } else {
-            setVisible(true);
-            setResizable(true);
-
-            addComponentListener(new ComponentAdapter() {
-                @Override
-                public void componentResized(ComponentEvent e) {
-                    setPreferredSize(e.getComponent().getSize());
-                    pack();
-                    windowResizer(getContentPane().getWidth(), getContentPane().getHeight());
-                    canvas.setPreferredSize(getContentPane().getPreferredSize());
-                    xFactor = getContentPane().getWidth() / (double) AFact.gameConfig.getConfigInt("WIDTH");
-                    yFactor = getContentPane().getHeight() / (double) AFact.gameConfig.getConfigInt("HEIGHT");
-                }
-            });
-        }
 
         canvas.setFocusable(false);
         canvas.addMouseListener(input);
@@ -90,7 +62,8 @@ public class Display extends JFrame {
 
         state.getEntities()
                 .forEach(entity -> graphics.drawImage(
-                        entity.visualize(),
+                        entity.visualize().getScaledInstance((int) (AFact.gameConfig.getConfigInt("ENTITY_WIDTH")*xFactor),
+                                (int) (AFact.gameConfig.getConfigInt("ENTITY_HEIGHT")*yFactor), Image.SCALE_SMOOTH),
                         (int) Math.round(entity.getPosition().getX()*xFactor),
                         (int) Math.round(entity.getPosition().getY()*yFactor),
                         null
@@ -107,6 +80,48 @@ public class Display extends JFrame {
         bufferStrategy.show();
     }
 
+
+    public void resizeHandler() {
+        if (Java2DFact.displayConfig.getConfigInt("FULLSCREEN") == 1) {
+            xFactor = Toolkit.getDefaultToolkit().getScreenSize().getWidth() / (double) AFact.gameConfig.getConfigInt("WIDTH");
+            yFactor = Toolkit.getDefaultToolkit().getScreenSize().getHeight() / (double) AFact.gameConfig.getConfigInt("HEIGHT");
+            setExtendedState(JFrame.MAXIMIZED_BOTH);
+            setUndecorated(true);
+            setVisible(true);
+            setResizable(false);
+            windowResizer((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int)Toolkit.getDefaultToolkit().getScreenSize().getHeight());
+            canvas.setPreferredSize(Toolkit.getDefaultToolkit().getScreenSize());
+            setSize(Toolkit.getDefaultToolkit().getScreenSize());
+
+        } else {
+            setVisible(true);
+            setResizable(true);
+            canvas.setPreferredSize(new Dimension(Java2DFact.gameConfig.getConfigInt("WIDTH"), Java2DFact.gameConfig.getConfigInt("HEIGHT")));
+            setPreferredSize(new Dimension(Java2DFact.gameConfig.getConfigInt("WIDTH"), Java2DFact.gameConfig.getConfigInt("HEIGHT")));
+            xFactor = Java2DFact.gameConfig.getConfigInt("WIDTH") / (double) AFact.gameConfig.getConfigInt("WIDTH");
+            yFactor = Java2DFact.gameConfig.getConfigInt("HEIGHT") / (double) AFact.gameConfig.getConfigInt("HEIGHT");
+            ratioCalculator();
+
+
+            addComponentListener(new ComponentAdapter() {
+                @Override
+                public void componentResized(ComponentEvent e) {
+                    setPreferredSize(e.getComponent().getSize());
+                    pack();
+                    windowResizer(getContentPane().getWidth(), getContentPane().getHeight());
+                    canvas.setPreferredSize(getContentPane().getPreferredSize());
+
+
+                    ratioCalculator();
+                }
+            });
+        }
+    }
+
+    public void ratioCalculator() {
+        xFactor = Java2DFact.gameConfig.getConfigInt("WIDTH") / (double) AFact.gameConfig.getConfigInt("WIDTH");
+        yFactor = Java2DFact.gameConfig.getConfigInt("HEIGHT") / (double) AFact.gameConfig.getConfigInt("HEIGHT");
+    }
 
     public void windowResizer(int width, int height) {
         backgroundManager.resize(width, height);

@@ -2,11 +2,11 @@ package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 
 import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.audioEngine.AudioPlayer;
-import be.uantwerpen.fti.ei.invaders.gameEngine.CollisionHandling.CollisionBox;
+import be.uantwerpen.fti.ei.invaders.gameEngine.collisionHandling.CollisionBox;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.Action;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Effect;
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Size;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Size;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
 import java.awt.*;
@@ -21,9 +21,9 @@ public abstract class Entity {
     protected Position position;
     protected Size size;
     protected boolean isEntityAlive;
-    protected List<Effect> effects;
+    protected final List<Effect> effects;
     protected Optional<Action> action;
-    protected AudioPlayer audioPlayer;
+    protected final AudioPlayer audioPlayer;
 
     /**
      * The constructor provides a default position and size.
@@ -39,7 +39,6 @@ public abstract class Entity {
     }
 
     public abstract void updateMovement();
-    public abstract boolean collidesWith(Entity other);
     public abstract Image visualize();
 
     public CollisionBox getCollisionBox() {
@@ -51,6 +50,10 @@ public abstract class Entity {
                         size.getHeight()
                 )
         );
+    }
+
+    public boolean collidesWith(Entity other) {
+        return getCollisionBox().collidesWith(other.getCollisionBox());
     }
 
     public void update(State state) {

@@ -1,6 +1,6 @@
 package be.uantwerpen.fti.ei.invaders.controlEngine;
 
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.helperFunctions.Position;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
 
 import java.awt.event.*;
 
@@ -10,7 +10,7 @@ public class Input implements KeyListener, MouseListener, MouseMotionListener {
     private boolean mouseClicked;
     private boolean mousePressed;
 
-    private boolean[] pressed;
+    private final boolean[] pressed;
 
     public Input() {
         pressed = new boolean[1000];
