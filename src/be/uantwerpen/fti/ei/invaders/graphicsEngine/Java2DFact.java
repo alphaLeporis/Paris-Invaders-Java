@@ -5,9 +5,11 @@ import be.uantwerpen.fti.ei.invaders.ConfigReader;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Input;
 import be.uantwerpen.fti.ei.invaders.controlEngine.PlayerController;
+import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.Entity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.entities.*;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds.BackgroundLibrary;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.SpriteLibrary;
 
 /**
@@ -18,12 +20,15 @@ public class Java2DFact extends AFact {
 
     private final Display display;
     protected final SpriteLibrary spriteLibrary;
+    protected final BackgroundLibrary backgroundLibrary;
+
 
     public Java2DFact() {
         super();
         displayConfig = new ConfigReader("display.properties");
         spriteLibrary = new SpriteLibrary();
-        display = new Display(input, spriteLibrary);
+        backgroundLibrary = new BackgroundLibrary();
+        display = new Display(input, spriteLibrary, backgroundLibrary);
     }
 
     @Override
@@ -60,4 +65,5 @@ public class Java2DFact extends AFact {
     public Entity getBlockEntity(int x, int y) {
         return new Java2DBlockEntity(spriteLibrary, x, y);
     }
+
 }

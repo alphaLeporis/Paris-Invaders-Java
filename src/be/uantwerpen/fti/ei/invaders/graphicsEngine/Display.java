@@ -3,6 +3,7 @@ package be.uantwerpen.fti.ei.invaders.graphicsEngine;
 import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Input;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds.BackgroundLibrary;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.SpriteLibrary;
 
 import javax.swing.*;
@@ -18,7 +19,8 @@ public class Display extends JFrame {
 
     private final Canvas canvas;
     private final SpriteLibrary spriteLibrary;
-    private static BackgroundManager backgroundManager;
+    private final BackgroundLibrary backgroundLibrary;
+    private final BackgroundManager backgroundManager;
     private double xFactor;
     private double yFactor;
 
@@ -26,9 +28,10 @@ public class Display extends JFrame {
      * This is the default constructor to set up a display
      * @param input Because our JFrame needs a KeyListener we add our (keyboard) input
      */
-    public Display(Input input, SpriteLibrary spriteLibrary) {
+    public Display(Input input, SpriteLibrary spriteLibrary, BackgroundLibrary backgroundLibrary) {
         this.spriteLibrary = spriteLibrary;
-        backgroundManager = new BackgroundManager();
+        this.backgroundLibrary = backgroundLibrary;
+        this.backgroundManager = new BackgroundManager(backgroundLibrary);
         canvas = new Canvas();
 
         setTitle("Paris Invaders");
@@ -122,7 +125,7 @@ public class Display extends JFrame {
 
 
     public void windowResizer(int width, int height) {
-        backgroundManager.resize(width, height);
+        backgroundLibrary.resize(width, height);
         spriteLibrary.resize(width/(double) AFact.gameConfig.getConfigInt("WIDTH"),
                             height/(double) AFact.gameConfig.getConfigInt("HEIGHT"));
     }

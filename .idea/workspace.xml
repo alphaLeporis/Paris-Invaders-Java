@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd344fa2-c0f1-4f0d-b634-c73c379e4456" name="Default Changelist" comment="- Adding documentation&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Finish resizing of images&#10;- Finish UI&#10;- Finish movement class">
+    <list default="true" id="cd344fa2-c0f1-4f0d-b634-c73c379e4456" name="Default Changelist" comment="- Adding documentation&#10;- Finished resizing of images&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Finish UI&#10;- Finish movement class">
+      <change afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/StatesEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/UIManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/movement/Movement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/movement/Movement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/AFact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/AFact.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/BackgroundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/BackgroundManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Display.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Java2DFact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Java2DFact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/ImageUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/ImageUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/backgrounds/BackgroundLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/backgrounds/BackgroundLibrary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/sprites/AnimationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/sprites/AnimationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/sprites/SpriteLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/sprites/SpriteLibrary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/sprites/SpriteSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/sprites/SpriteSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/game/UIGameStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/game/UIGameStats.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +22,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -40,7 +39,7 @@
     </file-type-list>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedIndex" value="6" />
+    <option name="selectedIndex" value="2" />
   </component>
   <component name="ProjectId" id="1ptsyc7MP0KiNtED186kDysAnmE" />
   <component name="ProjectView">
@@ -218,7 +217,9 @@
       <workItem from="1619774688381" duration="46000" />
       <workItem from="1619774895862" duration="134000" />
       <workItem from="1620043127678" duration="12240000" />
-      <workItem from="1621015394573" duration="6513000" />
+      <workItem from="1621015394573" duration="7532000" />
+      <workItem from="1621606362206" duration="1402000" />
+      <workItem from="1621782984533" duration="3376000" />
     </task>
     <task id="LOCAL-00001" summary="Adding the controller and a playerEntity">
       <created>1616325051200</created>
@@ -416,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621015637155</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="- Adding documentation&#10;- Finished resizing of images&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Finish UI&#10;- Finish movement class">
+      <created>1621022058529</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1621022058529</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,7 +443,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adding the controller and a playerEntity" />
     <MESSAGE value="Adding the object renderer" />
     <MESSAGE value="Added the enemy&#10;&#10;ToDo: Unable to create bullet and re-draw the image" />
     <MESSAGE value="Small refactor, adding a state.&#10;Working on SpriteLibrary.java" />
@@ -460,7 +467,8 @@
     <MESSAGE value="- Adding documentation&#10;- Working on UI containers&#10;- Added resizing and fullscreen&#10;&#10;Still have to add:&#10;- Improve movement for enemies" />
     <MESSAGE value="- Adding documentation&#10;_ Fixed some small issues&#10;- Working on UI containers&#10;- Added resizing and fullscreen&#10;&#10;Still have to add:&#10;- Improve movement for enemies" />
     <MESSAGE value="- Adding documentation&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Finish resizing of images&#10;- Finish UI&#10;- Finish movement class" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Adding documentation&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Finish resizing of images&#10;- Finish UI&#10;- Finish movement class" />
+    <MESSAGE value="- Adding documentation&#10;- Finished resizing of images&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Finish UI&#10;- Finish movement class" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Adding documentation&#10;- Finished resizing of images&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Finish UI&#10;- Finish movement class" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

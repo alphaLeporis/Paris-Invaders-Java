@@ -14,8 +14,8 @@ public class BackgroundManager {
     /**
      * The constructor loads the BackgroundLibrary.
      */
-    public BackgroundManager() {
-        backgroundLibrary = new BackgroundLibrary();
+    public BackgroundManager(BackgroundLibrary backgroundLibrary) {
+        this.backgroundLibrary = backgroundLibrary;
     }
 
 
@@ -25,22 +25,20 @@ public class BackgroundManager {
      * @return an Image, in this case a BufferedImage
      */
     public Image visualize(State state) {
-        //Todo: Change this into a switch
-        if (state instanceof MenuState)
-            return backgroundLibrary.getBackground("menu-background");
-        else if (state instanceof GameState)
-            return backgroundLibrary.getBackground("game-background");
-        else if (state instanceof WonState)
-            return backgroundLibrary.getBackground("won-background");
-        else if (state instanceof LostState)
-            return backgroundLibrary.getBackground("lost-background");
-        else if (state instanceof PauseState)
-            return backgroundLibrary.getBackground("pause-background");
-        else
-            return null;
-    }
-
-    public void resize(int width, int height) {
-        backgroundLibrary.resize(width, height);
+        StatesEnum currentState = StatesEnum.valueOf(state.getClass().getSimpleName());
+        switch (currentState) {
+            case MenuState:
+                return backgroundLibrary.getBackground("menu-background");
+            case GameState:
+                return backgroundLibrary.getBackground("game-background");
+            case WonState:
+                return backgroundLibrary.getBackground("won-background");
+            case LostState:
+                return backgroundLibrary.getBackground("lost-background");
+            case PauseState:
+                return backgroundLibrary.getBackground("pause-background");
+            default:
+                return null;
+        }
     }
 }
