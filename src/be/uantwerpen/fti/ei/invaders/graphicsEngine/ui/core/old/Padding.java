@@ -1,21 +1,21 @@
-package be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core;
+package be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.old;
 
-public class Spacing {
+public class Padding {
 
     private int top;
     private int right;
     private int bottom;
     private int left;
 
-    public Spacing(int spacing) {
+    public Padding(int spacing) {
         this(spacing, spacing);
     }
 
-    public Spacing(int horizontal, int vertical) {
+    public Padding(int horizontal, int vertical) {
         this(vertical, horizontal, vertical, horizontal);
     }
 
-    public Spacing(int top, int right, int bottom, int left) {
+    public Padding(int top, int right, int bottom, int left) {
         this.top = top;
         this.right = right;
         this.bottom = bottom;

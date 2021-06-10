@@ -1,10 +1,11 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.pause;
 
+/*
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Size;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.GameState;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.Alignment;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.VerticalContainer;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.old.Alignment;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.old.VerticalContainer;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.clickable.UIButton;
 
 public class UIPause extends VerticalContainer {
@@ -16,3 +17,4 @@ public class UIPause extends VerticalContainer {
         addUIComponent(new UIButton("EXIT", (state) -> System.exit(0)));
     }
 }
+*/

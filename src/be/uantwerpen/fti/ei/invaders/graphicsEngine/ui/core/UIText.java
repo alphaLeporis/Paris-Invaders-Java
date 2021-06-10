@@ -2,6 +2,7 @@ package be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core;
 
 
 
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Size;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ImageUtils;
@@ -23,9 +24,10 @@ public class UIText extends UIComponent {
 
     private Font font;
 
-    public UIText(String text) {
+    public UIText(String text, Position position) {
+        this.position = position;
         this.text = text;
-        this.fontSize = 18;
+        this.fontSize = 24;
         this.fontStyle = Font.BOLD;
         this.fontFamily = "Joystix Monospace";
         this.color = Color.WHITE;
@@ -43,11 +45,11 @@ public class UIText extends UIComponent {
 
         if(dropShadow) {
             graphics.setColor(shadowColor);
-            graphics.drawString(text, padding.getLeft() + dropShadowOffset, fontSize + padding.getTop() + dropShadowOffset);
+            graphics.drawString(text, dropShadowOffset, fontSize + dropShadowOffset);
         }
 
         graphics.setColor(color);
-        graphics.drawString(text, padding.getLeft(), fontSize + padding.getTop());
+        graphics.drawString(text, 0, fontSize);
 
         graphics.dispose();
         return image;
@@ -61,8 +63,8 @@ public class UIText extends UIComponent {
 
     private void calculateSize() {
         FontMetrics fontMetrics = new Canvas().getFontMetrics(font);
-        int width = fontMetrics.stringWidth(text) + padding.getHorizontal();
-        int height = fontMetrics.getHeight() + padding.getVertical();
+        int width = fontMetrics.stringWidth(text);
+        int height = fontMetrics.getHeight();
 
         if(dropShadow) {
             width += dropShadowOffset;

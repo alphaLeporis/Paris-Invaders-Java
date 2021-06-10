@@ -7,9 +7,7 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
 import be.uantwerpen.fti.ei.invaders.gameEngine.Timer;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.Entity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.PlayerEntity;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UIContainer;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -24,7 +22,6 @@ public abstract class State {
     protected final Game game;
     protected Timer timer;
 
-    protected List<UIContainer> uiContainers;
     protected final Input input;
 
     private State nextState;
@@ -35,14 +32,12 @@ public abstract class State {
         this.game = game;
         audioPlayer = new AudioPlayer();
         entities = new ArrayList<>();
-        uiContainers = new ArrayList<>();
         timer = new Timer();
     }
 
     public void update(Game game) {
         updateEntities();
         removeDeadEntities();
-        List.copyOf(uiContainers).forEach(uiContainer -> uiContainer.update(this));
         handleMouseInput();
         if(nextState != null) {
             game.enterState(nextState);
@@ -95,9 +90,6 @@ public abstract class State {
         return entities;
     }
 
-    public List<UIContainer> getUiContainers() {
-        return uiContainers;
-    }
 
     public Game getGame() {
         return game;

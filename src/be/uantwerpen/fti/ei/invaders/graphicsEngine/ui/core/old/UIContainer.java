@@ -1,4 +1,5 @@
-package be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core;
+/*
+package be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.old;
 
 
 
@@ -6,37 +7,56 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Size;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ImageUtils;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UIComponent;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class UIContainer extends UIComponent {
+public class UIContainer extends UIComponent {
 
     protected Color backgroundColor;
-
-    protected Alignment alignment;
-    protected final Size windowSize;
-
+    protected Padding padding;
     protected Size fixedSize;
 
     protected final List<UIComponent> children;
 
     public UIContainer(Size windowSize) {
         super();
-        this.windowSize = windowSize;
-        alignment = new Alignment(Alignment.Position.START, Alignment.Position.START);
         backgroundColor = new Color(0, 0, 0, 0);
-        margin = new Spacing(5);
-        padding = new Spacing(5);
+        padding = new Padding(5);
         children = new ArrayList<>();
         calculateSize();
         calculatePosition();
     }
 
-    protected abstract Size calculateContentSize();
-    protected abstract void calculateContentPosition();
+    protected Size calculateContentSize() {
+        int combinedChildHeight = 0;
+        int widestChildWidth = 0;
+
+        for(UIComponent uiComponent : children) {
+            combinedChildHeight += uiComponent.getSize().getHeight() + uiComponent.getMargin().getVertical();
+
+            if(uiComponent.getSize().getWidth() > widestChildWidth) {
+                widestChildWidth = uiComponent.getSize().getWidth();
+            }
+        }
+
+        return new Size(widestChildWidth, combinedChildHeight);
+    }
+
+    protected void calculateContentPosition() {
+        int currentY = padding.getTop();
+
+        for (UIComponent uiComponent : children) {
+            currentY += uiComponent.getMargin().getTop();
+            uiComponent.setRelativePosition(new Position(padding.getLeft(), currentY));
+            uiComponent.setAbsolutePosition(new Position(padding.getLeft() + absolutePosition.getX(), currentY + absolutePosition.getY()));
+            currentY += uiComponent.getSize().getHeight();
+            currentY += uiComponent.getMargin().getBottom();
+        }
+    }
 
     private void calculateSize() {
         Size calculatedContentSize = calculateContentSize();
@@ -113,3 +133,4 @@ public abstract class UIContainer extends UIComponent {
         this.fixedSize = fixedSize;
     }
 }
+*/

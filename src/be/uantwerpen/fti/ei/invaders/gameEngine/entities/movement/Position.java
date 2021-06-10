@@ -19,10 +19,4 @@ public class Position {
     public int getY() {
         return y;
     }
-
-    public void apply(Movement movement) {
-        Vector2D vector  = movement.getVector();
-        x += vector.getX();
-        y += vector.getY();
-    }
 }

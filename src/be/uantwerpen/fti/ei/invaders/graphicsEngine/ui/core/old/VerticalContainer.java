@@ -1,8 +1,11 @@
-package be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core;
+/*
+package be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.old;
 
 
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Size;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UIComponent;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.old.UIContainer;
 
 public class VerticalContainer extends UIContainer {
     public VerticalContainer(Size windowSize) {
@@ -38,3 +41,4 @@ public class VerticalContainer extends UIContainer {
         }
     }
 }
+*/

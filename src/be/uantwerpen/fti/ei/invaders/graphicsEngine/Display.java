@@ -21,6 +21,7 @@ public class Display extends JFrame {
     private final SpriteLibrary spriteLibrary;
     private final BackgroundLibrary backgroundLibrary;
     private final BackgroundManager backgroundManager;
+    private final UIManager uiManager;
     private double xFactor;
     private double yFactor;
 
@@ -32,6 +33,7 @@ public class Display extends JFrame {
         this.spriteLibrary = spriteLibrary;
         this.backgroundLibrary = backgroundLibrary;
         this.backgroundManager = new BackgroundManager(backgroundLibrary);
+        this.uiManager = new UIManager();
         canvas = new Canvas();
 
         setTitle("Paris Invaders");
@@ -65,20 +67,20 @@ public class Display extends JFrame {
         graphics.fillRect(0,0, canvas.getWidth(),canvas.getHeight());
 
         graphics.drawImage(backgroundManager.visualize(state), 0,0,null);
+        uiManager.update(state);
 
-        state.getEntities()
-                .forEach(entity -> graphics.drawImage(
-                        entity.visualize(),
-                        (int) Math.round(entity.getPosition().getX()*xFactor),
-                        (int) Math.round(entity.getPosition().getY()*yFactor),
-                        null
-                ));
+        state.getEntities().forEach(entity -> graphics.drawImage(
+            entity.visualize(),
+            (int) Math.round(entity.getPosition().getX()*xFactor),
+            (int) Math.round(entity.getPosition().getY()*yFactor),
+            null
+        ));
 
-        state.getUiContainers().forEach(uiContainer -> graphics.drawImage(
-                uiContainer.visualize(),
-                uiContainer.getRelativePosition().getX(),
-                uiContainer.getRelativePosition().getY(),
-                null
+        uiManager.getUiComponents().forEach(uiContainer -> graphics.drawImage(
+            uiContainer.visualize(),
+            (int) Math.round(uiContainer.getPosition().getX()*xFactor),
+            (int) Math.round(uiContainer.getPosition().getY()*yFactor),
+            null
         ));
 
         graphics.dispose();

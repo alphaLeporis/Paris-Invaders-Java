@@ -48,7 +48,6 @@ public class GameState extends State {
     public GameState(Game game, State previousState) {
         super(game);
         this.entities = previousState.getEntities();
-        this.uiContainers = previousState.getUiContainers();
         this.timer = previousState.getTimer();
         playing = true;
         initializeConditions();
