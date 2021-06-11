@@ -21,10 +21,12 @@ public abstract class State {
     protected final AFact afact;
     protected final Game game;
     protected Timer timer;
+    protected int currentGameLevel;
 
     protected final Input input;
 
     private State nextState;
+    private State previousState;
 
     public State(Game game) {
         this.input = game.getInput();
@@ -71,7 +73,9 @@ public abstract class State {
     }
 
     public int getPlayerLives() {
-        System.out.println("Player Health: "+((PlayerEntity) entities.get(0)).getCurrentHealth());
+        if (!(entities.get(0) instanceof PlayerEntity)) {
+            return 0;
+        }
         return ((PlayerEntity) entities.get(0)).getCurrentHealth();
     }
 
@@ -80,9 +84,18 @@ public abstract class State {
     }
 
     public void setNextState(State nextState) {
+        if (nextState instanceof PauseState) {
+            previousState = this;
+        }
         audioPlayer.removeMusic();
         timer.stop();
         this.nextState = nextState;
+    }
+
+    public void returnState() {
+        audioPlayer.removeMusic();
+        timer.stop();
+        this.nextState = previousState;
     }
 
 
@@ -99,4 +112,7 @@ public abstract class State {
         return timer;
     }
 
+    public int getCurrentGameLevel() {
+        return currentGameLevel;
+    }
 }

@@ -21,7 +21,6 @@ public class GameState extends State {
     private List<Condition> victoryConditions;
     private List<Condition> defeatConditions;
     private boolean playing;
-    private int currentGameLevel;
 
     /**
      * This is the base constructor and will create a game without a previous state (new game).
@@ -35,7 +34,6 @@ public class GameState extends State {
 
         initializeCharacters();
         initializeConditions();
-        //uiContainers.add(new UIGameStats(windowSize, this));
 
         audioPlayer.playMusic("game.wav");
     }
@@ -158,7 +156,7 @@ public class GameState extends State {
     private void win() {
         currentGameLevel ++;
         restartGame();
-        if (currentGameLevel > 5) {
+        if (currentGameLevel > 3) {
             playing = false;
             timer.stop();
             setNextState(new WonState(game));

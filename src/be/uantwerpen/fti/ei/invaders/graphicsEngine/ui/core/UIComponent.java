@@ -11,6 +11,8 @@ public abstract class UIComponent {
 
     protected Position position;
     protected Size size;
+    protected double xFactor;
+    protected double yFactor;
 
     public UIComponent() {
         position = new Position(0, 0);
@@ -34,6 +36,11 @@ public abstract class UIComponent {
 
     public void setSize(Size size) {
         this.size = size;
+    }
+
+    public void resize(double xFactor, double yFactor) {
+        this.xFactor = xFactor;
+        this.yFactor = yFactor;
     }
 
 }

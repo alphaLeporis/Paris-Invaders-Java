@@ -22,8 +22,8 @@ public class Display extends JFrame {
     private final BackgroundLibrary backgroundLibrary;
     private final BackgroundManager backgroundManager;
     private final UIManager uiManager;
-    private double xFactor;
-    private double yFactor;
+    protected double xFactor;
+    protected double yFactor;
 
     /**
      * This is the default constructor to set up a display
@@ -33,14 +33,13 @@ public class Display extends JFrame {
         this.spriteLibrary = spriteLibrary;
         this.backgroundLibrary = backgroundLibrary;
         this.backgroundManager = new BackgroundManager(backgroundLibrary);
-        this.uiManager = new UIManager();
+        this.uiManager = new UIManager(this);
         canvas = new Canvas();
 
         setTitle("Paris Invaders");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         resizeHandler();
-
 
         canvas.setFocusable(false);
         canvas.addMouseListener(input);
@@ -68,6 +67,7 @@ public class Display extends JFrame {
 
         graphics.drawImage(backgroundManager.visualize(state), 0,0,null);
         uiManager.update(state);
+
 
         state.getEntities().forEach(entity -> graphics.drawImage(
             entity.visualize(),
@@ -99,30 +99,30 @@ public class Display extends JFrame {
             windowResizer((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int)Toolkit.getDefaultToolkit().getScreenSize().getHeight());
             canvas.setPreferredSize(Toolkit.getDefaultToolkit().getScreenSize());
             setSize(Toolkit.getDefaultToolkit().getScreenSize());
-
-        } else {
-            setVisible(true);
-            setResizable(true);
-            canvas.setPreferredSize(new Dimension(Java2DFact.gameConfig.getConfigInt("WIDTH"), Java2DFact.gameConfig.getConfigInt("HEIGHT")));
-            setPreferredSize(new Dimension(Java2DFact.gameConfig.getConfigInt("WIDTH"), Java2DFact.gameConfig.getConfigInt("HEIGHT")));
-            xFactor = Java2DFact.gameConfig.getConfigInt("WIDTH") / (double) AFact.gameConfig.getConfigInt("WIDTH");
-            yFactor = Java2DFact.gameConfig.getConfigInt("HEIGHT") / (double) AFact.gameConfig.getConfigInt("HEIGHT");
-
-
-            addComponentListener(new ComponentAdapter() {
-                @Override
-                public void componentResized(ComponentEvent e) {
-                    setPreferredSize(e.getComponent().getSize());
-                    pack();
-                    windowResizer(getContentPane().getWidth(), getContentPane().getHeight());
-                    canvas.setPreferredSize(getContentPane().getPreferredSize());
-
-                    xFactor = getContentPane().getWidth() / (double) AFact.gameConfig.getConfigInt("WIDTH");
-                    yFactor = getContentPane().getHeight() / (double) AFact.gameConfig.getConfigInt("HEIGHT");
-
-                }
-            });
+            return;
         }
+
+        setVisible(true);
+        setResizable(true);
+        canvas.setPreferredSize(new Dimension(Java2DFact.gameConfig.getConfigInt("WIDTH"), Java2DFact.gameConfig.getConfigInt("HEIGHT")));
+        setPreferredSize(new Dimension(Java2DFact.gameConfig.getConfigInt("WIDTH"), Java2DFact.gameConfig.getConfigInt("HEIGHT")));
+        xFactor = Java2DFact.gameConfig.getConfigInt("WIDTH") / (double) AFact.gameConfig.getConfigInt("WIDTH");
+        yFactor = Java2DFact.gameConfig.getConfigInt("HEIGHT") / (double) AFact.gameConfig.getConfigInt("HEIGHT");
+
+        addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentResized(ComponentEvent e) {
+                setPreferredSize(e.getComponent().getSize());
+                pack();
+                windowResizer(getContentPane().getWidth(), getContentPane().getHeight());
+                canvas.setPreferredSize(getContentPane().getPreferredSize());
+
+                xFactor = getContentPane().getWidth() / (double) AFact.gameConfig.getConfigInt("WIDTH");
+                yFactor = getContentPane().getHeight() / (double) AFact.gameConfig.getConfigInt("HEIGHT");
+
+            }
+        });
+
     }
 
 

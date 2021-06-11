@@ -18,7 +18,6 @@ public abstract class UIClickable extends UIComponent {
         Position mousePosition = state.getInput().getMousePosition();
         hasFocus = getBounds().contains(mousePosition.getX(), mousePosition.getY());
         isPressed = hasFocus && state.getInput().isMousePressed();
-        System.out.println(hasFocus+":"+isPressed);
         if(isPressed) {
             System.out.println("clicky");
             onClick(state);
@@ -29,10 +28,10 @@ public abstract class UIClickable extends UIComponent {
 
     private Rectangle getBounds() {
         return new Rectangle(
-                position.getX()-5,
-                position.getY()-5,
-                size.getWidth()+5,
-                size.getHeight()+5
+                (int) (position.getX()*xFactor),
+                (int) (position.getY()*yFactor),
+                size.getWidth(),
+                size.getHeight()
         );
     }
 }

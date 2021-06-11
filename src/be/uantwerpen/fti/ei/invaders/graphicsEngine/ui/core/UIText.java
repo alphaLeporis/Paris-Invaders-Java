@@ -16,7 +16,7 @@ public class UIText extends UIComponent {
     private final int fontSize;
     private final int fontStyle;
     private final String fontFamily;
-    private final Color color;
+    protected Color color;
 
     private final boolean dropShadow;
     private final int dropShadowOffset;
@@ -61,7 +61,7 @@ public class UIText extends UIComponent {
         calculateSize();
     }
 
-    private void calculateSize() {
+    protected void calculateSize() {
         FontMetrics fontMetrics = new Canvas().getFontMetrics(font);
         int width = fontMetrics.stringWidth(text);
         int height = fontMetrics.getHeight();
@@ -73,11 +73,15 @@ public class UIText extends UIComponent {
         size = new Size(width, height);
     }
 
-    private void createFont() {
+    protected void createFont() {
         font = new Font(fontFamily, fontStyle, fontSize);
     }
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getText() {
+        return text;
     }
 }
