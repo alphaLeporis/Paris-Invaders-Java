@@ -75,7 +75,7 @@ public abstract class State {
     /**
      * Gets the colliding game objects.
      * @param entity is the entity to check collidings with.
-     * @return a list with all the entites that are colliding with the given entity.
+     * @return a list with all the entities that are colliding with the given entity.
      */
     public List<Entity> getCollidingGameObjects(Entity entity) {
         return entities.stream()

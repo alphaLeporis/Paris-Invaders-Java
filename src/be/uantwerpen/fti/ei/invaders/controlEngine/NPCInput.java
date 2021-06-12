@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * In this NPCinput class we implement the logic behind the controlls of the NPC.
+ * In this NPCinput class we implement the logic behind the controls of the NPC.
  */
 public class NPCInput {
     private final State state;

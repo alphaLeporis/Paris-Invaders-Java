@@ -4,14 +4,11 @@ import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.audioEngine.AudioPlayer;
 import be.uantwerpen.fti.ei.invaders.gameEngine.collisionHandling.CollisionBox;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.Action;
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Effect;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Size;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 /**

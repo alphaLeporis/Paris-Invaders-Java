@@ -85,8 +85,8 @@ public class UIText extends UIComponent {
         this.text = text;
     }
 
+    @SuppressWarnings("unused")
     public String getText() {
         return text;
     }
-
 }
