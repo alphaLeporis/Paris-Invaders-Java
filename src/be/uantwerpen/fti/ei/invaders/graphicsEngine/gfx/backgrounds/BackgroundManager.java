@@ -30,6 +30,8 @@ public class BackgroundManager {
         switch (currentState) {
             case MenuState:
                 return backgroundLibrary.getBackground("menu-background");
+            case HelpState:
+                return backgroundLibrary.getBackground("help-background");
             case GameState:
                 return backgroundLibrary.getBackground("game-background");
             case WonState:

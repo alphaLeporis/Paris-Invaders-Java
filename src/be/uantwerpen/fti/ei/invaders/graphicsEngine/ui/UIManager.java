@@ -40,8 +40,8 @@ public class UIManager {
 
         if (state instanceof MenuState) {
             uiComponents.add(new UIButton("PLAY",new Position(600,400), (uiState) -> uiState.setNextState(new GameState(state.getGame()))));
-            uiComponents.add(new UIButton("HELP",new Position(600,480), (uiState) -> uiState.setNextState(new HelpState(state.getGame()))));
-            uiComponents.add(new UIButton("EXIT",new Position(600,440), (uiState) -> System.exit(0)));
+            uiComponents.add(new UIButton("HELP",new Position(600,440), (uiState) -> uiState.setNextState(new HelpState(state.getGame()))));
+            uiComponents.add(new UIButton("EXIT",new Position(600,480), (uiState) -> System.exit(0)));
         }
 
         if (state instanceof HelpState) {

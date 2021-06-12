@@ -6,16 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd344fa2-c0f1-4f0d-b634-c73c379e4456" name="Default Changelist" comment="- Adding documentation&#10;- Timer is added&#10;- Small bug fix for effects&#10;&#10;Still have to add:&#10;- Add help screen&#10;- Add exit button on pause screen">
-      <change afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/HelpState.java" afterDir="false" />
+    <list default="true" id="cd344fa2-c0f1-4f0d-b634-c73c379e4456" name="Default Changelist" comment="- Adding documentation&#10;- Added exit button on pause screen&#10;- Added help state, still have to add a nice background">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/Timer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/Timer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/MenuState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/StatesEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/StatesEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/BackgroundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/backgrounds/BackgroundManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/backgrounds/BackgroundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/backgrounds/BackgroundManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/UIManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/UIManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -229,7 +222,7 @@
       <workItem from="1622314564936" duration="217000" />
       <workItem from="1623348245919" duration="7011000" />
       <workItem from="1623396992782" duration="7498000" />
-      <workItem from="1623488075349" duration="20283000" />
+      <workItem from="1623488075349" duration="22252000" />
     </task>
     <task id="LOCAL-00001" summary="Adding the controller and a playerEntity">
       <created>1616325051200</created>
@@ -476,7 +469,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623514608708</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="- Adding documentation&#10;- Added exit button on pause screen&#10;- Added help state, still have to add a nice background">
+      <created>1623516500618</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1623516500618</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +495,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added gamestate -&gt; working menu&#10;&#10;Still have to add:&#10;&#10;- Background&#10;- Bonusses&#10;- Movement for enemies&#10;- Sound effects&#10;- Enemies animation&#10;- Pause" />
     <MESSAGE value="Added Game and lose states/conditions&#10;Added backgrounds&#10;&#10;Still have to add:&#10;- Bonusses&#10;- Movement for enemies&#10;- Sound effects&#10;- Enemies animation&#10;- Pause" />
     <MESSAGE value="- Began adding bonusses -&gt; has to be integrated in actions&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Sound effects&#10;- Enemies animation&#10;- Pause&#10;- Actions&#10;- Win and lose screens&#10;- Finish UI containers" />
     <MESSAGE value="- Added enemies animation&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Sound effects&#10;- Pause&#10;- Actions&#10;- Win and lose screens&#10;- Finish UI containers" />
@@ -520,7 +519,8 @@
     <MESSAGE value="- Adding documentation&#10;- UIManager is done&#10;- UI is done&#10;&#10;Still have to add:&#10;- Add timer&#10;- Improve movement for enemies (meh)&#10;- Finish movement class (meh)" />
     <MESSAGE value="- Adding documentation&#10;- Timer is added&#10;&#10;Still have to add:&#10;- Add help screen&#10;- Add exit button on pause screen&#10;- Improve movement for enemies (meh)&#10;- Finish movement class (meh)" />
     <MESSAGE value="- Adding documentation&#10;- Timer is added&#10;- Small bug fix for effects&#10;&#10;Still have to add:&#10;- Add help screen&#10;- Add exit button on pause screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Adding documentation&#10;- Timer is added&#10;- Small bug fix for effects&#10;&#10;Still have to add:&#10;- Add help screen&#10;- Add exit button on pause screen" />
+    <MESSAGE value="- Adding documentation&#10;- Added exit button on pause screen&#10;- Added help state, still have to add a nice background" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Adding documentation&#10;- Added exit button on pause screen&#10;- Added help state, still have to add a nice background" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
