@@ -53,6 +53,28 @@ public class GameState extends State {
     }
 
     /**
+     * At every update we will check the conditions and generate bonuses.
+     * @param game is needed to pass to super.
+     */
+    @Override
+    public void update(Game game) {
+        super.update(game);
+
+        timer.update();
+        generateBonus();
+
+        if(playing) {
+            if(victoryConditions.stream().allMatch(Condition::isMet)) {
+                win();
+            }
+
+            if(defeatConditions.stream().allMatch(Condition::isMet)) {
+                lose();
+            }
+        }
+    }
+
+    /**
      * Initializes the movable characters. The player and multiple enemies.
      */
     private void initializeCharacters() {
@@ -114,28 +136,6 @@ public class GameState extends State {
         return entities.stream()
                 .filter(e -> e instanceof EnemyEntity)
                 .toArray().length;
-    }
-
-    /**
-     * At every update we will check the conditions and generate bonuses.
-     * @param game is needed to pass to super.
-     */
-    @Override
-    public void update(Game game) {
-        super.update(game);
-
-        timer.update();
-        generateBonus();
-
-        if(playing) {
-            if(victoryConditions.stream().allMatch(Condition::isMet)) {
-                win();
-            }
-
-            if(defeatConditions.stream().allMatch(Condition::isMet)) {
-                lose();
-            }
-        }
     }
 
     /**

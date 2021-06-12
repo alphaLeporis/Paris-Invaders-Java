@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Our game is based on different states. Each state can have different elements.
+ * Our game is based on different states. Each state has a different goal.
  */
 public abstract class State {
     protected final AudioPlayer audioPlayer;
@@ -28,6 +28,10 @@ public abstract class State {
     private State nextState;
     protected State previousState;
 
+    /**
+     * The constructor makes a new state ands sets all the parameters to the begin values.
+     * @param game is needed to get the input and the abstract factory for graphics.
+     */
     public State(Game game) {
         this.input = game.getInput();
         this.afact = game.getAfact();
@@ -37,21 +41,30 @@ public abstract class State {
         timer = new Timer();
     }
 
+    /**
+     * Updates the audioplayer, entities and removes old entities.
+     * @param game is needed to change between states.
+     */
     public void update(Game game) {
         audioPlayer.update();
         updateEntities();
         removeDeadEntities();
-        //handleMouseInput();
         if(nextState != null) {
             game.enterState(nextState);
             nextState = null;
         }
     }
 
+    /**
+     * Checks for entities that can be deleted and will delete them.
+     */
     private void removeDeadEntities() {
         entities.removeIf(entity -> !entity.isEntityAlive());
     }
 
+    /**
+     * Updates all the entities in the entity list.
+     */
     @SuppressWarnings("ForLoopReplaceableByForEach")
     private void updateEntities() {
         for (int i = 0; i < entities.size(); i++) {
@@ -59,16 +72,29 @@ public abstract class State {
         }
     }
 
+    /**
+     * Gets the colliding game objects.
+     * @param entity is the entity to check collidings with.
+     * @return a list with all the entites that are colliding with the given entity.
+     */
     public List<Entity> getCollidingGameObjects(Entity entity) {
         return entities.stream()
                 .filter(other -> other.collidesWith(entity))
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Spawns a new entity.
+     * @param entity is added to the entity list.
+     */
     public void spawn(Entity entity) {
         entities.add(entity);
     }
 
+    /**
+     * Gets the remaining lives of the player.
+     * @return an integer value of the remaining lives of the player.
+     */
     public int getPlayerLives() {
         if (!(entities.get(0) instanceof PlayerEntity)) {
             return 0;
@@ -76,10 +102,17 @@ public abstract class State {
         return ((PlayerEntity) entities.get(0)).getCurrentHealth();
     }
 
+    /**
+     * @return the player input
+     */
     public Input getInput() {
         return input;
     }
 
+    /**
+     * Sets the next state to the given state.
+     * @param nextState the state that will be the next state.
+     */
     public void setNextState(State nextState) {
         if (nextState instanceof PauseState) {
             previousState = this;
@@ -89,25 +122,42 @@ public abstract class State {
         this.nextState = nextState;
     }
 
+    /**
+     * @return a list of all the entities.
+     */
     public List<Entity> getEntities() {
         return entities;
     }
 
-
+    /**
+     * @return the game.
+     */
     public Game getGame() {
         return game;
     }
 
+    /**
+     * @return the in-game timer.
+     */
     public Timer getTimer() {
         return timer;
     }
 
+    /**
+     * @return a formatted string representation of the in-game timer.
+     */
     public String getFormattedTimer() {return timer.getFormattedTime();}
 
+    /**
+     * @return the current game level.
+     */
     public int getCurrentGameLevel() {
         return currentGameLevel;
     }
 
+    /**
+     * @return the previous state, before the state switch. (Is needed for pause)
+     */
     public State getPreviousState() {
         return previousState;
     }

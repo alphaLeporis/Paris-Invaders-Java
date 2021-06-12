@@ -39,21 +39,27 @@ public class UIManager {
         }
 
         if (state instanceof MenuState) {
-            uiComponents.add(new UIButton("PLAY",new Position(600,400), (uiState) -> uiState.setNextState(new GameState(state.getGame())) ));
+            uiComponents.add(new UIButton("PLAY",new Position(600,400), (uiState) -> uiState.setNextState(new GameState(state.getGame()))));
+            uiComponents.add(new UIButton("HELP",new Position(600,480), (uiState) -> uiState.setNextState(new HelpState(state.getGame()))));
             uiComponents.add(new UIButton("EXIT",new Position(600,440), (uiState) -> System.exit(0)));
+        }
+
+        if (state instanceof HelpState) {
+            uiComponents.add(new UIButton("RETURN",new Position(1050,720), (uiState) -> uiState.setNextState(new MenuState(state.getGame()))));
         }
 
         if (state instanceof PauseState) {
             uiComponents.add(new UIButton("RETURN", new Position(600,400), (uiState) -> uiState.setNextState(new GameState(state.getGame(), uiState.getPreviousState()))));
+            uiComponents.add(new UIButton("EXIT TO MENU",new Position(600,440), (uiState) -> uiState.setNextState(new MenuState(state.getGame()))));
         }
 
         if (state instanceof LostState) {
-            uiComponents.add(new UIButton("MENU",new Position(400,400), (uiState) -> uiState.setNextState(new MenuState(state.getGame())) ));
+            uiComponents.add(new UIButton("MENU",new Position(400,400), (uiState) -> uiState.setNextState(new MenuState(state.getGame()))));
             uiComponents.add(new UIButton("EXIT",new Position(400,440), (uiState) -> System.exit(0)));
         }
 
         if (state instanceof WonState) {
-            uiComponents.add(new UIButton("MENU",new Position(200,400), (uiState) -> uiState.setNextState(new MenuState(state.getGame())) ));
+            uiComponents.add(new UIButton("MENU",new Position(200,400), (uiState) -> uiState.setNextState(new MenuState(state.getGame()))));
             uiComponents.add(new UIButton("EXIT",new Position(200,440), (uiState) -> System.exit(0)));
         }
     }

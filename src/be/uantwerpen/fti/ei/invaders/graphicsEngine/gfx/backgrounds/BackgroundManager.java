@@ -1,4 +1,4 @@
-package be.uantwerpen.fti.ei.invaders.graphicsEngine.ui;
+package be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds;
 
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.*;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.StatesEnum;

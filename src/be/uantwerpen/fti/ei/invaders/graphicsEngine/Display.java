@@ -5,7 +5,7 @@ import be.uantwerpen.fti.ei.invaders.controlEngine.Input;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds.BackgroundLibrary;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.SpriteLibrary;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.BackgroundManager;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds.BackgroundManager;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.UIManager;
 
 import javax.swing.*;
