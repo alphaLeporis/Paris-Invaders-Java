@@ -10,7 +10,6 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.EnemyEntity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.PlayerEntity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -57,7 +56,10 @@ public class GameState extends State {
      */
     private void initializeCharacters() {
         entities.add(afact.getPlayerEntity(input));
-        entities.add(afact.getBlockEntity(800,600));
+        entities.add(afact.getBlockEntity(1036,600));
+        entities.add(afact.getBlockEntity(736,600));
+        entities.add(afact.getBlockEntity(416,600));
+        entities.add(afact.getBlockEntity(100,600));
         initializeEnemies(1);
     }
 
@@ -141,7 +143,7 @@ public class GameState extends State {
     }
 
     /**
-     * If the player loses this method will be called and state will change to the LostState.
+     * If the player loses this method will be called and state will change states to the LostState.
      */
     private void lose() {
         playing = false;
@@ -155,6 +157,7 @@ public class GameState extends State {
      */
     private void win() {
         currentGameLevel ++;
+        audioPlayer.playSound("next-level.wav");
         restartGame();
         if (currentGameLevel > 3) {
             playing = false;

@@ -1,8 +1,6 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine.states;
 
-import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Size;
 
 /**
  * This is the begin state of our game. It will show the menu and will be playing th menu music.

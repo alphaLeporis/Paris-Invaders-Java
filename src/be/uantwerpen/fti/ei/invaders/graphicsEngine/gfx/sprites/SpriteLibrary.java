@@ -3,7 +3,6 @@ package be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.Java2DFact;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ImageUtils;
 
-import java.awt.*;
 import java.io.File;
 import java.net.URL;
 import java.util.HashMap;

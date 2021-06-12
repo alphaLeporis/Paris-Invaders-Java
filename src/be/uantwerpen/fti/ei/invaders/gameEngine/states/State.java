@@ -26,7 +26,7 @@ public abstract class State {
     protected final Input input;
 
     private State nextState;
-    private State previousState;
+    protected State previousState;
 
     public State(Game game) {
         this.input = game.getInput();
@@ -92,13 +92,6 @@ public abstract class State {
         this.nextState = nextState;
     }
 
-    public void returnState() {
-        audioPlayer.removeMusic();
-        timer.stop();
-        this.nextState = previousState;
-    }
-
-
     public List<Entity> getEntities() {
         return entities;
     }
@@ -114,5 +107,9 @@ public abstract class State {
 
     public int getCurrentGameLevel() {
         return currentGameLevel;
+    }
+
+    public State getPreviousState() {
+        return previousState;
     }
 }

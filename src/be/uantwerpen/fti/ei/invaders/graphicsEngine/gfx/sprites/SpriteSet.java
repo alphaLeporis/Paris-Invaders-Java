@@ -6,11 +6,9 @@ import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
-import static java.lang.Math.round;
-
 public class SpriteSet {
     private final Map<String, Image> original_animationSheets;
-    private Map<String, Image> animationSheets;
+    private final Map<String, Image> animationSheets;
 
     public int spriteWidth = Java2DFact.displayConfig.getConfigInt("SPRITE_SIZE");
     public int spriteHeight = Java2DFact.displayConfig.getConfigInt("SPRITE_SIZE");

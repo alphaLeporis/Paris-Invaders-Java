@@ -13,10 +13,11 @@ import java.awt.image.BufferedImage;
 public class UIText extends UIComponent {
 
     private String text;
-    private final int fontSize;
+    private int baseFontSize;
+    private int fontSize;
     private final int fontStyle;
     private final String fontFamily;
-    protected Color color;
+    public Color color;
 
     private final boolean dropShadow;
     private final int dropShadowOffset;
@@ -27,7 +28,8 @@ public class UIText extends UIComponent {
     public UIText(String text, Position position) {
         this.position = position;
         this.text = text;
-        this.fontSize = 24;
+        this.baseFontSize = 24;
+        this.fontSize = baseFontSize;
         this.fontStyle = Font.BOLD;
         this.fontFamily = "Joystix Monospace";
         this.color = Color.WHITE;
@@ -74,6 +76,7 @@ public class UIText extends UIComponent {
     }
 
     protected void createFont() {
+        if (xFactor!=0) fontSize = (int) (baseFontSize*xFactor);
         font = new Font(fontFamily, fontStyle, fontSize);
     }
 
@@ -84,4 +87,5 @@ public class UIText extends UIComponent {
     public String getText() {
         return text;
     }
+
 }

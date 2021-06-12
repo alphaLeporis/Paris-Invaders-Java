@@ -5,6 +5,8 @@ import be.uantwerpen.fti.ei.invaders.controlEngine.Input;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds.BackgroundLibrary;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.SpriteLibrary;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.BackgroundManager;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.UIManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,9 +23,9 @@ public class Display extends JFrame {
     private final SpriteLibrary spriteLibrary;
     private final BackgroundLibrary backgroundLibrary;
     private final BackgroundManager backgroundManager;
-    private final UIManager uiManager;
-    protected double xFactor;
-    protected double yFactor;
+    private final be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.UIManager uiManager;
+    public double xFactor;
+    public double yFactor;
 
     /**
      * This is the default constructor to set up a display

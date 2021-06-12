@@ -6,9 +6,9 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
  * The player has pushed the pause button and entered this PauseState. It will show return screen and plays pause music.
  */
 public class PauseState extends State {
-    public PauseState(Game game, State oldState) {
+    public PauseState(Game game, State state) {
         super(game);
         audioPlayer.playMusic("pause.wav");
-        //uiContainers.add(new UIPause(windowSize, oldState));
+        this.previousState = state;
     }
 }

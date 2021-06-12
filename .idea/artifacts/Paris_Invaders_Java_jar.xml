@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Paris-Invaders-Java:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Paris_Invaders_Java_jar</output-path>
+    <root id="archive" name="Paris-Invaders-Java.jar">
+      <element id="module-output" name="Paris-Invaders-Java" />
+    </root>
+  </artifact>
+</component>

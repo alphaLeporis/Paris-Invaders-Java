@@ -27,7 +27,7 @@ public class BlockEntity extends Entity {
 
     private void handleCollision(Entity other) {
         if (other instanceof EnemyBulletEntity | other instanceof PlayerBulletEntity) {
-            audioPlayer.playSound("player-hit.wav");
+            audioPlayer.playSound("block-hit.wav");
             if (currentHealth <= 1) {
                 isEntityAlive = false;
             } else {
