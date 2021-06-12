@@ -3,60 +3,75 @@ package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.PlayerShootsBullet;
+import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Effect;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Fast;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Slow;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
+/**
+ *  The game needs a player, else the game would not be playable!
+ */
 public class PlayerEntity extends Entity {
-
+    @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
+    private Optional<Effect> effect;
     private int currentHealth = 3;
     private final Controller controller;
     private long lastSpaceEntry = System.currentTimeMillis();
 
+    /**
+     * The enemy spawns
+     * @param controller is needed to control the enemy.
+     */
     public PlayerEntity(Controller controller) {
         super();
         position = new Position(AFact.gameConfig.getConfigInt("WIDTH")/2 - AFact.gameConfig.getConfigInt("ENTITY_WIDTH")/2,
                 AFact.gameConfig.getConfigInt("HEIGHT") -  AFact.gameConfig.getConfigInt("ENTITY_HEIGHT")*2);
         this.controller = controller;
-        //this.movement = new Movement(3);
+        effect = Optional.empty();
     }
 
+    /**
+     * Passes the update to super (entity) and applies effects.
+     * @param state is needed to know where the updates happens.
+     */
     @Override
     public void update(State state) {
         super.update(state);
-        handleCollisions(state);
-        setSpeed();
+        effect.ifPresent(Effect::update);
+        cleanupEffects();
     }
 
-    private int setSpeed() {
-        try {
-            if (effects.get(0) instanceof Slow) {
-                return 3;
-            } else if (effects.get(0) instanceof Fast) {
-                return 7;
-            } else {
-                return 5;
-            }
-        } catch (Exception e) {
-            return 5;
-        }
-
+    /**
+     * The speed can be affected by effects. Here we predefine the speed in case of an effect.
+     * @return the speed.
+     */
+    private int getSpeed() {
+        if (effect.isEmpty()) return 5;
+        if (effect.get() instanceof Fast) return 7;
+        if (effect.get() instanceof Slow) return 3;
+        return 5;
     }
 
+    /**
+     * In here we update the movement, based on the controller.
+     */
     @Override
     public void updateMovement() {
         int deltaX = 0;
         if (controller.isRequestingLeft()) {
             if ((this.size.getWidth()*0.5) < position.getX())
-                deltaX -= setSpeed();
+                deltaX -= getSpeed();
         }
 
         if (controller.isRequestingRight()) {
             if (position.getX() < AFact.gameConfig.getConfigInt("WIDTH")-(this.size.getWidth()*1.5)) {
-                deltaX += setSpeed();
+                deltaX += getSpeed();
             } else {
                 deltaX = 0;
             }
@@ -71,11 +86,13 @@ public class PlayerEntity extends Entity {
         position.set(position.getX() + deltaX, position.getY());
     }
 
-    private void handleCollisions(State state) {
-        state.getCollidingGameObjects(this).forEach(this::handleCollision);
-    }
-
-    private void handleCollision(Entity other) {
+    /**
+     * Here we handle the collisions, if the player collides with the enemy bullet the enemy dies.
+     * If the player collides with a bonus, an effect is added.
+     * @param other is the other entity that collides with this enemy.
+     */
+    @Override
+    public void handleCollision(Entity other) {
         if (other instanceof EnemyBulletEntity) {
             audioPlayer.playSound("player-hit.wav");
             if (currentHealth <= 1) {
@@ -97,13 +114,34 @@ public class PlayerEntity extends Entity {
         }
     }
 
+    /**
+     * Cleans up old effects that should be deleted.
+     */
+    private void cleanupEffects() {
+        if (effect.isEmpty()) return;
+        if (effect.get().shouldDelete()) effect = Optional.empty();
+    }
+
+    /**
+     * Applies a new effect.
+     * @param effect is the new effect to be applied.
+     */
+    public void setEffect(Effect effect) {
+        this.effect = Optional.of(effect);
+    }
+
+    /**
+     * @return the current health of the player.
+     */
+    public int getCurrentHealth() {
+        return currentHealth;
+    }
+
+    /**
+     * @return null: no visualisation inside here.
+     */
     @Override
     public Image visualize() {
         return null;
-    }
-
-
-    public int getCurrentHealth() {
-        return currentHealth;
     }
 }

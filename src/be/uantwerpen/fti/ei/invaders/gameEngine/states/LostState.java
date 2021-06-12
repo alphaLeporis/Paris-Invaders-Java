@@ -8,7 +8,6 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
 public class LostState extends State {
     public LostState(Game game) {
         super(game);
-        //uiContainers.add(new UIEndScreen(windowSize));
         audioPlayer.playSound("lost.wav");
     }
 }

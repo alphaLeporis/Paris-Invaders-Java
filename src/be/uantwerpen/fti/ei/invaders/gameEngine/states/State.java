@@ -41,16 +41,11 @@ public abstract class State {
         audioPlayer.update();
         updateEntities();
         removeDeadEntities();
-        handleMouseInput();
+        //handleMouseInput();
         if(nextState != null) {
             game.enterState(nextState);
             nextState = null;
         }
-    }
-
-
-    private void handleMouseInput() {
-        input.clearMouseClick();
     }
 
     private void removeDeadEntities() {

@@ -64,6 +64,10 @@ public class GameState extends State {
         initializeEnemies(1);
     }
 
+    /**
+     * Initializes the enemies for a given levels
+     * @param levels is needed to initialize different level.
+     */
     private void initializeEnemies(int levels) {
         int stepSize = AFact.gameConfig.getConfigInt("WIDTH") / (AFact.gameConfig.getConfigInt("ENEMIES_PER_ROW")+1);
         Controller enemyController = new EnemyController(new NPCInput(this));
@@ -75,6 +79,7 @@ public class GameState extends State {
             }
         }
     }
+
     /**
      * Initializes the conditions that will determine if the player won or lost.
      */
@@ -154,7 +159,7 @@ public class GameState extends State {
     }
 
     /**
-     * If the player wins this method will be called and state will change to the WinState.
+     * If the player wins this method will be called and state will change to the WinState (after 3 levels).
      */
     private void win() {
         currentGameLevel ++;
@@ -168,6 +173,9 @@ public class GameState extends State {
         }
     }
 
+    /**
+     * We can restart the game after going to a new level with this method.
+     */
     private void restartGame() {
         System.out.println("Current game level: "+currentGameLevel);
         initializeEnemies(2);

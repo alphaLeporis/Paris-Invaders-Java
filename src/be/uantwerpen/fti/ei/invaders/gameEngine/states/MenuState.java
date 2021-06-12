@@ -10,5 +10,4 @@ public class MenuState extends State {
         super(game);
         audioPlayer.playMusic("menu.wav");
     }
-
 }

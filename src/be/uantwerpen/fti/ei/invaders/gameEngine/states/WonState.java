@@ -8,7 +8,6 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
 public class WonState extends State {
     public WonState(Game game) {
         super(game);
-        //uiContainers.add(new UIEndScreen(windowSize));
         audioPlayer.playSound("won.wav");
     }
 }
