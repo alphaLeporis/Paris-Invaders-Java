@@ -8,10 +8,6 @@ import java.awt.image.BufferedImage;
 import java.util.Objects;
 
 public class ImageUtils {
-    public static final int ALPHA_OPAQUE = 1;
-    public static final int ALPHA_BIT_MASKED = 2;
-    public static final int ALPHA_BLEND = 3;
-
     public static Image loadImage(String filePath) {
         try {
            return ImageIO.read(Objects.requireNonNull(ImageUtils.class.getResource(filePath)));
@@ -21,12 +17,12 @@ public class ImageUtils {
         return null;
     }
 
-    public static Image createCompatibleImage(Size size, int transparency) {
+    public static Image createCompatibleImage(Size size) {
         GraphicsConfiguration graphicsConfiguration = GraphicsEnvironment.getLocalGraphicsEnvironment()
                 .getDefaultScreenDevice()
                 .getDefaultConfiguration();
 
-        return graphicsConfiguration.createCompatibleImage(size.getWidth(), size.getHeight(), transparency);
+        return graphicsConfiguration.createCompatibleImage(size.getWidth(), size.getHeight(), 2);
     }
 
     public static BufferedImage convertToBufferedImage(Image image)

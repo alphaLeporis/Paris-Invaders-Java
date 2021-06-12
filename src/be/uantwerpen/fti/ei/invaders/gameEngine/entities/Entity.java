@@ -22,6 +22,7 @@ public abstract class Entity {
     protected Size size;
     protected boolean isEntityAlive;
     protected final List<Effect> effects;
+    @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
     protected Optional<Action> action;
     protected final AudioPlayer audioPlayer;
 
@@ -59,7 +60,7 @@ public abstract class Entity {
     public void update(State state) {
         updateMovement();
         handleAction(state);
-        effects.forEach(effect -> effect.update(state));
+        effects.forEach(Effect::update);
         cleanup();
     }
 
@@ -77,15 +78,16 @@ public abstract class Entity {
     public Position getPosition() {
         return position;
     }
-    public Size getSize() {
-        return size;
-    }
+
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     public boolean isEntityAlive() {
         return isEntityAlive;
     }
+
     public void killEntity() {
         isEntityAlive = false;
     }
+
     public void setEffect(Effect effect) {
         effects.clear();
         effects.add(effect);

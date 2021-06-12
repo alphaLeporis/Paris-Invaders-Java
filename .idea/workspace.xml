@@ -6,80 +6,34 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd344fa2-c0f1-4f0d-b634-c73c379e4456" name="Default Changelist" comment="- Adding documentation&#10;- Added an UIManager (working on)&#10;- Began editing UI&#10;&#10;Still have to add:&#10;- Improve movement for enemies (meh)&#10;- Finish movement class (meh)">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Paris_Invaders_Java_jar.xml" afterDir="false" />
+    <list default="true" id="cd344fa2-c0f1-4f0d-b634-c73c379e4456" name="Default Changelist" comment="- Adding documentation&#10;- UIManager is done&#10;- UI is done&#10;&#10;Still have to add:&#10;- Add timer&#10;- Improve movement for enemies (meh)&#10;- Finish movement class (meh)">
+      <change afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/UITimer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image_sources/croissant_block.psd" beforeDir="false" afterPath="$PROJECT_DIR$/image_sources/croissant_block.psd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/backgrounds/game-background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/backgrounds/lost-background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/backgrounds/menu-background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/backgrounds/pause-background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/backgrounds/won-background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/configs/display.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/configs/game.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sounds/bonus.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sounds/enemy-shoots.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sounds/game.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sounds/hit.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sounds/lost.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sounds/menu.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sounds/pause.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sounds/player-hit.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sounds/player-shoots.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sounds/won.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sprites/bad-bonus/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sprites/baguette/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sprites/beer/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sprites/block/broken_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sprites/block/broken_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sprites/block/broken_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sprites/block/broken_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sprites/block/broken_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sprites/block/broken_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sprites/block/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sprites/cactus/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sprites/cowboy/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sprites/german/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sprites/good-bonus/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sprites/greek/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sprites/mexican/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sprites/remy/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sprites/taco/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Paris-Invaders-Java/sprites/trident/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sounds/hit.wav" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sounds/hit.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sprites/block/broken_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sprites/block/broken_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sprites/block/broken_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sprites/block/broken_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sprites/block/broken_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sprites/block/broken_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sprites/block/broken_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sprites/block/broken_4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sprites/block/broken_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sprites/block/broken_5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sprites/block/broken_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sprites/block/broken_6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sprites/block/image.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sprites/block/image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sprites/trident/image.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sprites/trident/image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/AFact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/AFact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/BlockEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/BlockEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/audioEngine/AudioPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/audioEngine/AudioPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/controlEngine/NPCInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/controlEngine/NPCInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/GameLoop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/BonusEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/BonusEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/EnemyBulletEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/EnemyBulletEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/EnemyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/EnemyEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/PlayerBulletEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/PlayerBulletEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/PlayerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/PlayerEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/actions/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/actions/Action.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/actions/EnemyShootsBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/actions/EnemyShootsBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/actions/PlayerShootsBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/actions/PlayerShootsBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/effects/Effect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/effects/Effect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/movement/Movement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/movement/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/movement/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/movement/Vector2D.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/MenuState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/PauseState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/PauseState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/BackgroundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/BackgroundManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Java2DFact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/Java2DFact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/StatesEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/StatesEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/UIManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/UIManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/sprites/AnimationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/sprites/AnimationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DEnemyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DEnemyEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/ImageUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/ImageUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/sprites/SpriteLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/sprites/SpriteLibrary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/sprites/SpriteSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/sprites/SpriteSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/UIManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/UIManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/UIComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/UIComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/UIText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/UIText.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/clickable/UIButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/clickable/UIButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/old/Alignment.java.old" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/old/HorizontalContainer.java.old" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/old/Padding.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/old/UIContainer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/old/VerticalContainer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/endScreen/UIEndScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/game/UIGameStats.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/menu/UIMainMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/pause/UIPause.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/clickable/UIClickable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/clickable/UIClickable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +62,7 @@
     </file-type-list>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedIndex" value="2" />
+    <option name="selectedIndex" value="13" />
   </component>
   <component name="ProjectId" id="1ptsyc7MP0KiNtED186kDysAnmE" />
   <component name="ProjectView">
@@ -199,6 +153,7 @@
       <recent name="$PROJECT_DIR$/resources/sprites/units/remy" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core" />
       <recent name="be.uantwerpen.fti.ei.invaders.gameEngine.entities" />
     </key>
   </component>
@@ -209,6 +164,17 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -279,7 +245,7 @@
       <workItem from="1622314564936" duration="217000" />
       <workItem from="1623348245919" duration="7011000" />
       <workItem from="1623396992782" duration="7498000" />
-      <workItem from="1623488075349" duration="5112000" />
+      <workItem from="1623488075349" duration="10944000" />
     </task>
     <task id="LOCAL-00001" summary="Adding the controller and a playerEntity">
       <created>1616325051200</created>
@@ -505,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623404361593</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="- Adding documentation&#10;- UIManager is done&#10;- UI is done&#10;&#10;Still have to add:&#10;- Add timer&#10;- Improve movement for enemies (meh)&#10;- Finish movement class (meh)">
+      <created>1623496385959</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1623496385959</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -524,7 +497,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed errors, now working:&#10;- Removing an object&#10;- Firing&#10;- Added boundaries so that our object will not go that far&#10;Working with a general game.java file.&#10;&#10;Todo:&#10;- Add enemies&#10;- Collision detection&#10;- Sprites&#10;- Sound" />
     <MESSAGE value="Small fixes" />
     <MESSAGE value="Small fixes&#10;&#10;Changed the gameloop to sleep after update.&#10;&#10;Added collision detection on enemy and player." />
     <MESSAGE value="Added gamestate -&gt; working menu&#10;&#10;Still have to add:&#10;&#10;- Background&#10;- Bonusses&#10;- Movement for enemies&#10;- Sound effects&#10;- Enemies animation&#10;- Pause" />
@@ -549,7 +521,8 @@
     <MESSAGE value="- Adding documentation&#10;- Finished BackgroundManager&#10;- Added an UIManager (working on)&#10;&#10;Still have to add:&#10;- Improve movement for enemies (meh)&#10;- Finish movement class (meh)" />
     <MESSAGE value="- Adding documentation&#10;- Added an UIManager (working on)&#10;- Began editing UI&#10;- Resizing and clickable has to be fixed&#10;&#10;Still have to add:&#10;- Improve movement for enemies (meh)&#10;- Finish movement class (meh)" />
     <MESSAGE value="- Adding documentation&#10;- Added an UIManager (working on)&#10;- Began editing UI&#10;&#10;Still have to add:&#10;- Improve movement for enemies (meh)&#10;- Finish movement class (meh)" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Adding documentation&#10;- Added an UIManager (working on)&#10;- Began editing UI&#10;&#10;Still have to add:&#10;- Improve movement for enemies (meh)&#10;- Finish movement class (meh)" />
+    <MESSAGE value="- Adding documentation&#10;- UIManager is done&#10;- UI is done&#10;&#10;Still have to add:&#10;- Add timer&#10;- Improve movement for enemies (meh)&#10;- Finish movement class (meh)" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Adding documentation&#10;- UIManager is done&#10;- UI is done&#10;&#10;Still have to add:&#10;- Add timer&#10;- Improve movement for enemies (meh)&#10;- Finish movement class (meh)" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

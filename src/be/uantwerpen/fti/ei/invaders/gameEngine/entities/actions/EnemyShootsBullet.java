@@ -38,7 +38,6 @@ public class EnemyShootsBullet extends Action {
     /**
      * @return a boolean to know when an action is done, in this case when the EnemyBullet is not alive.
      */
-    @Override
     public boolean isDone() {
         return !EnemyBullet.isEntityAlive();
     }

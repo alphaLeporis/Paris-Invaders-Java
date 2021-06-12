@@ -1,7 +1,6 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects;
 
 import be.uantwerpen.fti.ei.invaders.AFact;
-import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
 /**
  * An effect is a temporary change in movement for the player.
@@ -18,9 +17,8 @@ public abstract class Effect {
 
     /**
      * At each update we decrement the counter
-     * @param state could be used for a specific integration.
      */
-    public void update(State state) {
+    public void update() {
         lifeSpanInUpdates--;
     }
 

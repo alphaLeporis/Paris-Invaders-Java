@@ -8,7 +8,6 @@ import be.uantwerpen.fti.ei.invaders.AFact;
  */
 public class GameLoop {
     private final Game game;
-    private boolean running;
     private long lastUpdate = System.currentTimeMillis();
     private long nextStatTime;
     private int fps, ups;
@@ -26,20 +25,16 @@ public class GameLoop {
      * Starts the game
      */
     public void run() {
-        running = true;
         nextStatTime = System.currentTimeMillis() + 1000;
 
-        while (running) {
+        //noinspection InfiniteLoopStatement
+        while (true) {
             startStopwatch();
             update();
             render();
             sleepStopwatch();
             printStats();
         }
-    }
-
-    public void stop() {
-        running = false;
     }
 
     /**

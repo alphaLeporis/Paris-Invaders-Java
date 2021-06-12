@@ -1,6 +1,5 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites;
 
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.Java2DFact;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ImageUtils;
 
 import java.io.File;
@@ -10,11 +9,7 @@ import java.util.Map;
 
 public class SpriteLibrary {
     private final static String PATH_TO_SPRITES = "/sprites";
-
     private final Map<String, SpriteSet> spriteSetMap;
-
-    public int spriteWidth = Java2DFact.displayConfig.getConfigInt("SPRITE_SIZE");
-    public int spriteHeight = Java2DFact.displayConfig.getConfigInt("SPRITE_SIZE");
 
     public SpriteLibrary() {
         spriteSetMap = new HashMap<>();
@@ -62,12 +57,8 @@ public class SpriteLibrary {
     }
 
     public void resize(double xFactor, double yFactor) {
-        spriteWidth *= xFactor;
-        spriteHeight *= yFactor;
-
         for (Map.Entry<String, SpriteSet> spriteSet : spriteSetMap.entrySet()) {
             spriteSet.getValue().resize(xFactor, yFactor);
         }
-
     }
 }

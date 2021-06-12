@@ -71,7 +71,6 @@ public class AudioPlayer {
      * @return the Clip based on the fileName param
      */
     private Clip getClip(String fileName) {
-        //Todo: fix the crash when music is not found :(
         final URL soundFile = AudioPlayer.class.getResource("/sounds/" + fileName);
         try {
             assert soundFile != null;
@@ -85,8 +84,6 @@ public class AudioPlayer {
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             System.out.println(e);
         }
-
         return null;
     }
-
 }

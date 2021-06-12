@@ -6,7 +6,6 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.PlayerShootsBul
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Fast;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Slow;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
-import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Movement;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
 import java.awt.*;
@@ -15,7 +14,6 @@ public class PlayerEntity extends Entity {
 
     private int currentHealth = 3;
     private final Controller controller;
-    private final Movement movement;
     private long lastSpaceEntry = System.currentTimeMillis();
 
     public PlayerEntity(Controller controller) {
@@ -23,14 +21,13 @@ public class PlayerEntity extends Entity {
         position = new Position(AFact.gameConfig.getConfigInt("WIDTH")/2 - AFact.gameConfig.getConfigInt("ENTITY_WIDTH")/2,
                 AFact.gameConfig.getConfigInt("HEIGHT") -  AFact.gameConfig.getConfigInt("ENTITY_HEIGHT")*2);
         this.controller = controller;
-        this.movement = new Movement(3);
+        //this.movement = new Movement(3);
     }
 
     @Override
     public void update(State state) {
         super.update(state);
         handleCollisions(state);
-        movement.update(controller);
         setSpeed();
     }
 
@@ -71,7 +68,7 @@ public class PlayerEntity extends Entity {
                 lastSpaceEntry = System.currentTimeMillis();
             }
         }
-        position = new Position(position.getX() + deltaX, position.getY());
+        position.set(position.getX() + deltaX, position.getY());
     }
 
     private void handleCollisions(State state) {

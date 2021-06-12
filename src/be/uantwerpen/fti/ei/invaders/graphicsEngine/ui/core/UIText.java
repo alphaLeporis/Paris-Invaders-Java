@@ -13,7 +13,7 @@ import java.awt.image.BufferedImage;
 public class UIText extends UIComponent {
 
     private String text;
-    private int baseFontSize;
+    private final int baseFontSize;
     private int fontSize;
     private final int fontStyle;
     private final String fontFamily;
@@ -31,6 +31,7 @@ public class UIText extends UIComponent {
         this.baseFontSize = 24;
         this.fontSize = baseFontSize;
         this.fontStyle = Font.BOLD;
+        //noinspection SpellCheckingInspection
         this.fontFamily = "Joystix Monospace";
         this.color = Color.WHITE;
 
@@ -41,7 +42,7 @@ public class UIText extends UIComponent {
 
     @Override
     public Image visualize() {
-        BufferedImage image = (BufferedImage) ImageUtils.createCompatibleImage(size, ImageUtils.ALPHA_BIT_MASKED);
+        BufferedImage image = (BufferedImage) ImageUtils.createCompatibleImage(size);
         Graphics2D graphics = image.createGraphics();
         graphics.setFont(font);
 

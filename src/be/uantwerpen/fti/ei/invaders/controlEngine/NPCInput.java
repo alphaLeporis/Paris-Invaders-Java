@@ -10,10 +10,7 @@ import java.util.stream.Collectors;
 
 public class NPCInput {
     private final State state;
-
-    public boolean callingLeft = false;
-    public boolean callingRight = false;
-    public boolean callingUp = false;
+    public final boolean callingUp = false;
     public boolean callingDown = false;
 
     private boolean goingRight;
@@ -45,8 +42,6 @@ public class NPCInput {
                 callingDown = false;
             }
         }
-
-
     }
 
     public boolean callingShoot() {

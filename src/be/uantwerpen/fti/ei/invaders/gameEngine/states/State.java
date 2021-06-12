@@ -38,6 +38,7 @@ public abstract class State {
     }
 
     public void update(Game game) {
+        audioPlayer.update();
         updateEntities();
         removeDeadEntities();
         handleMouseInput();
@@ -56,6 +57,7 @@ public abstract class State {
         entities.removeIf(entity -> !entity.isEntityAlive());
     }
 
+    @SuppressWarnings("ForLoopReplaceableByForEach")
     private void updateEntities() {
         for (int i = 0; i < entities.size(); i++) {
             entities.get(i).update(this);
@@ -104,6 +106,8 @@ public abstract class State {
     public Timer getTimer() {
         return timer;
     }
+
+    public String getFormattedTimer() {return timer.getFormattedTime();}
 
     public int getCurrentGameLevel() {
         return currentGameLevel;

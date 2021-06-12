@@ -19,7 +19,6 @@ public abstract class UIClickable extends UIComponent {
         hasFocus = getBounds().contains(mousePosition.getX(), mousePosition.getY());
         isPressed = hasFocus && state.getInput().isMousePressed();
         if(isPressed) {
-            System.out.println("clicky");
             onClick(state);
         }
     }

@@ -43,7 +43,7 @@ public class EnemyEntity extends Entity {
         if (controller.isRequestingShoot()) {
             perform(new EnemyShootsBullet(this));
         }
-        position = new Position(position.getX() + deltaX, position.getY() + deltaY);
+        position.set(position.getX() + deltaX, position.getY()+deltaY);
     }
 
     private void handleCollisions(State state) {

@@ -31,7 +31,7 @@ public class EnemyBulletEntity extends Entity {
     @Override
     public void updateMovement() {
         int deltaY = +10;
-        position = new Position(position.getX(), position.getY() + deltaY);
+        position.set(position.getX(), position.getY()+deltaY);
     }
 
     @Override

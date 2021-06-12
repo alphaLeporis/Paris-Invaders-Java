@@ -36,7 +36,6 @@ public class PlayerShootsBullet extends Action {
     /**
      * @return a boolean to know when an action is done, in this case when the PlayerBullet is not alive.
      */
-    @Override
     public boolean isDone() {
         return !playerBullet.isEntityAlive();
     }

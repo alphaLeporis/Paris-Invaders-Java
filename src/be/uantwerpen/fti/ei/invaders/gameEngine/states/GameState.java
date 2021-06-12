@@ -46,6 +46,7 @@ public class GameState extends State {
         super(game);
         this.entities = previousState.getEntities();
         this.timer = previousState.getTimer();
+        timer.start();
         playing = true;
         initializeConditions();
         audioPlayer.playMusic("game.wav");

@@ -6,6 +6,7 @@ import be.uantwerpen.fti.ei.invaders.graphicsEngine.Display;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UIComponent;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UILevel;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UILives;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UITimer;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.clickable.UIButton;
 
 import java.util.ArrayList;
@@ -31,9 +32,10 @@ public class UIManager {
         uiComponents = new ArrayList<>();
 
         if (state instanceof GameState) {
-            uiComponents.add(new UILevel(new Position(50,15)));
-            uiComponents.add(new UILives(new Position(200,15)));
-            uiComponents.add(new UIButton("PAUSE",new Position(1100,15), (uiState) -> uiState.setNextState(new PauseState(state.getGame(), uiState))));
+            uiComponents.add(new UILevel(new Position(20,10)));
+            uiComponents.add(new UILives(new Position(200,10)));
+            uiComponents.add(new UITimer(new Position(570,10)));
+            uiComponents.add(new UIButton("PAUSE",new Position(1100,10), (uiState) -> uiState.setNextState(new PauseState(state.getGame(), uiState))));
         }
 
         if (state instanceof MenuState) {
