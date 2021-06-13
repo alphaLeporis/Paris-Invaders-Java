@@ -67,4 +67,6 @@ public class Game {
     public Score getScore() {
         return score;
     }
+
+    public void resetScore() {score = new Score();}
 }

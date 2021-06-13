@@ -29,6 +29,7 @@ public class GameState extends State {
         super(game);
         playing = true;
         currentGameLevel = 1;
+        game.resetScore();
 
         initializeCharacters();
         initializeConditions();
