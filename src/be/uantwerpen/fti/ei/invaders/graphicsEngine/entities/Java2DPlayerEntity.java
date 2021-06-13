@@ -3,16 +3,16 @@ package be.uantwerpen.fti.ei.invaders.graphicsEngine.entities;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.PlayerEntity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.SpriteVisualization;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.AnimationManager;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.SpriteLibrary;
-
-import java.awt.*;
 
 /**
  * This is  the visualization method of the Player entity.
  */
 public class Java2DPlayerEntity extends PlayerEntity {
     private final AnimationManager animationManager;
+    private final SpriteVisualization spriteVisualization;
 
     /**
      * This is the constructor to spawn a new Player entity.
@@ -22,6 +22,7 @@ public class Java2DPlayerEntity extends PlayerEntity {
      */
     public Java2DPlayerEntity(Controller controller, SpriteLibrary spriteLibrary) {
         super(controller);
+        spriteVisualization = new SpriteVisualization();
         animationManager = new AnimationManager(spriteLibrary.getUnit("remy"));
     }
 
@@ -40,7 +41,8 @@ public class Java2DPlayerEntity extends PlayerEntity {
      * Visualizes the Player entity.
      * @return an image of the sprite animation frame.
      */
-    public Image visualize() {
-        return animationManager.getSprite();
+    public SpriteVisualization visualize() {
+        spriteVisualization.set(animationManager.getSprite());
+        return spriteVisualization;
     }
 }

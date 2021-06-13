@@ -2,16 +2,16 @@ package be.uantwerpen.fti.ei.invaders.graphicsEngine.entities;
 
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.BonusEntity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.SpriteVisualization;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.AnimationManager;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.SpriteLibrary;
-
-import java.awt.*;
 
 /**
  * This is  the visualization method of the Bonus entity.
  */
 public class Java2DBonusEntity extends BonusEntity {
     private final AnimationManager animationManager;
+    private final SpriteVisualization spriteVisualization;
 
     /**
      * This is the constructor to spawn a new Bonus entity.
@@ -19,6 +19,7 @@ public class Java2DBonusEntity extends BonusEntity {
      */
     public Java2DBonusEntity(SpriteLibrary spriteLibrary) {
         super();
+        spriteVisualization = new SpriteVisualization();
         if (isGoodBonus)
             animationManager = new AnimationManager(spriteLibrary.getUnit("good-bonus"));
         else
@@ -40,7 +41,8 @@ public class Java2DBonusEntity extends BonusEntity {
      * Visualizes the Bonus entity.
      * @return an image of the sprite animation frame.
      */
-    public Image visualize() {
-        return animationManager.getSprite();
+    public SpriteVisualization visualize() {
+        spriteVisualization.set(animationManager.getSprite());
+        return spriteVisualization;
     }
 }

@@ -1,13 +1,13 @@
-package be.uantwerpen.fti.ei.invaders.graphicsEngine.ui;
+package be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ui;
 
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.*;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.Display;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UIComponent;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UILevel;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UILives;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UIScore;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.clickable.UIButton;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ui.core.UIComponent;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ui.core.UILevel;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ui.core.UILives;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ui.core.UIScore;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ui.core.clickable.UIButton;
 
 import java.util.ArrayList;
 import java.util.List;

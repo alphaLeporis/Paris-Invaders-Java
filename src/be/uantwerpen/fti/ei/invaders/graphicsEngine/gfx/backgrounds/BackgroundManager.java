@@ -1,8 +1,7 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds;
 
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.*;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.StatesEnum;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds.BackgroundLibrary;
+import be.uantwerpen.fti.ei.invaders.gameEngine.StatesEnum;
 
 import java.awt.*;
 

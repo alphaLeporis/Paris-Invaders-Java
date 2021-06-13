@@ -2,8 +2,7 @@ package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
-
-import java.awt.*;
+import be.uantwerpen.fti.ei.invaders.gameEngine.VisualizationObject;
 
 /**
  * This is a block within the game. This object has no movement but has health.
@@ -62,7 +61,7 @@ public class BlockEntity extends Entity {
      * @return null: no visualisation inside here.
      */
     @Override
-    public Image visualize() {
+    public VisualizationObject visualize() {
         return null;
     }
 }

@@ -6,7 +6,7 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds.BackgroundLibrary;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.SpriteLibrary;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds.BackgroundManager;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.UIManager;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ui.UIManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,7 +22,7 @@ public class Display extends JFrame {
     private final SpriteLibrary spriteLibrary;
     private final BackgroundLibrary backgroundLibrary;
     private final BackgroundManager backgroundManager;
-    private final be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.UIManager uiManager;
+    private final be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ui.UIManager uiManager;
     public double xFactor;
     public double yFactor;
 
@@ -71,7 +71,7 @@ public class Display extends JFrame {
 
 
         state.getEntities().forEach(entity -> graphics.drawImage(
-            entity.visualize(),
+            (Image) entity.visualize().get(),
             (int) Math.round(entity.getPosition().getX()*xFactor),
             (int) Math.round(entity.getPosition().getY()*yFactor),
             null

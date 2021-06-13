@@ -8,8 +8,8 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Fast;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Slow;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
+import be.uantwerpen.fti.ei.invaders.gameEngine.VisualizationObject;
 
-import java.awt.*;
 import java.util.Optional;
 
 /**
@@ -142,7 +142,7 @@ public class PlayerEntity extends Entity {
      * @return null: no visualisation inside here.
      */
     @Override
-    public Image visualize() {
+    public VisualizationObject visualize() {
         return null;
     }
 }

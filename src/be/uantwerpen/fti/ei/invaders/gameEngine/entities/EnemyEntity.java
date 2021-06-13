@@ -4,8 +4,7 @@ import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.EnemyShootsBullet;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
-
-import java.awt.*;
+import be.uantwerpen.fti.ei.invaders.gameEngine.VisualizationObject;
 
 /**
  *  The game needs enemies, else the game would be too easy!
@@ -79,7 +78,7 @@ public class EnemyEntity extends Entity {
      * @return null: no visualisation inside here.
      */
     @Override
-    public Image visualize() {
+    public VisualizationObject visualize() {
         return null;
     }
 }

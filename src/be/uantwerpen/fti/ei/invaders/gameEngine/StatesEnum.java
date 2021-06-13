@@ -1,4 +1,4 @@
-package be.uantwerpen.fti.ei.invaders.graphicsEngine;
+package be.uantwerpen.fti.ei.invaders.gameEngine;
 
 /**
  * An enum of all the states

@@ -4,8 +4,7 @@ import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Size;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
-
-import java.awt.*;
+import be.uantwerpen.fti.ei.invaders.gameEngine.VisualizationObject;
 
 /**
  *  During the game bonuses slowly drop from above.
@@ -71,7 +70,7 @@ public class BonusEntity extends Entity {
      * @return null: no visualisation inside here.
      */
     @Override
-    public Image visualize() {
+    public VisualizationObject visualize() {
         return null;
     }
 }

@@ -2,16 +2,16 @@ package be.uantwerpen.fti.ei.invaders.graphicsEngine.entities;
 
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.PlayerBulletEntity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.SpriteVisualization;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.AnimationManager;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.SpriteLibrary;
-
-import java.awt.*;
 
 /**
  * This is  the visualization method of the Player bullet entity.
  */
 public class Java2DPlayerBulletEntity extends PlayerBulletEntity {
     private final AnimationManager animationManager;
+    private final SpriteVisualization spriteVisualization;
 
     /**
      * This is the constructor to spawn a new Player Bullet entity.
@@ -19,6 +19,7 @@ public class Java2DPlayerBulletEntity extends PlayerBulletEntity {
      */
     public Java2DPlayerBulletEntity(int x, int y, SpriteLibrary spriteLibrary) {
         super(x, y);
+        spriteVisualization = new SpriteVisualization();
         animationManager = new AnimationManager(spriteLibrary.getUnit("baguette"));
     }
 
@@ -37,7 +38,8 @@ public class Java2DPlayerBulletEntity extends PlayerBulletEntity {
      * Visualizes the Player Bullet entity.
      * @return an image of the sprite animation frame.
      */
-    public Image visualize() {
-        return animationManager.getSprite();
+    public SpriteVisualization visualize() {
+        spriteVisualization.set(animationManager.getSprite());
+        return spriteVisualization;
     }
 }

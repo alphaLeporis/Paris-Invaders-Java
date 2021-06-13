@@ -1,8 +1,8 @@
-package be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.clickable;
+package be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ui.core.clickable;
 
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UIComponent;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ui.core.UIComponent;
 
 import java.awt.*;
 

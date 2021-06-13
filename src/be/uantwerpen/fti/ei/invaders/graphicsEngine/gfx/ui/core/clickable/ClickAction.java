@@ -1,4 +1,4 @@
-package be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.clickable;
+package be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.ui.core.clickable;
 
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 

@@ -8,6 +8,7 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.Action;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Size;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
+import be.uantwerpen.fti.ei.invaders.gameEngine.VisualizationObject;
 
 import java.awt.*;
 import java.util.Optional;
@@ -57,7 +58,7 @@ public abstract class Entity {
      * Visualization will be needed for the GraphicsEngine.
      * Abstract method that each entity has to implement.
      */
-    public abstract Image visualize();
+    public abstract VisualizationObject visualize();
 
     /**
      * Collision handling based on the colliding object.

@@ -3,16 +3,16 @@ package be.uantwerpen.fti.ei.invaders.graphicsEngine.entities;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.EnemyBulletEntity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.Entity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.SpriteVisualization;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.AnimationManager;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.SpriteLibrary;
-
-import java.awt.*;
 
 /**
  * This is  the visualization method of the Enemy bullet entity.
  */
 public class Java2DEnemyBulletEntity extends EnemyBulletEntity {
     private final AnimationManager animationManager;
+    private final SpriteVisualization spriteVisualization;
 
     /**
      * This is the constructor to spawn a new Enemy Bullet entity.
@@ -22,6 +22,7 @@ public class Java2DEnemyBulletEntity extends EnemyBulletEntity {
      */
     public Java2DEnemyBulletEntity(Entity entity, SpriteLibrary spriteLibrary) {
         super(entity.getPosition().getX(), entity.getPosition().getY());
+        spriteVisualization = new SpriteVisualization();
         String bulletSprite = "baguette";
         if (entity instanceof Java2DEnemyEntity) {
             switch (((Java2DEnemyEntity) entity).getUsedSprite()) {
@@ -55,7 +56,8 @@ public class Java2DEnemyBulletEntity extends EnemyBulletEntity {
      * Visualizes the Enemy Bullet entity.
      * @return an image of the sprite animation frame.
      */
-    public Image visualize() {
-        return animationManager.getSprite();
+    public SpriteVisualization visualize() {
+        spriteVisualization.set(animationManager.getSprite());
+        return spriteVisualization;
     }
 }
