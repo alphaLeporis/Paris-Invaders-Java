@@ -90,6 +90,11 @@ public class Display extends JFrame {
     }
 
 
+    /**
+     * Handles the resizing.
+     * The component listener will listen to any change in size.
+     * If the configuration is set to fullscreen, it will use the native resolution of the screen.
+     */
     public void resizeHandler() {
         if (Java2DFact.displayConfig.getConfigInt("FULLSCREEN") == 1) {
             xFactor = Toolkit.getDefaultToolkit().getScreenSize().getWidth() / (double) AFact.gameConfig.getConfigInt("WIDTH");
@@ -128,6 +133,11 @@ public class Display extends JFrame {
     }
 
 
+    /**
+     * When there is a new size, we change the size of backgrounds and sprites.
+     * @param width is the new width.
+     * @param height is the new height.
+     */
     public void windowResizer(int width, int height) {
         backgroundLibrary.resize(width, height);
         spriteLibrary.resize(width/(double) AFact.gameConfig.getConfigInt("WIDTH"),

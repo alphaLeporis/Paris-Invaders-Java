@@ -7,7 +7,8 @@ import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds.BackgroundLi
 import java.awt.*;
 
 /**
- * To make our game look less boring, we add different backgrounds. To easily handle multiple backgrounds based on the state.
+ * To make our game look less boring, we add different backgrounds.
+ * To easily handle multiple backgrounds based on the state we use this manager.
  */
 public class BackgroundManager {
     private final BackgroundLibrary backgroundLibrary;

@@ -26,9 +26,9 @@ public class ImageUtils {
     }
 
     /**
-     * Creates an empty (transparant) image in a specific size.
+     * Creates an empty (transparent) image in a specific size.
      * @param size the size you want the image.
-     * @return the transparant image.
+     * @return the transparent image.
      */
     public static Image createCompatibleImage(Size size) {
         GraphicsConfiguration graphicsConfiguration = GraphicsEnvironment.getLocalGraphicsEnvironment()
@@ -40,7 +40,7 @@ public class ImageUtils {
 
     /**
      * Converts an image in a BufferedImage.
-     * @param image the original image that has to be conerted
+     * @param image the original image that has to be converted
      * @return the buffered version of the given image.
      */
     public static BufferedImage convertToBufferedImage(Image image)

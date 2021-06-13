@@ -18,7 +18,7 @@ public class UIButton extends UIClickable {
     /**
      * UIButton holds a UIText element as a label.
      * @param label is the text that the button will show.
-     * @param position is the position of the button.
+     * @param position is the position of the button in game-units.
      * @param clickAction is the action to button takes when clicked.
      */
     public UIButton(String label, Position position, ClickAction clickAction) {

@@ -29,7 +29,7 @@ public class AnimationManager {
     }
 
     /**
-     * Updates the animationframe. At the gevin updates per frame, a new frame will be selected.
+     * Updates the animationframe. At the given updates per frame, a new frame will be selected.
      */
     public void update() {
         currentFrameTime ++;
@@ -46,7 +46,7 @@ public class AnimationManager {
 
     /**
      * This method returns the correct sprite frame at a specific moment.
-     * Sometimes an excception will print. This is because of the resizing.
+     * Sometimes an exception will print. This is because of the resizing.
      * The actual resizing takes longer than this method.
      * @return an image of the sprite frame.
      */

@@ -24,7 +24,7 @@ public class PlayerShootsBullet extends Action {
     @Override
     public void update(State state) {
         if(playerBullet == null) {
-            playerBullet = state.getGame().getAfact().getBulletEntity(player);
+            playerBullet = state.getGame().getAfact().getPlayerBulletEntity(player);
             state.spawn(playerBullet);
         }
 
