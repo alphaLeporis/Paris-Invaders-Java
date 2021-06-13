@@ -7,20 +7,36 @@ import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.SpriteLibrary;
 
 import java.awt.*;
 
+/**
+ * This is  the visualization method of the Player bullet entity.
+ */
 public class Java2DPlayerBulletEntity extends PlayerBulletEntity {
     private final AnimationManager animationManager;
 
+    /**
+     * This is the constructor to spawn a new Player Bullet entity.
+     * @param spriteLibrary is needed to create a new animationmanager with preloaded sprites.
+     */
     public Java2DPlayerBulletEntity(int x, int y, SpriteLibrary spriteLibrary) {
         super(x, y);
         animationManager = new AnimationManager(spriteLibrary.getUnit("baguette"));
     }
 
+    /**
+     * Updates super (PlayerBulletEntity).
+     * Updates the animationmanager for the animations.
+     * @param state is needed to know where the updates happens.
+     */
     @Override
     public void update(State state) {
         super.update(state);
         animationManager.update();
     }
 
+    /**
+     * Visualizes the Player Bullet entity.
+     * @return an image of the sprite animation frame.
+     */
     public Image visualize() {
         return animationManager.getSprite();
     }

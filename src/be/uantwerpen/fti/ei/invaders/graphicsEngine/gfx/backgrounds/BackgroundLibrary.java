@@ -8,18 +8,29 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * The background library loads all the backgrounds at the beginning of the game.
+ * It also takes care of resizing. Backgrounds are saved as their original and a resized version.
+ * At each resizement the original backgrounds will be use.
+ */
 public class BackgroundLibrary {
     private final static String PATH_TO_BACKGROUNDS = "/backgrounds";
 
     private final Map<String, Image> original_backgrounds;
     private final Map<String, Image> backgrounds;
 
+    /**
+     * Constructor that loads images.
+     */
     public BackgroundLibrary() {
         original_backgrounds = new HashMap<>();
         backgrounds = new HashMap<>();
         loadBackgroundsFromDisk();
     }
 
+    /**
+     * Method for loading backgrounds from disk.
+     */
     private void loadBackgroundsFromDisk() {
         String[] backgroundsInFolder = getBackgroundsInFolder();
 
@@ -31,6 +42,9 @@ public class BackgroundLibrary {
         }
     }
 
+    /**
+     * @return a list of all the backgrounds in the folder.
+     */
     private String[] getBackgroundsInFolder() {
         URL resource = BackgroundLibrary.class.getResource(BackgroundLibrary.PATH_TO_BACKGROUNDS);
         assert resource != null;
@@ -39,10 +53,19 @@ public class BackgroundLibrary {
     }
 
 
+    /**
+     * @param name is needed to know what background you want.
+     * @return the specified background (if it exists).
+     */
     public Image getBackground(String name) {
         return backgrounds.get(name);
     }
 
+    /**
+     * resizes the original backgrounds and saves them again.
+     * @param width is the new width.
+     * @param height is the new height.
+     */
     public void resize(int width, int height) {
         for (Map.Entry<String, Image> background : original_backgrounds.entrySet()) {
 

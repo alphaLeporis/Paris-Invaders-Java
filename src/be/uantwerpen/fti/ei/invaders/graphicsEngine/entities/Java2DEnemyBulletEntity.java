@@ -8,9 +8,18 @@ import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.SpriteLibrary;
 
 import java.awt.*;
 
+/**
+ * This is  the visualization method of the Enemy bullet entity.
+ */
 public class Java2DEnemyBulletEntity extends EnemyBulletEntity {
     private final AnimationManager animationManager;
 
+    /**
+     * This is the constructor to spawn a new Enemy Bullet entity.
+     * Based on the entity that fired te bullet, the bullet will visualize differently.
+     * @param entity is needed to know where the bullet has been fired and by whom.
+     * @param spriteLibrary is needed to create a new animationmanager with preloaded sprites.
+     */
     public Java2DEnemyBulletEntity(Entity entity, SpriteLibrary spriteLibrary) {
         super(entity.getPosition().getX(), entity.getPosition().getY());
         String bulletSprite = "baguette";
@@ -31,12 +40,21 @@ public class Java2DEnemyBulletEntity extends EnemyBulletEntity {
         animationManager = new AnimationManager(spriteLibrary.getUnit(bulletSprite));
     }
 
+    /**
+     * Updates super (EnemyBulletEntity).
+     * Updates the animationmanager for the animations.
+     * @param state is needed to know where the updates happens.
+     */
     @Override
     public void update(State state) {
         super.update(state);
         animationManager.update();
     }
 
+    /**
+     * Visualizes the Enemy Bullet entity.
+     * @return an image of the sprite animation frame.
+     */
     public Image visualize() {
         return animationManager.getSprite();
     }

@@ -7,15 +7,24 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This library holds different SpriteSets.
+ */
 public class SpriteLibrary {
     private final static String PATH_TO_SPRITES = "/sprites";
     private final Map<String, SpriteSet> spriteSetMap;
 
+    /**
+     * Constructor that loads SpriteSets
+     */
     public SpriteLibrary() {
         spriteSetMap = new HashMap<>();
         loadSpritesFromDisk();
     }
 
+    /**
+     * Loads all the sprites that can be found inside the sprite directory.
+     */
     private void loadSpritesFromDisk() {
         String[] folderNames = getFolderNames();
 
@@ -34,6 +43,12 @@ public class SpriteLibrary {
         }
     }
 
+    /**
+     * Returns a list of all sprite sheets in a folder.
+     * @param baseDir is the directory there will be looked in.
+     * @return a list of all the backgrounds in that folder.
+     *
+     */
     private String[] getSheetsInFolder(String baseDir) {
         URL resource = SpriteLibrary.class.getResource(baseDir);
         assert resource != null;
@@ -52,10 +67,20 @@ public class SpriteLibrary {
         return file.list((current, name) -> new File(current, name).isDirectory());
     }
 
+    /**
+     * returns a specific sprite unit.
+     * @param name is needed to know what unit you want.
+     * @return the specified sprite unit (if it exists).
+     */
     public SpriteSet getUnit(String name) {
         return spriteSetMap.get(name);
     }
 
+    /**
+     * Resizes the SpriteSets.
+     * @param xFactor is multiplied with the original image width.
+     * @param yFactor is multiplied with the original image height.
+     */
     public void resize(double xFactor, double yFactor) {
         for (Map.Entry<String, SpriteSet> spriteSet : spriteSetMap.entrySet()) {
             spriteSet.getValue().resize(xFactor, yFactor);

@@ -7,7 +7,15 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.Objects;
 
+/**
+ * Holds different small methods to work more easily with images.
+ */
 public class ImageUtils {
+    /**
+     * Loads an image from a folder relative to the resource folder.
+     * @param filePath a file relative to the resource folder.
+     * @return the loaded image.
+     */
     public static Image loadImage(String filePath) {
         try {
            return ImageIO.read(Objects.requireNonNull(ImageUtils.class.getResource(filePath)));
@@ -17,6 +25,11 @@ public class ImageUtils {
         return null;
     }
 
+    /**
+     * Creates an empty (transparant) image in a specific size.
+     * @param size the size you want the image.
+     * @return the transparant image.
+     */
     public static Image createCompatibleImage(Size size) {
         GraphicsConfiguration graphicsConfiguration = GraphicsEnvironment.getLocalGraphicsEnvironment()
                 .getDefaultScreenDevice()
@@ -25,6 +38,11 @@ public class ImageUtils {
         return graphicsConfiguration.createCompatibleImage(size.getWidth(), size.getHeight(), 2);
     }
 
+    /**
+     * Converts an image in a BufferedImage.
+     * @param image the original image that has to be conerted
+     * @return the buffered version of the given image.
+     */
     public static BufferedImage convertToBufferedImage(Image image)
     {
         BufferedImage newImage = new BufferedImage(

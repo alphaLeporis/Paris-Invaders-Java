@@ -6,14 +6,25 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd344fa2-c0f1-4f0d-b634-c73c379e4456" name="Default Changelist" comment="- Adding documentation&#10;- Finished help screen">
+    <list default="true" id="cd344fa2-c0f1-4f0d-b634-c73c379e4456" name="Default Changelist" comment="- Adding documentation&#10;- Code clean up">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/controlEngine/NPCInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/controlEngine/NPCInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/EnemyBulletEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/EnemyBulletEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/PlayerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/entities/PlayerEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/gameEngine/states/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/UIText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/UIText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_sources/help-background.psd" beforeDir="false" afterPath="$PROJECT_DIR$/image_sources/help-background.psd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DBlockEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DBlockEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DBonusEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DBonusEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DEnemyBulletEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DEnemyBulletEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DEnemyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DEnemyEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DPlayerBulletEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DPlayerBulletEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DPlayerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/entities/Java2DPlayerEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/ImageUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/ImageUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/backgrounds/BackgroundLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/backgrounds/BackgroundLibrary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/backgrounds/BackgroundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/backgrounds/BackgroundManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/sprites/AnimationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/sprites/AnimationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/sprites/SpriteLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/sprites/SpriteLibrary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/sprites/SpriteSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/gfx/sprites/SpriteSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/UIComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/UIComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/clickable/ClickAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/clickable/ClickAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/clickable/UIButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/clickable/UIButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/clickable/UIClickable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/uantwerpen/fti/ei/invaders/graphicsEngine/ui/core/clickable/UIClickable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,13 +160,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -226,7 +239,8 @@
       <workItem from="1622314564936" duration="217000" />
       <workItem from="1623348245919" duration="7011000" />
       <workItem from="1623396992782" duration="7498000" />
-      <workItem from="1623488075349" duration="22445000" />
+      <workItem from="1623488075349" duration="22562000" />
+      <workItem from="1623564786410" duration="2946000" />
     </task>
     <task id="LOCAL-00001" summary="Adding the controller and a playerEntity">
       <created>1616325051200</created>
@@ -487,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623527281810</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="- Adding documentation&#10;- Code clean up">
+      <created>1623527515925</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1623527515925</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,7 +527,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="- Began adding bonusses -&gt; has to be integrated in actions&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Sound effects&#10;- Enemies animation&#10;- Pause&#10;- Actions&#10;- Win and lose screens&#10;- Finish UI containers" />
     <MESSAGE value="- Added enemies animation&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Sound effects&#10;- Pause&#10;- Actions&#10;- Win and lose screens&#10;- Finish UI containers" />
     <MESSAGE value="- Working on effects&#10;- Working on actions&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Sound effects&#10;- Pause&#10;- Win and lose screens&#10;- Finish UI containers" />
     <MESSAGE value="- Effects are done&#10;- Actions are done&#10;- Added soundeffects&#10;&#10;&#10;Still have to add:&#10;- Improve movement for enemies&#10;- Pause&#10;- Win and lose screens&#10;- Finish UI containers" />
@@ -531,7 +551,8 @@
     <MESSAGE value="- Adding documentation&#10;- Timer is added&#10;- Small bug fix for effects&#10;&#10;Still have to add:&#10;- Add help screen&#10;- Add exit button on pause screen" />
     <MESSAGE value="- Adding documentation&#10;- Added exit button on pause screen&#10;- Added help state, still have to add a nice background" />
     <MESSAGE value="- Adding documentation&#10;- Finished help screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Adding documentation&#10;- Finished help screen" />
+    <MESSAGE value="- Adding documentation&#10;- Code clean up" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Adding documentation&#10;- Code clean up" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

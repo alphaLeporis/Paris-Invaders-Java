@@ -21,9 +21,9 @@ public class BackgroundManager {
 
 
     /**
-     * Our renderer needs the visualize method to render the background on our window.
-     * @param state is needed to know what background to render
-     * @return an Image, in this case a BufferedImage
+     * Our renderer needs the visualize method to render the correct background on our window.
+     * @param state is needed to know what background to render.
+     * @return an Image, the correct background.
      */
     public Image visualize(State state) {
         StatesEnum currentState = StatesEnum.valueOf(state.getClass().getSimpleName());
