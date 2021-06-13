@@ -22,7 +22,7 @@ public class Game {
         this.afact = afact;
         input = afact.getInput();
         score = new Score();
-        currentState = new MenuState(this);
+        currentState = afact.getMenuState(this);
     }
 
     /**

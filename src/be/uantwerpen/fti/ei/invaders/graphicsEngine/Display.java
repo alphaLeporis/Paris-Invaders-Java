@@ -6,7 +6,7 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds.BackgroundLibrary;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.SpriteLibrary;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds.BackgroundManager;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.UIManager;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.VisualisationObjects;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,8 +21,8 @@ public class Display extends JFrame {
     private final Canvas canvas;
     private final SpriteLibrary spriteLibrary;
     private final BackgroundLibrary backgroundLibrary;
-    private final BackgroundManager backgroundManager;
-    private final be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.UIManager uiManager;
+    //private final BackgroundManager backgroundManager;
+    //private final be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.UIManager uiManager;
     public double xFactor;
     public double yFactor;
 
@@ -33,8 +33,8 @@ public class Display extends JFrame {
     public Display(Input input, SpriteLibrary spriteLibrary, BackgroundLibrary backgroundLibrary) {
         this.spriteLibrary = spriteLibrary;
         this.backgroundLibrary = backgroundLibrary;
-        this.backgroundManager = new BackgroundManager(backgroundLibrary);
-        this.uiManager = new UIManager(this);
+        //this.backgroundManager = new BackgroundManager(backgroundLibrary);
+        //this.uiManager = new UIManager(this);
         canvas = new Canvas();
 
         setTitle("Paris Invaders");
@@ -66,8 +66,12 @@ public class Display extends JFrame {
         graphics.setColor(Color.BLACK);
         graphics.fillRect(0,0, canvas.getWidth(),canvas.getHeight());
 
-        graphics.drawImage(backgroundManager.visualize(state), 0,0,null);
-        uiManager.update(state);
+        try {
+            graphics.drawImage(state.visualize().getBackground(), 0,0,null);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        //uiManager.update(state);
 
 
         state.getEntities().forEach(entity -> graphics.drawImage(
@@ -77,12 +81,17 @@ public class Display extends JFrame {
             null
         ));
 
-        uiManager.getUiComponents().forEach(uiContainer -> graphics.drawImage(
-            uiContainer.visualize(),
-            (int) Math.round(uiContainer.getPosition().getX()*xFactor),
-            (int) Math.round(uiContainer.getPosition().getY()*yFactor),
-            null
-        ));
+
+        try {
+            state.visualize().getUiComponents().forEach(uiContainer -> graphics.drawImage(
+                uiContainer.visualize(),
+                (int) Math.round(uiContainer.getPosition().getX()*xFactor),
+                (int) Math.round(uiContainer.getPosition().getY()*yFactor),
+                null
+            ));
+        } catch (Exception e) {
+            System.out.println(e);
+        }
 
         graphics.dispose();
         bufferStrategy.show();
@@ -139,5 +148,9 @@ public class Display extends JFrame {
         backgroundLibrary.resize(width, height);
         spriteLibrary.resize(width/(double) AFact.gameConfig.getConfigInt("WIDTH"),
                             height/(double) AFact.gameConfig.getConfigInt("HEIGHT"));
+    }
+
+    public BackgroundLibrary getBackgroundLibrary() {
+        return backgroundLibrary;
     }
 }

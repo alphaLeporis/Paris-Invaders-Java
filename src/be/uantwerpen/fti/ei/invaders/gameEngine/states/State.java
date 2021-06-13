@@ -7,6 +7,7 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
 import be.uantwerpen.fti.ei.invaders.gameEngine.Score;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.Entity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.PlayerEntity;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.VisualisationObjects;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +47,7 @@ public abstract class State {
      * @param game is needed to change between states.
      */
     public void update(Game game) {
-        audioPlayer.update();
+        //audioPlayer.update();
         updateEntities();
         removeDeadEntities();
         if(nextState != null) {
@@ -156,5 +157,8 @@ public abstract class State {
         return previousState;
     }
 
-
+    /**
+     * @return a visualisation of the state.
+     */
+    public abstract VisualisationObjects visualize();
 }

@@ -2,6 +2,7 @@ package be.uantwerpen.fti.ei.invaders;
 
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Input;
+import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.Entity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
@@ -26,6 +27,14 @@ public abstract class AFact {
      * @param state is needed to know what state to render.
      */
     public abstract void render(State state);
+
+    public abstract State getGameState(Game game);
+    public abstract State getGameState(Game game, State state);
+    public abstract State getHelpState(Game game);
+    public abstract State getLostState(Game game);
+    public abstract State getWonState(Game game);
+    public abstract State getMenuState(Game game);
+    public abstract State getPauseState(Game game);
 
     /**
      * @param input is the controller.

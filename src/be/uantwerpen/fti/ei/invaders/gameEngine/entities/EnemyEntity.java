@@ -4,6 +4,7 @@ import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.EnemyShootsBullet;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.VisualisationObjects;
 
 import java.awt.*;
 
@@ -17,7 +18,7 @@ public class EnemyEntity extends Entity {
      * The enemy spawns
      * @param controller is needed to control the enemy.
      * @param x is the x value of where the enemy spawns in game units.
-     * @param y is the yy value of where the enemy spawns in game units.
+     * @param y is the y value of where the enemy spawns in game units.
      */
     public EnemyEntity(Controller controller, int x, int y) {
         super();

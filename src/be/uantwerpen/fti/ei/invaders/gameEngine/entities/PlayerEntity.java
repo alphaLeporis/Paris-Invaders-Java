@@ -8,6 +8,7 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Fast;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.effects.Slow;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.VisualisationObjects;
 
 import java.awt.*;
 import java.util.Optional;

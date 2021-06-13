@@ -9,6 +9,7 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.Condition;
 import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.EnemyEntity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.PlayerEntity;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.VisualisationObjects;
 
 import java.util.List;
 
@@ -34,8 +35,8 @@ public class GameState extends State {
 
         initializeCharacters();
         initializeConditions();
+        audioPlayer.playMusic("pause.wav");
 
-        audioPlayer.playMusic("game.wav");
     }
 
     /**
@@ -50,7 +51,7 @@ public class GameState extends State {
         playing = true;
         currentGameLevel = previousState.getCurrentGameLevel();
         initializeConditions();
-        audioPlayer.playMusic("game.wav");
+        audioPlayer.playMusic("pause.wav");
     }
 
     /**
@@ -151,7 +152,7 @@ public class GameState extends State {
      */
     private void lose() {
         playing = false;
-        setNextState(new LostState(game));
+        setNextState(game.getAfact().getLostState(game));
     }
 
     /**
@@ -162,7 +163,7 @@ public class GameState extends State {
         if (currentGameLevel > 3) {
             playing = false;
             score.playerWins();
-            setNextState(new WonState(game));
+            setNextState(game.getAfact().getWonState(game));
         }
         score.playerNewLevel();
         audioPlayer.playSound("next-level.wav");
@@ -174,5 +175,13 @@ public class GameState extends State {
      */
     private void restartGame() {
         initializeEnemies(2);
+    }
+
+    /**
+     * @return a visualisation of the state. Unused here.
+     */
+    @Override
+    public VisualisationObjects visualize() {
+        return null;
     }
 }

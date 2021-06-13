@@ -5,11 +5,13 @@ import be.uantwerpen.fti.ei.invaders.ConfigReader;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Controller;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Input;
 import be.uantwerpen.fti.ei.invaders.controlEngine.PlayerController;
+import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.Entity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.entities.*;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.backgrounds.BackgroundLibrary;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.gfx.sprites.SpriteLibrary;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.states.*;
 
 /**
  * This class extends the parent abstract factory.
@@ -41,6 +43,41 @@ public class Java2DFact extends AFact {
     @Override
     public void render(State state) {
         display.render(state);
+    }
+
+    @Override
+    public State getGameState(Game game) {
+        return new Java2DGameState(game, display);
+    }
+
+    @Override
+    public State getGameState(Game game, State state) {
+        return new Java2DGameState(game, state, display);
+    }
+
+    @Override
+    public State getHelpState(Game game) {
+        return new Java2DHelpState(game, display);
+    }
+
+    @Override
+    public State getLostState(Game game) {
+        return new Java2DLostState(game, display);
+    }
+
+    @Override
+    public State getWonState(Game game) {
+        return new Java2DWonState(game, display);
+    }
+
+    @Override
+    public State getMenuState(Game game) {
+        return new Java2DMenuState(game, display);
+    }
+
+    @Override
+    public State getPauseState(Game game) {
+        return new Java2DMenuState(game, display);
     }
 
     /**
