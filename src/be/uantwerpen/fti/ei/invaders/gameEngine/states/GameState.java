@@ -23,6 +23,7 @@ public class GameState extends State {
 
     /**
      * This is the base constructor and will create a game without a previous state (new game).
+     * The game level is
      * @param game is needed to pass to super to store the needed game variables stored in game.
      */
     public GameState(Game game) {
@@ -44,9 +45,10 @@ public class GameState extends State {
      */
     public GameState(Game game, State previousState) {
         super(game);
-        this.entities = previousState.getEntities();
-        this.score = previousState.getScore();
+        entities = previousState.getEntities();
+        score = previousState.getScore();
         playing = true;
+        currentGameLevel = previousState.getCurrentGameLevel();
         initializeConditions();
         audioPlayer.playMusic("game.wav");
     }

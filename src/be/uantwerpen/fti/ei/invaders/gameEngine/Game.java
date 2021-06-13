@@ -12,7 +12,7 @@ public class Game {
     private final AFact afact;
     private final Input input;
     private State currentState;
-    private Score score;
+    private final Score score;
 
     /**
      * The game constructor will start the game. In this case we want our menu state to start.
@@ -68,5 +68,8 @@ public class Game {
         return score;
     }
 
-    public void resetScore() {score = new Score();}
+    /**
+     * Resets the score.
+     */
+    public void resetScore() {score.reset();}
 }

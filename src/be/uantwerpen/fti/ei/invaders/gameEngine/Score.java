@@ -65,10 +65,17 @@ public class Score {
     }
 
     /**
-     * @return nicely formated score in string.
+     * @return nicely formatted score in string.
      */
     public String getFormattedScore() {
         String scoreString = String.valueOf(score);
         return "0".repeat(Math.max(0, 5 - scoreString.length())) + scoreString;
+    }
+
+    /**
+     * Resets the score to 0.
+     */
+    public void reset() {
+        score = 0;
     }
 }
