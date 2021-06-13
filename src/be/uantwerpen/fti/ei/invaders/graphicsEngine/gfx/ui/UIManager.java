@@ -56,27 +56,32 @@ public class UIManager {
             uiComponents.add(new UILives(new Position(200,10)));
             uiComponents.add(new UIScore(new Position(530,10)));
             uiComponents.add(new UIButton("PAUSE",new Position(1100,10), (uiState) -> uiState.setNextState(new PauseState(state.getGame(), uiState))));
+            return;
         }
 
         if (state instanceof MenuState) {
             uiComponents.add(new UIButton("PLAY",new Position(600,400), (uiState) -> uiState.setNextState(new GameState(state.getGame()))));
             uiComponents.add(new UIButton("HELP",new Position(600,440), (uiState) -> uiState.setNextState(new HelpState(state.getGame()))));
             uiComponents.add(new UIButton("EXIT",new Position(600,480), (uiState) -> System.exit(0)));
+            return;
         }
 
         if (state instanceof HelpState) {
             uiComponents.add(new UIButton("RETURN",new Position(1050,720), (uiState) -> uiState.setNextState(new MenuState(state.getGame()))));
+            return;
         }
 
         if (state instanceof PauseState) {
             uiComponents.add(new UIButton("RETURN", new Position(600,400), (uiState) -> uiState.setNextState(new GameState(state.getGame(), uiState.getPreviousState()))));
             uiComponents.add(new UIButton("EXIT TO MENU",new Position(600,440), (uiState) -> uiState.setNextState(new MenuState(state.getGame()))));
+            return;
         }
 
         if (state instanceof LostState) {
             uiComponents.add(new UIScore(new Position(400,340)));
             uiComponents.add(new UIButton("MENU",new Position(400,400), (uiState) -> uiState.setNextState(new MenuState(state.getGame()))));
             uiComponents.add(new UIButton("EXIT",new Position(400,440), (uiState) -> System.exit(0)));
+            return;
         }
 
         if (state instanceof WonState) {
