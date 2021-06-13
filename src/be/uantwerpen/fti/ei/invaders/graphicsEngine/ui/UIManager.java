@@ -6,7 +6,7 @@ import be.uantwerpen.fti.ei.invaders.graphicsEngine.Display;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UIComponent;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UILevel;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UILives;
-import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UITimer;
+import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.UIScore;
 import be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core.clickable.UIButton;
 
 import java.util.ArrayList;
@@ -54,7 +54,7 @@ public class UIManager {
         if (state instanceof GameState) {
             uiComponents.add(new UILevel(new Position(20,10)));
             uiComponents.add(new UILives(new Position(200,10)));
-            uiComponents.add(new UITimer(new Position(570,10)));
+            uiComponents.add(new UIScore(new Position(530,10)));
             uiComponents.add(new UIButton("PAUSE",new Position(1100,10), (uiState) -> uiState.setNextState(new PauseState(state.getGame(), uiState))));
         }
 
@@ -74,11 +74,13 @@ public class UIManager {
         }
 
         if (state instanceof LostState) {
+            uiComponents.add(new UIScore(new Position(400,340)));
             uiComponents.add(new UIButton("MENU",new Position(400,400), (uiState) -> uiState.setNextState(new MenuState(state.getGame()))));
             uiComponents.add(new UIButton("EXIT",new Position(400,440), (uiState) -> System.exit(0)));
         }
 
         if (state instanceof WonState) {
+            uiComponents.add(new UIScore(new Position(200,340)));
             uiComponents.add(new UIButton("MENU",new Position(200,400), (uiState) -> uiState.setNextState(new MenuState(state.getGame()))));
             uiComponents.add(new UIButton("EXIT",new Position(200,440), (uiState) -> System.exit(0)));
         }

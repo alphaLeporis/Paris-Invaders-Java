@@ -2,6 +2,7 @@ package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 
 import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.audioEngine.AudioPlayer;
+import be.uantwerpen.fti.ei.invaders.gameEngine.Score;
 import be.uantwerpen.fti.ei.invaders.gameEngine.collisionHandling.CollisionBox;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.actions.Action;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
@@ -21,6 +22,7 @@ public abstract class Entity {
     @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
     protected Optional<Action> action;
     protected final AudioPlayer audioPlayer;
+    protected Score score;
 
     /**
      * The constructor provides a default position and size.
@@ -39,6 +41,7 @@ public abstract class Entity {
      * @param state is needed to know where the updates happens.
      */
     public void update(State state) {
+        if (score == null) score = state.getScore();
         updateMovement();
         handleAction(state);
         handleCollisions(state);

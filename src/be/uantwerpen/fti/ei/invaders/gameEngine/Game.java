@@ -12,15 +12,17 @@ public class Game {
     private final AFact afact;
     private final Input input;
     private State currentState;
+    private Score score;
 
     /**
      * The game constructor will start the game. In this case we want our menu state to start.
      * @param afact is needed to know what graphics engine we will be using.
      */
     public Game(AFact afact) {
-        this.input = afact.getInput();
         this.afact = afact;
-        this.currentState = new MenuState(this);
+        input = afact.getInput();
+        score = new Score();
+        currentState = new MenuState(this);
     }
 
     /**
@@ -57,5 +59,12 @@ public class Game {
      */
     public Input getInput() {
         return input;
+    }
+
+    /**
+     * @return the gamescore.
+     */
+    public Score getScore() {
+        return score;
     }
 }

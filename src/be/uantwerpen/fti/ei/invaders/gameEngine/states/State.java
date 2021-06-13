@@ -4,7 +4,7 @@ import be.uantwerpen.fti.ei.invaders.AFact;
 import be.uantwerpen.fti.ei.invaders.audioEngine.AudioPlayer;
 import be.uantwerpen.fti.ei.invaders.controlEngine.Input;
 import be.uantwerpen.fti.ei.invaders.gameEngine.Game;
-import be.uantwerpen.fti.ei.invaders.gameEngine.Timer;
+import be.uantwerpen.fti.ei.invaders.gameEngine.Score;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.Entity;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.PlayerEntity;
 
@@ -20,7 +20,7 @@ public abstract class State {
     protected List<Entity> entities;
     protected final AFact afact;
     protected final Game game;
-    protected Timer timer;
+    protected Score score;
     protected int currentGameLevel;
 
     protected final Input input;
@@ -33,12 +33,12 @@ public abstract class State {
      * @param game is needed to get the input and the abstract factory for graphics.
      */
     public State(Game game) {
-        this.input = game.getInput();
-        this.afact = game.getAfact();
         this.game = game;
+        input = game.getInput();
+        afact = game.getAfact();
         audioPlayer = new AudioPlayer();
         entities = new ArrayList<>();
-        timer = new Timer();
+        score = game.getScore();
     }
 
     /**
@@ -118,7 +118,6 @@ public abstract class State {
             previousState = this;
         }
         audioPlayer.removeMusic();
-        timer.stop();
         this.nextState = nextState;
     }
 
@@ -130,23 +129,18 @@ public abstract class State {
     }
 
     /**
+     * @return the score.
+     */
+    public Score getScore() {
+        return score;
+    }
+
+    /**
      * @return the game.
      */
     public Game getGame() {
         return game;
     }
-
-    /**
-     * @return the in-game timer.
-     */
-    public Timer getTimer() {
-        return timer;
-    }
-
-    /**
-     * @return a formatted string representation of the in-game timer.
-     */
-    public String getFormattedTimer() {return timer.getFormattedTime();}
 
     /**
      * @return the current game level.

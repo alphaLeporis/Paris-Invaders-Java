@@ -28,7 +28,6 @@ public class GameState extends State {
     public GameState(Game game) {
         super(game);
         playing = true;
-
         currentGameLevel = 1;
 
         initializeCharacters();
@@ -45,8 +44,7 @@ public class GameState extends State {
     public GameState(Game game, State previousState) {
         super(game);
         this.entities = previousState.getEntities();
-        this.timer = previousState.getTimer();
-        timer.start();
+        this.score = previousState.getScore();
         playing = true;
         initializeConditions();
         audioPlayer.playMusic("game.wav");
@@ -59,8 +57,6 @@ public class GameState extends State {
     @Override
     public void update(Game game) {
         super.update(game);
-
-        timer.update();
         generateBonus();
 
         if(playing) {
@@ -153,7 +149,6 @@ public class GameState extends State {
      */
     private void lose() {
         playing = false;
-        timer.stop();
         setNextState(new LostState(game));
         System.out.println("LOST");
     }
@@ -163,14 +158,15 @@ public class GameState extends State {
      */
     private void win() {
         currentGameLevel ++;
-        audioPlayer.playSound("next-level.wav");
-        restartGame();
         if (currentGameLevel > 3) {
             playing = false;
-            timer.stop();
+            score.playerWins();
             setNextState(new WonState(game));
             System.out.println("WON");
         }
+        score.playerNewLevel();
+        audioPlayer.playSound("next-level.wav");
+        restartGame();
     }
 
     /**
@@ -180,5 +176,4 @@ public class GameState extends State {
         System.out.println("Current game level: "+currentGameLevel);
         initializeEnemies(2);
     }
-
 }

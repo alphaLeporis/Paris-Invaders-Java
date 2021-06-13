@@ -70,6 +70,7 @@ public class EnemyEntity extends Entity {
         if (other instanceof PlayerBulletEntity) {
             isEntityAlive = false;
             other.killEntity();
+            score.playerKills();
             audioPlayer.playSound("hit.wav");
         }
     }

@@ -93,19 +93,23 @@ public class PlayerEntity extends Entity {
     public void handleCollision(Entity other) {
         if (other instanceof EnemyBulletEntity) {
             audioPlayer.playSound("player-hit.wav");
+            other.killEntity();
+            score.enemyHitsPlayer();
             if (currentHealth <= 1) {
                 isEntityAlive = false;
-            } else {
-                currentHealth--;
+                return;
             }
-            other.killEntity();
+            currentHealth--;
+
         }
 
         if (other instanceof BonusEntity) {
             if (((BonusEntity) other).isGoodBonus()) {
                 setEffect(new Fast());
+                score.playerGoodBonus();
             } else {
                 setEffect(new Slow());
+                score.playerBadBonus();
             }
             other.killEntity();
             audioPlayer.playSound("bonus.wav");

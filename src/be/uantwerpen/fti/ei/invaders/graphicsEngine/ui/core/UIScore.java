@@ -8,10 +8,10 @@ import java.awt.*;
 /**
  * Shows the current in-game time. Based on UIText.
  */
-public class UITimer extends UIText {
-    public UITimer(Position position) {
+public class UIScore extends UIText {
+    public UIScore(Position position) {
         super("", position);
-        this.color = Color.black;
+        this.color = Color.white;
     }
 
     /**
@@ -22,6 +22,6 @@ public class UITimer extends UIText {
     public void update(State state) {
         createFont();
         calculateSize();
-        setText(state.getFormattedTimer());
+        setText("Score: "+state.getScore().getFormattedScore());
     }
 }

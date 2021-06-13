@@ -47,6 +47,9 @@ public class BlockEntity extends Entity {
             }
             other.killEntity();
         }
+        if (other instanceof PlayerBulletEntity) {
+            score.playerHitsBlock();
+        }
     }
 
     /**
