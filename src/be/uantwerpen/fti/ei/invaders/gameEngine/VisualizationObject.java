@@ -1,7 +1,5 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine;
 
-import java.awt.*;
-
 /**
  * Is the abstract visualization object. This has to be implemented by the graphics side.
  * @param <T> is the visualization type.

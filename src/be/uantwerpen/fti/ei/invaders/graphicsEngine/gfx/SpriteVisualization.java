@@ -18,14 +18,6 @@ public class SpriteVisualization extends VisualizationObject<Image> {
     }
 
     /**
-     * Constructor with image
-     * @param image the image that has to be saved.
-     */
-    public SpriteVisualization(Image image) {
-        this.image = image;
-    }
-
-    /**
      * @return the sprite (image).
      */
     @Override
