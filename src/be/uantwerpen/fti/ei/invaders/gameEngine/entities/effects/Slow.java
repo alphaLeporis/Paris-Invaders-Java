@@ -7,5 +7,4 @@ public class Slow extends Effect {
     public Slow() {
         super(5);
     }
-
 }

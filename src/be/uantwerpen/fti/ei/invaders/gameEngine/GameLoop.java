@@ -1,6 +1,5 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine;
 
-
 import be.uantwerpen.fti.ei.invaders.AFact;
 
 /**

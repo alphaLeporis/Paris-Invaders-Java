@@ -10,9 +10,7 @@ import java.awt.*;
  * Implements the UIClickable method.
  */
 public class UIButton extends UIClickable {
-
     private final UIText label;
-
     private final ClickAction clickAction;
 
     /**

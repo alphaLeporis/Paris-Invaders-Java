@@ -12,7 +12,6 @@ import java.awt.*;
  * This is  the visualization method of the Player entity.
  */
 public class Java2DPlayerEntity extends PlayerEntity {
-
     private final AnimationManager animationManager;
 
     /**

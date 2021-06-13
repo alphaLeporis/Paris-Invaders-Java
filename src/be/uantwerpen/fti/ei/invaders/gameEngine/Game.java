@@ -9,7 +9,6 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
  * The Game class will bond our Abstract Factory and the Game engine together.
  */
 public class Game {
-
     private final AFact afact;
     private final Input input;
     private State currentState;

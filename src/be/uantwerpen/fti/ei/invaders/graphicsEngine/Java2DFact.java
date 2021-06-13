@@ -22,7 +22,6 @@ public class Java2DFact extends AFact {
     protected final SpriteLibrary spriteLibrary;
     protected final BackgroundLibrary backgroundLibrary;
 
-
     /**
      * The constructor loads the display, background an sprites.
      * It also takes care of the display properties.

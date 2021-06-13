@@ -1,6 +1,5 @@
 package be.uantwerpen.fti.ei.invaders.graphicsEngine.ui.core;
 
-
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Size;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
@@ -11,7 +10,6 @@ import java.awt.*;
  * This is an abstract UIComponent that can de implemented to different UI systems.
  */
 public abstract class UIComponent {
-
     protected Position position;
     protected Size size;
     protected double xFactor;

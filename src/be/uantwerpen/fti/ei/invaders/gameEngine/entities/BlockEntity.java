@@ -1,6 +1,5 @@
 package be.uantwerpen.fti.ei.invaders.gameEngine.entities;
 
-
 import be.uantwerpen.fti.ei.invaders.gameEngine.entities.movement.Position;
 import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 
@@ -55,7 +54,6 @@ public class BlockEntity extends Entity {
      */
     @Override
     public void updateMovement() {}
-
 
     /**
      * @return null: no visualisation inside here.

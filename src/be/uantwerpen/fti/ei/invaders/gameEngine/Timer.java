@@ -9,7 +9,6 @@ public class Timer {
     private int updatesTillNow;
     private boolean isRunning;
 
-
     /**
      * Creates a new timer starting at 0.
      */

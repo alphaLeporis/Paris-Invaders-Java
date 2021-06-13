@@ -14,7 +14,6 @@ import java.util.Arrays;
  * This is  the visualization method of the Enemy entity.
  */
 public class Java2DEnemyEntity extends EnemyEntity {
-
     private final AnimationManager animationManager;
     @SuppressWarnings("FieldCanBeLocal")
     private final ArrayList<String> spriteList = new ArrayList<>(Arrays.asList("cowboy", "german", "greek", "mexican"));

@@ -17,10 +17,16 @@ public class Position {
         this.y = y;
     }
 
+    /**
+     * @return the stored x value.
+     */
     public int getX() {
         return x;
     }
 
+    /**
+     * @return the stored y value.
+     */
     public int getY() {
         return y;
     }

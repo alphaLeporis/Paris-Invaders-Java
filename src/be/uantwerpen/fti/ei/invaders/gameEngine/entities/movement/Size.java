@@ -17,10 +17,16 @@ public class Size {
         this.height = height;
     }
 
+    /**
+     * @return the stored width.
+     */
     public int getWidth() {
         return width;
     }
 
+    /**
+     * @return the stored height.
+     */
     public int getHeight() {
         return height;
     }

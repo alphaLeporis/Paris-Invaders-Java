@@ -21,7 +21,6 @@ public class UIManager {
     private State currentState;
     private final Display display;
 
-
     /**
      * The constructor loads the uiComponents array.
      * @param display is needed to know the xFactor and the yFactor.

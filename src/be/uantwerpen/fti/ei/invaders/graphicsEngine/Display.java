@@ -18,7 +18,6 @@ import java.awt.image.BufferStrategy;
  * This class will make the display and render bufferedimages to its canvas.
  */
 public class Display extends JFrame {
-
     private final Canvas canvas;
     private final SpriteLibrary spriteLibrary;
     private final BackgroundLibrary backgroundLibrary;
@@ -89,7 +88,6 @@ public class Display extends JFrame {
         bufferStrategy.show();
     }
 
-
     /**
      * Handles the resizing.
      * The component listener will listen to any change in size.
@@ -131,7 +129,6 @@ public class Display extends JFrame {
         });
 
     }
-
 
     /**
      * When there is a new size, we change the size of backgrounds and sprites.
