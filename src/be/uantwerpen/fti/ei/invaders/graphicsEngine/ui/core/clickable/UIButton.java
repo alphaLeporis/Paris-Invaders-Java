@@ -40,13 +40,7 @@ public class UIButton extends UIClickable {
             label.color = Color.LIGHT_GRAY;
             return;
         }
-
-        if(isPressed) {
-            label.color = Color.DARK_GRAY;
-            return;
-        }
         label.color = Color.WHITE;
-
     }
 
     /**

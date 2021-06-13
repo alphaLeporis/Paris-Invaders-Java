@@ -10,7 +10,7 @@ import java.awt.*;
  */
 public class UIScore extends UIText {
     public UIScore(Position position) {
-        super("", position);
+        super("Score:", position);
         this.color = Color.white;
     }
 

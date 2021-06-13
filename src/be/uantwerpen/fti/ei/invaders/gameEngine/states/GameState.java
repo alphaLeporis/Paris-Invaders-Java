@@ -144,7 +144,6 @@ public class GameState extends State {
         if(Math.random() * 1000 < AFact.gameConfig.getConfigInt("CHANCE_NEW_BONUS")) {
             entities.add(afact.getBonusEntity());
         }
-
     }
 
     /**
@@ -153,7 +152,6 @@ public class GameState extends State {
     private void lose() {
         playing = false;
         setNextState(new LostState(game));
-        System.out.println("LOST");
     }
 
     /**
@@ -165,7 +163,6 @@ public class GameState extends State {
             playing = false;
             score.playerWins();
             setNextState(new WonState(game));
-            System.out.println("WON");
         }
         score.playerNewLevel();
         audioPlayer.playSound("next-level.wav");
@@ -176,7 +173,6 @@ public class GameState extends State {
      * We can restart the game after going to a new level with this method.
      */
     private void restartGame() {
-        System.out.println("Current game level: "+currentGameLevel);
         initializeEnemies(2);
     }
 }

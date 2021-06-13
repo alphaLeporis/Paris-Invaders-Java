@@ -10,7 +10,7 @@ import java.awt.*;
  */
 public class UILives extends UIText {
     public UILives(Position position) {
-        super("", position);
+        super("Lives:", position);
         this.color = Color.black;
     }
 

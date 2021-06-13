@@ -100,7 +100,6 @@ public class PlayerEntity extends Entity {
                 return;
             }
             currentHealth--;
-
         }
 
         if (other instanceof BonusEntity) {

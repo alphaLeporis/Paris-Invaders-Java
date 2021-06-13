@@ -11,8 +11,8 @@ import be.uantwerpen.fti.ei.invaders.gameEngine.states.State;
 public class Game {
     private final AFact afact;
     private final Input input;
-    private State currentState;
     private final Score score;
+    private State currentState;
 
     /**
      * The game constructor will start the game. In this case we want our menu state to start.

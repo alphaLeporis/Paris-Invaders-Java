@@ -10,7 +10,7 @@ import java.awt.*;
  */
 public class UILevel extends UIText {
     public UILevel(Position position) {
-        super("", position);
+        super("Level:", position);
         this.color = Color.black;
     }
 
